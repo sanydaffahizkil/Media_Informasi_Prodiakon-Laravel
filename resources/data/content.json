@@ -193,11 +193,11 @@
   "data_wilayah": [
     {
       "kode": "peta",
-      "nama": "Peta Paroki Pulomas",
-      "nama_pelindung": "Gereja Santo Bonaventura",
+      "nama": "Peta",
+      "nama_pelindung": "Gereja Santo Bonaventura Pulomas",
       "cakupan": "Kawasan Teritorial Paroki Pulomas (Kec. Pulo Gadung, Matraman & sekitarnya)",
-      "deskripsi": "Peta pastoral territorial Paroki Santo Bonaventura Pulomas membawahi 11 Wilayah dan puluhan Lingkungan binaan, melayani ribuan keluarga Katolik di Jakarta Timur.",
-      "total_prodiakon": 84,
+      "deskripsi": "Peta pastoral teritorial Paroki Santo Bonaventura Pulomas membawahi 11 Wilayah dan 52 Lingkungan binaan, melayani ribuan keluarga Katolik di Keuskupan Agung Jakarta.",
+      "total_prodiakon": "11 Wilayah",
       "koordinator": "Ignatius Bambang Supriyadi (Ketua Paguyuban)",
       "daftar_prodiakon": [
         {

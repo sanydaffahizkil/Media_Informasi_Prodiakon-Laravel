@@ -350,10 +350,22 @@
                         @foreach($content['data_wilayah'] as $index => $w)
                             <li class="wilayah-nav-item">
                                 <button type="button" 
-                                        class="wilayah-nav-btn {{ $index === 0 ? 'active' : '' }}" 
+                                        class="wilayah-nav-btn {{ $index === 0 ? 'active' : '' }} {{ $w['kode'] === 'peta' ? 'peta-nav-btn' : '' }}" 
                                         data-wilayah="{{ $w['kode'] }}">
-                                    <span>{{ $w['nama'] }}</span>
-                                    <span class="count-badge">{{ $w['total_prodiakon'] }}</span>
+                                    <span>
+                                        @if($w['kode'] === 'peta')
+                                            <i class="bi bi-map-fill text-gold me-2"></i><strong>Peta</strong>
+                                        @else
+                                            {{ $w['nama'] }}
+                                        @endif
+                                    </span>
+                                    <span class="count-badge {{ $w['kode'] === 'peta' ? 'count-badge-peta' : '' }}">
+                                        @if($w['kode'] === 'peta')
+                                            <i class="bi bi-compass"></i>
+                                        @else
+                                            {{ $w['total_prodiakon'] }}
+                                        @endif
+                                    </span>
                                 </button>
                             </li>
                         @endforeach
@@ -365,71 +377,174 @@
                     @foreach($content['data_wilayah'] as $index => $w)
                         <div class="wilayah-panel" id="panel-{{ $w['kode'] }}" style="{{ $index === 0 ? 'display: block;' : 'display: none;' }}">
                             
-                            <!-- Wilayah Header Banner -->
-                            <div class="wilayah-header-card shimmer-card">
-                                <div class="wilayah-header-info">
-                                    <h3>{{ $w['nama'] }} <span style="font-size: 1.1rem; color: var(--accent-gold); font-weight: 600;">({{ $w['nama_pelindung'] }})</span></h3>
-                                    <p><i class="bi bi-geo-alt-fill text-gold me-1"></i> Cakupan: {{ $w['cakupan'] }}</p>
-                                    <p style="margin-top: 4px; font-size: 0.85rem; color: #475569;">{{ $w['deskripsi'] }}</p>
-                                </div>
-                                <div class="wilayah-badge-info">
-                                    <div class="badge-stat">
-                                        <div class="val">{{ $w['total_prodiakon'] }}</div>
-                                        <div class="lbl">Prodiakon</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                                <h4 style="font-size: 1.1rem; color: var(--primary-navy); margin: 0;">
-                                    <i class="bi bi-person-lines-fill text-gold me-2"></i>Daftar Pelayan Altar
-                                </h4>
-                                <span style="font-size: 0.82rem; color: var(--text-muted);">
-                                    Koordinator: <strong>{{ $w['koordinator'] }}</strong>
-                                </span>
-                            </div>
-
-                            <!-- Grid Cards of Prodiakon in this Wilayah -->
-                            <div class="prodiakon-cards-grid">
-                                @foreach($w['daftar_prodiakon'] as $pd)
-                                    <div class="prodiakon-card shimmer-card" data-nama="{{ strtolower($pd['nama']) }}" data-lingkungan="{{ strtolower($pd['lingkungan']) }}">
-                                        <div>
-                                            <div class="prodiakon-card-top">
-                                                <div class="prodiakon-avatar-circle">
-                                                    {{ strtoupper(substr($pd['nama'], 0, 1)) }}
-                                                </div>
-                                                <div class="prodiakon-name-title">
-                                                    <h4>{{ $pd['nama'] }}</h4>
-                                                    <div class="prodiakon-lingkungan">{{ $pd['lingkungan'] }}</div>
-                                                </div>
+                            @if($w['kode'] === 'peta')
+                                <!-- =========================================================
+                                     KHUSUS VIEW PETA WILAYAH PAROKI (HIGH-DEFINITION INTERACTIVE)
+                                     ========================================================= -->
+                                <div class="peta-showcase-container">
+                                    <!-- Header Peta -->
+                                    <div class="peta-header-card shimmer-card">
+                                        <div class="peta-header-content">
+                                            <div class="peta-badge-tag">
+                                                <i class="bi bi-compass-fill"></i> Teritori Pastoral Paroki Pulomas
                                             </div>
+                                            <h3 class="peta-main-title">PETA 11 WILAYAH GEREJA SANTO BONAVENTURA</h3>
+                                            <p class="peta-main-desc">
+                                                Peta pembagian teritorial pastoral mencakup 11 Wilayah Pelayanan dan 52 Lingkungan di bawah naungan Paroki Pulomas, Keuskupan Agung Jakarta.
+                                            </p>
+                                        </div>
+                                        <div class="peta-header-actions">
+                                            <button type="button" class="btn-peta-action" id="btnOpenMapLightbox">
+                                                <i class="bi bi-arrows-fullscreen"></i> Layar Penuh
+                                            </button>
+                                            <a href="/images/peta.png" download="Peta-Paroki-Santo-Bonaventura-Pulomas.png" class="btn-peta-action btn-peta-download">
+                                                <i class="bi bi-download"></i> Unduh HD
+                                            </a>
+                                        </div>
+                                    </div>
 
-                                            <div class="prodiakon-meta">
-                                                <div class="prodiakon-meta-row">
-                                                    <i class="bi bi-shield-check text-gold"></i>
-                                                    <span>{{ $pd['tugas_khusus'] }}</span>
-                                                </div>
-                                                <div class="prodiakon-meta-row">
-                                                    <i class="bi bi-calendar-event text-gold"></i>
-                                                    <span>Masa Bakti: {{ $pd['masa_bakti'] }}</span>
-                                                </div>
+                                    <!-- Interactive Map Viewer Frame -->
+                                    <div class="peta-map-frame shimmer-card" id="petaMainFrame" title="Klik untuk membuka layar penuh">
+                                        <div class="peta-map-church-pin">
+                                            <i class="bi bi-geo-alt-fill text-gold me-1"></i> Gereja Katolik St. Bonaventura (Pusat Paroki)
+                                        </div>
+                                        <div class="peta-map-img-wrapper">
+                                            <picture>
+                                                <source srcset="/images/peta.webp" type="image/webp">
+                                                <img src="/images/peta.png" alt="Peta Teritori Paroki Santo Bonaventura Pulomas" class="peta-main-img" id="mainPetaImage">
+                                            </picture>
+                                        </div>
+                                        <div class="peta-map-footer-hint">
+                                            <i class="bi bi-zoom-in text-gold me-1"></i> Klik gambar peta untuk memperbesar dalam mode Layar Penuh (HD)
+                                        </div>
+                                    </div>
+
+                                    <!-- Legend / Key Teritorial -->
+                                    <div class="peta-legend-grid">
+                                        <div class="peta-legend-item">
+                                            <div class="peta-legend-icon" style="background: rgba(203, 162, 88, 0.15); color: var(--accent-gold);">
+                                                <i class="bi bi-shield-shaded"></i>
+                                            </div>
+                                            <div>
+                                                <h4>Gereja Induk</h4>
+                                                <p>Jl. Pacuan Kuda No. 1, Pulomas</p>
                                             </div>
                                         </div>
+                                        <div class="peta-legend-item">
+                                            <div class="peta-legend-icon" style="background: rgba(37, 99, 235, 0.15); color: #2563eb;">
+                                                <i class="bi bi-map"></i>
+                                            </div>
+                                            <div>
+                                                <h4>11 Wilayah Pelayanan</h4>
+                                                <p>Tersebar di Wilayah I hingga XI</p>
+                                            </div>
+                                        </div>
+                                        <div class="peta-legend-item">
+                                            <div class="peta-legend-icon" style="background: rgba(22, 163, 74, 0.15); color: #16a34a;">
+                                                <i class="bi bi-people-fill"></i>
+                                            </div>
+                                            <div>
+                                                <h4>124 Pelayan Altar</h4>
+                                                <p>Melayani liturgi dan orang sakit</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                        <!-- Tombol Klik Detail sesuai instruksi User -->
-                                        <button type="button" 
-                                                class="btn-detail-modal"
-                                                data-nama="{{ $pd['nama'] }}"
-                                                data-lingkungan="{{ $pd['lingkungan'] }}"
-                                                data-wilayah-nama="{{ $w['nama'] }} - {{ $w['nama_pelindung'] }}"
-                                                data-masa-bakti="{{ $pd['masa_bakti'] }}"
-                                                data-tugas="{{ $pd['tugas_khusus'] }}"
-                                                data-jadwal="{{ $pd['jadwal'] }}">
-                                            <i class="bi bi-info-circle-fill text-gold"></i> Klik Detail
+                                    <!-- Quick Jump to Wilayah Pills -->
+                                    <div class="peta-jump-navigator">
+                                        <div class="peta-jump-header">
+                                            <i class="bi bi-cursor-fill text-gold me-2"></i>
+                                            <strong>Pilih Wilayah untuk Melihat Data Prodiakon:</strong>
+                                        </div>
+                                        <div class="peta-pills-container">
+                                            @foreach($content['data_wilayah'] as $otherW)
+                                                @if($otherW['kode'] !== 'peta')
+                                                    <button type="button" class="btn-jump-pill" data-target-wilayah="{{ $otherW['kode'] }}">
+                                                        <span class="jump-pill-name">{{ $otherW['nama'] }}</span>
+                                                        <span class="jump-pill-sub">{{ $otherW['nama_pelindung'] }}</span>
+                                                        <span class="jump-pill-count"><i class="bi bi-person-fill me-1"></i>{{ $otherW['total_prodiakon'] }}</span>
+                                                    </button>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+
+                            @else
+                                <!-- =========================================================
+                                     VIEW WILAYAH STANDAR (WILAYAH I - XI)
+                                     ========================================================= -->
+                                <!-- Wilayah Header Banner -->
+                                <div class="wilayah-header-card shimmer-card">
+                                    <div class="wilayah-header-info">
+                                        <h3>{{ $w['nama'] }} <span style="font-size: 1.1rem; color: var(--accent-gold); font-weight: 600;">({{ $w['nama_pelindung'] }})</span></h3>
+                                        <p><i class="bi bi-geo-alt-fill text-gold me-1"></i> Cakupan: {{ $w['cakupan'] }}</p>
+                                        <p style="margin-top: 4px; font-size: 0.85rem; color: #475569;">{{ $w['deskripsi'] }}</p>
+                                    </div>
+                                    <div class="wilayah-header-actions-right">
+                                        <div class="wilayah-badge-info">
+                                            <div class="badge-stat">
+                                                <div class="val">{{ $w['total_prodiakon'] }}</div>
+                                                <div class="lbl">Prodiakon</div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn-back-to-map" data-target-wilayah="peta">
+                                            <i class="bi bi-map-fill text-gold me-1"></i> Lihat Peta
                                         </button>
                                     </div>
-                                @endforeach
-                            </div>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+                                    <h4 style="font-size: 1.1rem; color: var(--primary-navy); margin: 0;">
+                                        <i class="bi bi-person-lines-fill text-gold me-2"></i>Daftar Pelayan Altar
+                                    </h4>
+                                    <span style="font-size: 0.82rem; color: var(--text-muted);">
+                                        Koordinator: <strong>{{ $w['koordinator'] }}</strong>
+                                    </span>
+                                </div>
+
+                                <!-- Grid Cards of Prodiakon in this Wilayah -->
+                                <div class="prodiakon-cards-grid">
+                                    @foreach($w['daftar_prodiakon'] as $pd)
+                                        <div class="prodiakon-card shimmer-card" data-nama="{{ strtolower($pd['nama']) }}" data-lingkungan="{{ strtolower($pd['lingkungan']) }}">
+                                            <div>
+                                                <div class="prodiakon-card-top">
+                                                    <div class="prodiakon-avatar-circle">
+                                                        {{ strtoupper(substr($pd['nama'], 0, 1)) }}
+                                                    </div>
+                                                    <div class="prodiakon-name-title">
+                                                        <h4>{{ $pd['nama'] }}</h4>
+                                                        <div class="prodiakon-lingkungan">{{ $pd['lingkungan'] }}</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="prodiakon-meta">
+                                                    <div class="prodiakon-meta-row">
+                                                        <i class="bi bi-shield-check text-gold"></i>
+                                                        <span>{{ $pd['tugas_khusus'] }}</span>
+                                                    </div>
+                                                    <div class="prodiakon-meta-row">
+                                                        <i class="bi bi-calendar-event text-gold"></i>
+                                                        <span>Masa Bakti: {{ $pd['masa_bakti'] }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Tombol Klik Detail sesuai instruksi User -->
+                                            <button type="button" 
+                                                    class="btn-detail-modal"
+                                                    data-nama="{{ $pd['nama'] }}"
+                                                    data-lingkungan="{{ $pd['lingkungan'] }}"
+                                                    data-wilayah-nama="{{ $w['nama'] }} - {{ $w['nama_pelindung'] }}"
+                                                    data-masa-bakti="{{ $pd['masa_bakti'] }}"
+                                                    data-tugas="{{ $pd['tugas_khusus'] }}"
+                                                    data-jadwal="{{ $pd['jadwal'] }}">
+                                                <i class="bi bi-info-circle-fill text-gold"></i> Klik Detail
+                                            </button>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
 
                         </div>
                     @endforeach

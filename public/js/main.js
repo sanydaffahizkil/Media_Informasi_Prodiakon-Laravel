@@ -350,9 +350,87 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // =========================================================================
+  // 8. QUICK JUMP TO WILAYAH / PETA HANDLER
+  // =========================================================================
+  const jumpButtons = document.querySelectorAll('[data-target-wilayah]');
+  jumpButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetKode = btn.getAttribute('data-target-wilayah');
+      const targetBtn = document.querySelector(`.wilayah-nav-btn[data-wilayah="${targetKode}"]`);
+      if (targetBtn) {
+        targetBtn.click();
+        const wilayahSection = document.getElementById('data-prodiakon');
+        if (wilayahSection) {
+          const yOffset = -70;
+          const y = wilayahSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  // =========================================================================
+  // 9. MAP LIGHTBOX MODAL & INTERACTIVE CONTROLS
+  // =========================================================================
+  const mapLightboxModal = document.getElementById('mapLightboxModal');
+  const btnOpenMapLightbox = document.getElementById('btnOpenMapLightbox');
+  const petaMainFrame = document.getElementById('petaMainFrame');
+  const btnCloseMapLightbox = document.getElementById('btnCloseMapLightbox');
+  const mapZoomableImg = document.getElementById('mapZoomableImg');
+  const btnZoomIn = document.getElementById('btnZoomIn');
+  const btnZoomOut = document.getElementById('btnZoomOut');
+  const btnZoomReset = document.getElementById('btnZoomReset');
+
+  let currentZoom = 1;
+
+  const updateMapZoom = (newZoom) => {
+    currentZoom = Math.min(Math.max(newZoom, 1), 3);
+    if (mapZoomableImg) {
+      mapZoomableImg.style.transform = `scale(${currentZoom})`;
+      mapZoomableImg.style.cursor = currentZoom > 1 ? 'grab' : 'zoom-in';
+    }
+  };
+
+  const openMapLightbox = () => {
+    if (mapLightboxModal) {
+      mapLightboxModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      updateMapZoom(1);
+    }
+  };
+
+  const closeMapLightbox = () => {
+    if (mapLightboxModal) {
+      mapLightboxModal.classList.remove('show');
+      document.body.style.overflow = '';
+      updateMapZoom(1);
+    }
+  };
+
+  petaMainFrame?.addEventListener('click', openMapLightbox);
+  btnOpenMapLightbox?.addEventListener('click', openMapLightbox);
+  btnCloseMapLightbox?.addEventListener('click', closeMapLightbox);
+
+  mapLightboxModal?.addEventListener('click', (e) => {
+    if (e.target === mapLightboxModal) {
+      closeMapLightbox();
+    }
+  });
+
+  btnZoomIn?.addEventListener('click', () => updateMapZoom(currentZoom + 0.35));
+  btnZoomOut?.addEventListener('click', () => updateMapZoom(currentZoom - 0.35));
+  btnZoomReset?.addEventListener('click', () => updateMapZoom(1));
+
+  mapZoomableImg?.addEventListener('click', () => {
+    updateMapZoom(currentZoom > 1 ? 1 : 1.75);
+  });
+
+  // Global ESC Key Listener
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalBackdrop?.classList.contains('show')) {
-      closeModal();
+    if (e.key === 'Escape') {
+      if (modalBackdrop?.classList.contains('show')) closeModal();
+      if (mapLightboxModal?.classList.contains('show')) closeMapLightbox();
     }
   });
 });

@@ -104,6 +104,37 @@
         </div>
     </div>
 
+    <!-- Modal Lightbox Peta Fullscreen -->
+    <div class="modal-backdrop map-lightbox-backdrop" id="mapLightboxModal">
+        <div class="map-lightbox-card">
+            <div class="map-lightbox-header">
+                <div class="map-lightbox-title-wrap">
+                    <i class="bi bi-map-fill text-gold me-2"></i>
+                    <div>
+                        <h3 class="map-lightbox-title">Peta Wilayah Paroki Santo Bonaventura Pulomas (HD)</h3>
+                        <span class="map-lightbox-sub">Keuskupan Agung Jakarta &bull; Wilayah I sampai XI</span>
+                    </div>
+                </div>
+                <div class="map-lightbox-tools">
+                    <button type="button" class="btn-map-tool" id="btnZoomIn" title="Perbesar"><i class="bi bi-zoom-in"></i></button>
+                    <button type="button" class="btn-map-tool" id="btnZoomOut" title="Perkecil"><i class="bi bi-zoom-out"></i></button>
+                    <button type="button" class="btn-map-tool" id="btnZoomReset" title="Reset Ukuran"><i class="bi bi-arrows-angle-contract"></i></button>
+                    <a href="/images/peta.png" download="Peta-Paroki-Santo-Bonaventura-Pulomas.png" class="btn-map-tool" title="Unduh Peta HD"><i class="bi bi-download"></i></a>
+                    <button type="button" class="btn-map-close" id="btnCloseMapLightbox" title="Tutup">&times;</button>
+                </div>
+            </div>
+            <div class="map-lightbox-viewport" id="mapViewport">
+                <picture>
+                    <source srcset="/images/peta.webp" type="image/webp">
+                    <img src="/images/peta.png" alt="Peta Paroki Pulomas Fullscreen" class="map-zoomable-img" id="mapZoomableImg">
+                </picture>
+            </div>
+            <div class="map-lightbox-footer">
+                <span><i class="bi bi-info-circle me-1 text-gold"></i> Gunakan tombol zoom di atas atau cubit/geser untuk melihat nama jalan dan batas teritori lingkungan secara mendetail.</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
