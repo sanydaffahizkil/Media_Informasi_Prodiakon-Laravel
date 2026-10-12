@@ -1,0 +1,623 @@
+{
+  "paroki": {
+    "nama": "Gereja Santo Bonaventura",
+    "alamat": "Jl. Pacuan Kuda No. 1, Pulo Mas, Kayu Putih, Pulo Gadung, Jakarta Timur 13210",
+    "telepon": "(021) 489-1301",
+    "email": "sekretariat@stbonaventura.org",
+    "website": "https://stbonaventura.org"
+  },
+  "sambutan_romo": {
+    "nama": "Romo Antonius Yakin Ciptamulya, Pr",
+    "jabatan": "Pastor Paroki Santo Bonaventura Pulomas",
+    "foto": "/images/romo.jpg",
+    "kutipan_singkat": "\"Melayani dengan kerendahan hati, menghadirkan Tubuh Kristus di tengah persekutuan dan bagi mereka yang lemah dan sakit.\"",
+    "isi": [
+      "Salam damai dalam kasih Kristus,",
+      "Puji dan syukur kita haturkan ke hadirat Allah Bapa yang Maha Pengasih, atas rahmat dan penyertaan-Nya sehingga para Prodiakon Paroki Santo Bonaventura Pulomas senantiasa setia melayani altar dan umat-Nya. Pelayanan Prodiakon bukan sekadar tugas administratif liturgis, melainkan wujud nyata keterlibatan awam dalam mempersembahkan diri bagi kemuliaan Tuhan dan keselamatan sesama.",
+      "Melalui moto pengabdian 2025–2028, kita diajak untuk semakin mempererat persekutuan kasih, berakar dalam Ekaristi, dan berbuah dalam pelayanan nyata—khususnya menyapa para lansia dan saudara-saudari kita yang terbaring sakit di lingkungan-lingkungan Wilayah I sampai XI.",
+      "Semoga teladan Santo Bonaventura, Sang Pujangga Serafik yang penuh cinta ilahi dan kerendahan hati, senantiasa menuntun setiap langkah pengabdian para Prodiakon. Selamat melayani dengan sukacita dan ketulusan hati."
+    ]
+  },
+  "makna_vandel": {
+    "judul": "Makna Lambang Vandel Prodiakon",
+    "subjudul": "Simbolisme Suci Pelayanan Altar dan Perutusan Umat",
+    "foto": "/images/vandel.jpg",
+    "deskripsi_umum": "Vandel Prodiakon Paroki Santo Bonaventura Pulomas mengandung simbol-simbol luhur yang merepresentasikan jati diri, spiritualitas Ekaristi, dan kesiapan melayani tanpa pamrih.",
+    "elemen": [
+      {
+        "simbol": "Hosti Kudus & Piala Ekaristi",
+        "makna": "Pusat dari seluruh panggilan Prodiakon adalah Ekaristi Mahakudus. Prodiakon diutus sebagai pelayan luar biasa untuk membagikan Tubuh Kristus kepada umat beriman dalam perayaan Ekaristi dan mengantarkannya kepada umat yang sakit di rumah.",
+        "icon": "bi-trophy"
+      },
+      {
+        "simbol": "Salib Kristus",
+        "makna": "Dasar dari setiap pengorbanan dan pelayanan kasih. Meneladani pengorbanan Kristus yang wafat di kayu salib demi menebus umat manusia, mengajar prodiakon untuk melayani dengan semangat mati raga dan kerendahan hati.",
+        "icon": "bi-plus-lg"
+      },
+      {
+        "simbol": "Burung Merpati (Roh Kudus)",
+        "makna": "Lambang bimbingan Roh Kudus yang melimpahkan tujuh karunia rohani, memberikan hikmat, kekuatan, dan kesucian dalam menunaikan tugas liturgis.",
+        "icon": "bi-feather"
+      },
+      {
+        "simbol": "Warna Emas & Putih Liturgis",
+        "makna": "Warna emas melambangkan kemuliaan Allah, keagungan takhta surgawi, dan keluhuran martabat pelayanan. Warna putih melambangkan kemurnian hati, ketulusan, serta kesucian hidup rohani seorang pelayan altar.",
+        "icon": "bi-stars"
+      },
+      {
+        "simbol": "Tali & Rumbai Persatuan",
+        "makna": "Melambangkan ikatan tali persaudaraan yang erat di antara seluruh anggota prodiakon dan kesatuan persekutuan dengan Pastor Paroki serta Uskup Keuskupan Agung Jakarta.",
+        "icon": "bi-link-45deg"
+      }
+    ]
+  },
+  "moto": {
+    "periode": "2025 – 2028",
+    "semboyan": "BERAKAR DALAM EKARISTI, BERBUAH DALAM PELAYANAN KASIH",
+    "sub_semboyan": "\"Sebab Anak Manusia juga datang bukan untuk dilayani, melainkan untuk melayani.\" (Markus 10:45)",
+    "pilar": [
+      {
+        "judul": "Kekudusan Pribadi",
+        "keterangan": "Menjaga hidup doa dan integritas moral sebagai cermin kehadiran Kristus."
+      },
+      {
+        "judul": "Ketepatan & Ketaatan Liturgi",
+        "keterangan": "Menjalankan tata perayaan liturgi Gereja Katolik secara tertib, khidmat, dan setia."
+      },
+      {
+        "judul": "Kepekaan Pastoral",
+        "keterangan": "Sigap menyapa umat yang sakit, terpinggirkan, dan membutuhkan sentuhan kasih Kristus."
+      }
+    ]
+  },
+  "pelindung": {
+    "nama": "Santo Bonaventura (1221 – 1274)",
+    "gelar": "Uskup, Kardinal, dan Pujangga Gereja (Doctor Seraphicus)",
+    "pesta_nama": "15 Juli",
+    "sejarah": "Santo Bonaventura lahir di Bagnoregio, Italia, dengan nama Giovanni di Fidanza. Ketika masih kecil ia sembuh dari sakit parah berkat doa Santo Fransiskus dari Asisi, yang berseru 'O buona ventura!' (O masa depan yang baik!). Menjadi Magister Teologi di Universitas Paris dan kemudian Minister Jenderal Ordo Saudara Dina (Fransiskan). Ia diangkat menjadi Kardinal Uskup Albano dan kemudian dinobatkan sebagai Pujangga Gereja dengan gelar 'Doctor Seraphicus' karena tulisan-tulisannya yang memancarkan nyala api cinta ilahi.",
+    "teladan_pelayanan": "Bagi para Prodiakon Pulomas, Santo Bonaventura meneladankan bahwa ilmu pengetahuan dan tugas liturgis harus berpadu erat dengan cinta yang membara kepada Kristus. Pelayanan altar bukan mencari kedudukan, melainkan kerendahan hati dalam mengabdi kepada Allah dan sesama."
+  },
+  "pengurus": {
+    "periode": "2025 – 2028",
+    "daftar": [
+      {
+        "nama": "Ignatius Bambang Supriyadi",
+        "jabatan": "Ketua Paguyuban Prodiakon",
+        "wilayah": "Wilayah VII - Lingkungan Santa Klara",
+        "inisial": "IBS"
+      },
+      {
+        "nama": "Francisca Maria Retno Utami",
+        "jabatan": "Wakil Ketua",
+        "wilayah": "Wilayah II - Lingkungan Santo Fransiskus",
+        "inisial": "FMR"
+      },
+      {
+        "nama": "Antonius Hendra Wijaya",
+        "jabatan": "Sekretaris I",
+        "wilayah": "Wilayah I - Lingkungan Santo Rafael",
+        "inisial": "AHW"
+      },
+      {
+        "nama": "Theresia Yenny Anggraeni",
+        "jabatan": "Sekretaris II",
+        "wilayah": "Wilayah VI - Lingkungan Santa Angela",
+        "inisial": "TYA"
+      },
+      {
+        "nama": "Benedictus FX. Suryanto",
+        "jabatan": "Bendahara Umum",
+        "wilayah": "Wilayah VIII - Lingkungan Santo Matius",
+        "inisial": "BFS"
+      },
+      {
+        "nama": "Gregorius Ariyanto Kusuma",
+        "jabatan": "Koordinator Liturgi & Jadwal",
+        "wilayah": "Wilayah III - Lingkungan Santo Mikael",
+        "inisial": "GAK"
+      },
+      {
+        "nama": "Maria Bernadetha Sulistiawati",
+        "jabatan": "Koordinator Pelayanan Orang Sakit (Pastoral)",
+        "wilayah": "Wilayah V - Lingkungan Santa Theresia",
+        "inisial": "MBS"
+      },
+      {
+        "nama": "Yohanes Baptista Danu Saputra",
+        "jabatan": "Koordinator Pembinaan & Kerohanian",
+        "wilayah": "Wilayah IV - Lingkungan Santo Gabriel",
+        "inisial": "YBD"
+      }
+    ]
+  },
+  "tugas_pengurus": [
+    {
+      "bidang": "Pelayanan Liturgis Altar",
+      "deskripsi": "Mengatur jadwal penugasan prodiakon untuk Misa Harian, Misa Mingguan, Hari Raya Liturgis, Misa Perkawinan, serta Misa Requiem di Paroki Santo Bonaventura.",
+      "poin": [
+        "Penyusunan jadwal giliran tugas secara adil dan transparan.",
+        "Memastikan ketepatan waktu hadir (minimal 30 menit sebelum Misa dimulai).",
+        "Menjaga kesiapan pakaian liturgis (jubah, singel, salib gantung) dalam keadaan bersih dan rapi."
+      ]
+    },
+    {
+      "bidang": "Pelayanan Komuni Orang Sakit & Lansia",
+      "deskripsi": "Mengkoordinir pelayanan pengantaran Komuni Kudus kepada umat lansia dan orang sakit di lingkungan-lingkungan Wilayah I sampai XI.",
+      "poin": [
+        "Pendataan umat sakit dan lansia yang membutuhkan Komuni pertama Jumat atau mingguan.",
+        "Koordinasi dengan Ketua Lingkungan dan Seksi Pelayanan Paroki.",
+        "Pelaksanaan doa dan tata cara pembagian komuni orang sakit sesuai rubrik pastoral Gereja Katolik."
+      ]
+    },
+    {
+      "bidang": "Pembinaan & Spiritualitas",
+      "deskripsi": "Menyelenggarakan rekoleksi rohani, pembekalan teologis, dan evaluasi berkala guna menyegarkan kembali komitmen batiniah setiap prodiakon.",
+      "poin": [
+        "Rekoleksi tahunan bersama Pastor Paroki menjelang pembaruan janji janji prodiakon.",
+        "Latihan rubrik dan tata gerak liturgis secara berkala.",
+        "Pendalaman Kitab Suci dan dokumen ajaran Gereja mengenai Sakramen Ekaristi."
+      ]
+    },
+    {
+      "bidang": "Administrasi, Logistik & Keuangan",
+      "deskripsi": "Mengelola data keanggotaan, inventaris perlengkapan prodiakon, serta akuntabilitas keuangan paguyuban.",
+      "poin": [
+        "Pembaruan database anggota di setiap wilayah dan lingkungan.",
+        "Pemeliharaan piksis, bursa, dan sarana ibadat pelayanan.",
+        "Penyusunan laporan pertanggungjawaban secara berkala dan terbuka."
+      ]
+    }
+  ],
+  "sasaran": [
+    {
+      "nomor": "01",
+      "judul": "Kedisiplinan & Kesucian Liturgis",
+      "uraian": "Tercapainya kehadiran 100% tepat waktu pada setiap penugasan Misa altar dengan tata laku yang mencerminkan rasa hormat dan takzim pada Sakramen Mahakudus."
+    },
+    {
+      "nomor": "02",
+      "judul": "Cakupan 100% Umat Sakit & Lansia",
+      "uraian": "Menjangkau seluruh umat yang terhalang hadir ke gereja di Wilayah I sampai XI secara berkala, memastikan tidak ada domba yang tertinggal dari berkat Ekaristi."
+    },
+    {
+      "nomor": "03",
+      "judul": "Pembaruan Rohani Berkelanjutan",
+      "uraian": "Menyelenggarakan 2 kali rekoleksi dan pembekalan liturgis dalam setahun untuk memperdalam penghayatan spiritualitas Santo Bonaventura."
+    },
+    {
+      "nomor": "04",
+      "judul": "Sinergi Guyub & Komunikasi Terpadu",
+      "uraian": "Membangun sistem informasi dan komunikasi yang cepat, akurat, dan transparan antara pengurus, koordinator wilayah, dan dewan paroki."
+    }
+  ],
+  "data_wilayah": [
+    {
+      "kode": "peta",
+      "nama": "Peta Paroki Pulomas",
+      "nama_pelindung": "Gereja Santo Bonaventura",
+      "cakupan": "Kawasan Teritorial Paroki Pulomas (Kec. Pulo Gadung, Matraman & sekitarnya)",
+      "deskripsi": "Peta pastoral territorial Paroki Santo Bonaventura Pulomas membawahi 11 Wilayah dan puluhan Lingkungan binaan, melayani ribuan keluarga Katolik di Jakarta Timur.",
+      "total_prodiakon": 84,
+      "koordinator": "Ignatius Bambang Supriyadi (Ketua Paguyuban)",
+      "daftar_prodiakon": [
+        {
+          "nama": "Ignatius Bambang Supriyadi",
+          "lingkungan": "Santa Klara",
+          "wilayah": "Wilayah VII",
+          "masa_bakti": "2022 - 2028 (Periode II)",
+          "tugas_khusus": "Ketua Paguyuban",
+          "jadwal": "Misa Sabtu 17:00 / Misa Minggu 08:30"
+        },
+        {
+          "nama": "Francisca Maria Retno Utami",
+          "lingkungan": "Santo Fransiskus",
+          "wilayah": "Wilayah II",
+          "masa_bakti": "2025 - 2028 (Periode I)",
+          "tugas_khusus": "Wakil Ketua",
+          "jadwal": "Misa Minggu 06:30 / 17:00"
+        },
+        {
+          "nama": "Antonius Hendra Wijaya",
+          "lingkungan": "Santo Rafael",
+          "wilayah": "Wilayah I",
+          "masa_bakti": "2022 - 2028 (Periode II)",
+          "tugas_khusus": "Sekretaris I",
+          "jadwal": "Misa Minggu 10:30"
+        }
+      ]
+    },
+    {
+      "kode": "wilayah-i",
+      "nama": "Wilayah I",
+      "nama_pelindung": "Santa Maria Ratu Rosari",
+      "cakupan": "Ria Rio, Pacuan Kuda, dan sekitarnya",
+      "deskripsi": "Wadah persekutuan umat Katolik di Wilayah I (Santa Maria Ratu Rosari) yang terletak dekat kompleks gereja induk.",
+      "total_prodiakon": 8,
+      "koordinator": "Antonius Hendra Wijaya",
+      "daftar_prodiakon": [
+        {
+          "nama": "Antonius Hendra Wijaya",
+          "lingkungan": "Lingkungan Santo Rafael",
+          "wilayah": "Wilayah I",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Koor Wilayah I & Sekretaris",
+          "jadwal": "Minggu 08:30 & Komuni Lansia Jumat I"
+        },
+        {
+          "nama": "Yohanes Paulus Suwandi",
+          "lingkungan": "Lingkungan Santo Gabriel",
+          "wilayah": "Wilayah I",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Altar",
+          "jadwal": "Sabtu 17:00"
+        },
+        {
+          "nama": "Agustinus Dwi Cahyo",
+          "lingkungan": "Lingkungan Santa Faustina",
+          "wilayah": "Wilayah I",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Lansia Ria Rio",
+          "jadwal": "Minggu 06:30"
+        },
+        {
+          "nama": "Lucia Sri Wahyuni",
+          "lingkungan": "Lingkungan Santo Rafael",
+          "wilayah": "Wilayah I",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Pelayan Sakramen",
+          "jadwal": "Minggu 17:00"
+        }
+      ]
+    },
+    {
+      "kode": "wilayah-ii",
+      "nama": "Wilayah II",
+      "nama_pelindung": "Santo Maximilian Kolbe",
+      "cakupan": "Pulo Mas Selatan & sekitarnya",
+      "deskripsi": "Wadah persekutuan umat Katolik di Wilayah II (Santo Maximilian Kolbe) dengan kekeluargaan yang guyub.",
+      "total_prodiakon": 7,
+      "koordinator": "Francisca Maria Retno Utami",
+      "daftar_prodiakon": [
+        {
+          "nama": "Francisca Maria Retno Utami",
+          "lingkungan": "Lingkungan Santo Fransiskus",
+          "wilayah": "Wilayah II",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Koor Wilayah II & Wakil Ketua",
+          "jadwal": "Minggu 06:30 & Komuni Sakit"
+        },
+        {
+          "nama": "Petrus Albertus Sunarto",
+          "lingkungan": "Lingkungan Santo Antonius",
+          "wilayah": "Wilayah II",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Pelayan Misa Harian & Minggu",
+          "jadwal": "Sabtu 17:00"
+        },
+        {
+          "nama": "Cornelius Joko Priyono",
+          "lingkungan": "Lingkungan Santa Klara",
+          "wilayah": "Wilayah II",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Altar",
+          "jadwal": "Minggu 08:30"
+        }
+      ]
+    },
+    {
+      "kode": "wilayah-iii",
+      "nama": "Wilayah III",
+      "nama_pelindung": "Santo Gregorius Agung",
+      "cakupan": "Kp. Baru Waringin & sekitarnya",
+      "deskripsi": "Wadah persekutuan umat Katolik di Wilayah III (Santo Gregorius Agung) berjiwa pengabdian tinggi.",
+      "total_prodiakon": 8,
+      "koordinator": "Gregorius Ariyanto Kusuma",
+      "daftar_prodiakon": [
+        {
+          "nama": "Gregorius Ariyanto Kusuma",
+          "lingkungan": "Lingkungan Santo Mikael",
+          "wilayah": "Wilayah III",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Koordinator Liturgi & Jadwal",
+          "jadwal": "Minggu 10:30 & Penjadwalan Misa"
+        },
+        {
+          "nama": "Stefanus Budi Santoso",
+          "lingkungan": "Lingkungan Santo Stefanus",
+          "wilayah": "Wilayah III",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Altar",
+          "jadwal": "Sabtu 17:00"
+        },
+        {
+          "nama": "Elisabeth Maria Endang",
+          "lingkungan": "Lingkungan Santa Bernadeth",
+          "wilayah": "Wilayah III",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Komuni Orang Sakit",
+          "jadwal": "Minggu 08:30"
+        }
+      ]
+    },
+    {
+      "kode": "wilayah-iv",
+      "nama": "Wilayah IV",
+      "nama_pelindung": "Santo Gabriel",
+      "cakupan": "Kp. Ambon & sekitarnya",
+      "deskripsi": "Wadah persekutuan umat Katolik di Wilayah IV (Santo Gabriel) penuh semangat persaudaraan.",
+      "total_prodiakon": 7,
+      "koordinator": "Yohanes Baptista Danu Saputra",
+      "daftar_prodiakon": [
+        {
+          "nama": "Yohanes Baptista Danu Saputra",
+          "lingkungan": "Lingkungan Santo Gabriel",
+          "wilayah": "Wilayah IV",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Koor Pembinaan Rohani",
+          "jadwal": "Minggu 08:30"
+        },
+        {
+          "nama": "Andreas Hari Wibowo",
+          "lingkungan": "Lingkungan Santo Thomas",
+          "wilayah": "Wilayah IV",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Altar",
+          "jadwal": "Minggu 17:00"
+        },
+        {
+          "nama": "Vincentius Sony Kristianto",
+          "lingkungan": "Lingkungan Santo Lukas",
+          "wilayah": "Wilayah IV",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Lansia Kp. Ambon",
+          "jadwal": "Sabtu 17:00"
+        }
+      ]
+    },
+    {
+      "kode": "wilayah-v",
+      "nama": "Wilayah V",
+      "nama_pelindung": "Santa Veronika",
+      "cakupan": "Rawamangun & sekitarnya",
+      "deskripsi": "Wadah persekutuan umat Katolik di Wilayah V (Santa Veronika) yang aktif dalam kegiatan gerejani.",
+      "total_prodiakon": 8,
+      "koordinator": "Maria Bernadetha Sulistiawati",
+      "daftar_prodiakon": [
+        {
+          "nama": "Maria Bernadetha Sulistiawati",
+          "lingkungan": "Lingkungan Santa Theresia",
+          "wilayah": "Wilayah V",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Koordinator Pastoral Lansia",
+          "jadwal": "Minggu 06:30 & Kunjungan Kasih"
+        },
+        {
+          "nama": "Bernardus Sigit Prasetyo",
+          "lingkungan": "Lingkungan Santo Markus",
+          "wilayah": "Wilayah V",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Altar",
+          "jadwal": "Minggu 10:30"
+        },
+        {
+          "nama": "Theresia Lilis Suryani",
+          "lingkungan": "Lingkungan Santa Anna",
+          "wilayah": "Wilayah V",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Sakramen",
+          "jadwal": "Sabtu 17:00"
+        }
+      ]
+    },
+    {
+      "kode": "wilayah-vi",
+      "nama": "Wilayah VI",
+      "nama_pelindung": "Santo Yohanes Paulus II",
+      "cakupan": "Pulo Asem & sekitarnya",
+      "deskripsi": "Wadah persekutuan umat Katolik di Wilayah VI (Santo Yohanes Paulus II) dengan dinamika pastoral tinggi.",
+      "total_prodiakon": 7,
+      "koordinator": "Theresia Yenny Anggraeni",
+      "daftar_prodiakon": [
+        {
+          "nama": "Theresia Yenny Anggraeni",
+          "lingkungan": "Lingkungan Santa Angela",
+          "wilayah": "Wilayah VI",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Sekretaris II & Koor Wilayah VI",
+          "jadwal": "Minggu 08:30"
+        },
+        {
+          "nama": "Aloysius Dharmawan",
+          "lingkungan": "Lingkungan Santo Fransiskus Asisi",
+          "wilayah": "Wilayah VI",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Pelayan Altar & Misa Requiem",
+          "jadwal": "Minggu 17:00"
+        },
+        {
+          "nama": "Herman Joseph Setiawan",
+          "lingkungan": "Lingkungan Santo Dominikus",
+          "wilayah": "Wilayah VI",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Lansia Pulo Asem",
+          "jadwal": "Sabtu 17:00"
+        }
+      ]
+    },
+    {
+      "kode": "wilayah-vii",
+      "nama": "Wilayah VII",
+      "nama_pelindung": "Santa Maria Bunda Allah",
+      "cakupan": "Kayu Putih & sekitarnya",
+      "deskripsi": "Wadah persekutuan umat Katolik di Wilayah VII (Santa Maria Bunda Allah) yang berdekatan dengan pusat paroki.",
+      "total_prodiakon": 9,
+      "koordinator": "Ignatius Bambang Supriyadi",
+      "daftar_prodiakon": [
+        {
+          "nama": "Ignatius Bambang Supriyadi",
+          "lingkungan": "Lingkungan Santa Klara",
+          "wilayah": "Wilayah VII",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Ketua Paguyuban",
+          "jadwal": "Sabtu 17:00 & Misa Hari Raya"
+        },
+        {
+          "nama": "Dionysius Agus Purnomo",
+          "lingkungan": "Lingkungan Santa Maria Imakulata",
+          "wilayah": "Wilayah VII",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Altar",
+          "jadwal": "Minggu 06:30"
+        },
+        {
+          "nama": "Christina Indah Pertiwi",
+          "lingkungan": "Lingkungan Santo Bartolomeus",
+          "wilayah": "Wilayah VII",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Komuni Sakit Kayu Putih",
+          "jadwal": "Minggu 10:30"
+        }
+      ]
+    },
+    {
+      "kode": "wilayah-viii",
+      "nama": "Wilayah VIII",
+      "nama_pelindung": "Santo Yusuf Pekerja",
+      "cakupan": "Kayu Putih & Pulo Nangka",
+      "deskripsi": "Wadah persekutuan umat Katolik di Wilayah VIII (Santo Yusuf Pekerja) dengan kesetiaan pelayanan yang teguh.",
+      "total_prodiakon": 8,
+      "koordinator": "Benedictus FX. Suryanto",
+      "daftar_prodiakon": [
+        {
+          "nama": "Benedictus FX. Suryanto",
+          "lingkungan": "Lingkungan Santo Matius",
+          "wilayah": "Wilayah VIII",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Bendahara Paguyuban & Koor",
+          "jadwal": "Minggu 08:30"
+        },
+        {
+          "nama": "Gabriel Tri Susanto",
+          "lingkungan": "Lingkungan Santo Yakobus",
+          "wilayah": "Wilayah VIII",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Altar",
+          "jadwal": "Sabtu 17:00"
+        },
+        {
+          "nama": "Theresia Titik Handayani",
+          "lingkungan": "Lingkungan Santa Monika",
+          "wilayah": "Wilayah VIII",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Lansia Pulo Nangka",
+          "jadwal": "Minggu 17:00"
+        }
+      ]
+    },
+    {
+      "kode": "wilayah-ix",
+      "nama": "Wilayah IX",
+      "nama_pelindung": "Santo Yohanes",
+      "cakupan": "Pulo Gadung & sekitarnya",
+      "deskripsi": "Wadah persekutuan umat Katolik di Wilayah IX (Santo Yohanes) yang mencakup kawasan industri dan permukiman.",
+      "total_prodiakon": 8,
+      "koordinator": "Fransiskus Xaverius Tjahjono",
+      "daftar_prodiakon": [
+        {
+          "nama": "Fransiskus Xaverius Tjahjono",
+          "lingkungan": "Lingkungan Santo Yohanes Rasul",
+          "wilayah": "Wilayah IX",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Koor Wilayah IX",
+          "jadwal": "Minggu 08:30"
+        },
+        {
+          "nama": "Matheus Harry Prabowo",
+          "lingkungan": "Lingkungan Santo Filipus",
+          "wilayah": "Wilayah IX",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Altar",
+          "jadwal": "Minggu 06:30"
+        },
+        {
+          "nama": "Agatha Rita Agustin",
+          "lingkungan": "Lingkungan Santa Cecilia",
+          "wilayah": "Wilayah IX",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Lansia Pulo Gadung",
+          "jadwal": "Sabtu 17:00"
+        }
+      ]
+    },
+    {
+      "kode": "wilayah-x",
+      "nama": "Wilayah X",
+      "nama_pelindung": "Santo Fransiskus Xaverius",
+      "cakupan": "Jati Pulo Gadung & sekitarnya",
+      "deskripsi": "Wadah persekutuan umat Katolik di Wilayah X (Santo Fransiskus Xaverius) bersemangat misioner.",
+      "total_prodiakon": 7,
+      "koordinator": "Yosef Hendri Gunawan",
+      "daftar_prodiakon": [
+        {
+          "nama": "Yosef Hendri Gunawan",
+          "lingkungan": "Lingkungan Santo Andreas",
+          "wilayah": "Wilayah X",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Koor Wilayah X",
+          "jadwal": "Minggu 10:30"
+        },
+        {
+          "nama": "Klemens Budi Hartanto",
+          "lingkungan": "Lingkungan Santo Petrus",
+          "wilayah": "Wilayah X",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Altar",
+          "jadwal": "Minggu 17:00"
+        },
+        {
+          "nama": "Bernadetha Tutik Haryati",
+          "lingkungan": "Lingkungan Santa Agnes",
+          "wilayah": "Wilayah X",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Orang Sakit Jati",
+          "jadwal": "Sabtu 17:00"
+        }
+      ]
+    },
+    {
+      "kode": "wilayah-xi",
+      "nama": "Wilayah XI",
+      "nama_pelindung": "Santa Etheldreda",
+      "cakupan": "Vila Sari Mas & sekitarnya",
+      "deskripsi": "Wadah persekutuan umat Katolik di Wilayah XI (Santa Etheldreda) yang guyub dan berdedikasi tinggi.",
+      "total_prodiakon": 7,
+      "koordinator": "Paulus Eko Nugroho",
+      "daftar_prodiakon": [
+        {
+          "nama": "Paulus Eko Nugroho",
+          "lingkungan": "Lingkungan Santa Etheldreda",
+          "wilayah": "Wilayah XI",
+          "masa_bakti": "2022 - 2028",
+          "tugas_khusus": "Koor Wilayah XI",
+          "jadwal": "Minggu 08:30"
+        },
+        {
+          "nama": "Stephanus Ivan Hartono",
+          "lingkungan": "Lingkungan Santo Barnabas",
+          "wilayah": "Wilayah XI",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Altar",
+          "jadwal": "Sabtu 17:00"
+        },
+        {
+          "nama": "Margaretha Henny Sukotjo",
+          "lingkungan": "Lingkungan Santa Elisabeth",
+          "wilayah": "Wilayah XI",
+          "masa_bakti": "2025 - 2028",
+          "tugas_khusus": "Pelayan Sakramen Lansia",
+          "jadwal": "Minggu 06:30"
+        }
+      ]
+    }
+  ]
+}
