@@ -1,19 +1,15 @@
 <?php
 
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-
-$storageDir = '/tmp/storage';
+$tmpStorage = sys_get_temp_dir() . '/storage';
 $dirs = [
-    $storageDir,
-    $storageDir . '/app',
-    $storageDir . '/framework',
-    $storageDir . '/framework/cache',
-    $storageDir . '/framework/cache/data',
-    $storageDir . '/framework/views',
-    $storageDir . '/framework/sessions',
-    $storageDir . '/logs',
+    $tmpStorage,
+    $tmpStorage . '/app',
+    $tmpStorage . '/framework',
+    $tmpStorage . '/framework/cache',
+    $tmpStorage . '/framework/cache/data',
+    $tmpStorage . '/framework/views',
+    $tmpStorage . '/framework/sessions',
+    $tmpStorage . '/logs',
 ];
 
 foreach ($dirs as $dir) {
@@ -22,13 +18,17 @@ foreach ($dirs as $dir) {
     }
 }
 
-$_ENV['LARAVEL_STORAGE_PATH'] = $storageDir;
-$_SERVER['LARAVEL_STORAGE_PATH'] = $storageDir;
-putenv('LARAVEL_STORAGE_PATH=' . $storageDir);
-putenv('VIEW_COMPILED_PATH=' . $storageDir . '/framework/views');
+$_ENV['VERCEL'] = '1';
+$_SERVER['VERCEL'] = '1';
+$_ENV['LOG_CHANNEL'] = 'stderr';
+$_SERVER['LOG_CHANNEL'] = 'stderr';
+$_ENV['LARAVEL_STORAGE_PATH'] = $tmpStorage;
+$_SERVER['LARAVEL_STORAGE_PATH'] = $tmpStorage;
+putenv('VERCEL=1');
+putenv('LOG_CHANNEL=stderr');
+putenv('SESSION_DRIVER=cookie');
+putenv('CACHE_STORE=array');
+putenv('LARAVEL_STORAGE_PATH=' . $tmpStorage);
+putenv('VIEW_COMPILED_PATH=' . $tmpStorage . '/framework/views');
 
-try {
-    require __DIR__ . '/../public/index.php';
-} catch (\Throwable $e) {
-    echo "Exception: " . $e->getMessage() . " in " . $e->getFile() . ":" . $e->getLine();
-}
+require __DIR__ . '/../public/index.php';
