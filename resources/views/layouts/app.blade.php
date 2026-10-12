@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <!-- Top Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
 
     <!-- Sticky Navigation Bar -->
     <nav class="main-nav">
@@ -147,6 +151,15 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+        <svg class="progress-ring" width="50" height="50">
+            <circle class="progress-ring-bg" stroke="rgba(203, 162, 88, 0.2)" stroke-width="3" fill="transparent" r="20" cx="25" cy="25"/>
+            <circle class="progress-ring-indicator" id="progressRingCircle" stroke="var(--accent-gold)" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="125.66" fill="transparent" r="20" cx="25" cy="25"/>
+        </svg>
+        <i class="bi bi-chevron-up ring-arrow"></i>
+    </button>
 
     <!-- Main JavaScript -->
     <script src="/js/main.js"></script>

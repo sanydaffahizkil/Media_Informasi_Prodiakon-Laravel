@@ -1,41 +1,70 @@
 /**
- * Main JavaScript for Prodiakon Paroki Santo Bonaventura Pulomas
+ * Web Media Informasi Prodiakon Paroki Santo Bonaventura Pulomas
+ * Modern Animation & Micro-Interactions Engine
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Navbar Scroll Effect
+  // =========================================================================
+  // 1. TOP SCROLL PROGRESS BAR & FLOATING BACK-TO-TOP BUTTON
+  // =========================================================================
+  const scrollProgressBar = document.getElementById('scrollProgressBar');
+  const backToTopBtn = document.getElementById('backToTop');
+  const progressRingCircle = document.getElementById('progressRingCircle');
+  const circumference = 2 * Math.PI * 20; // ~125.66
+
+  const handleScrollProgress = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) : 0;
+
+    // Update top progress bar
+    if (scrollProgressBar) {
+      scrollProgressBar.style.width = `${Math.min(100, scrollPercent * 100)}%`;
+    }
+
+    // Update circular SVG indicator
+    if (progressRingCircle) {
+      const offset = circumference - (scrollPercent * circumference);
+      progressRingCircle.style.strokeDashoffset = offset;
+    }
+
+    // Show/hide floating back-to-top button
+    if (backToTopBtn) {
+      if (scrollTop > 320) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    }
+  };
+
+  window.addEventListener('scroll', handleScrollProgress, { passive: true });
+  handleScrollProgress();
+
+  backToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // =========================================================================
+  // 2. NAVBAR SCROLL EFFECT & SPY
+  // =========================================================================
   const navbar = document.querySelector('.main-nav');
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-link[href^="#"]');
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
       navbar?.classList.add('scrolled');
     } else {
       navbar?.classList.remove('scrolled');
     }
-  });
 
-  // 2. Mobile Menu Toggle
-  const mobileToggle = document.getElementById('mobileNavToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-
-    // Close menu when clicking link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('show');
-      });
-    });
-  }
-
-  // 3. ScrollSpy for Active Nav Link
-  const sections = document.querySelectorAll('section[id]');
-  const navItems = document.querySelectorAll('.nav-link[href^="#"]');
-
-  window.addEventListener('scroll', () => {
+    // ScrollSpy active link
     let current = '';
-    const scrollPos = window.scrollY + 120;
+    const scrollPos = window.scrollY + 130;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -51,9 +80,109 @@ document.addEventListener('DOMContentLoaded', () => {
         link.classList.add('active');
       }
     });
-  });
+  }, { passive: true });
 
-  // 4. Data Wilayah Selector / Tabs Switching
+  // Mobile Menu Toggle
+  const mobileToggle = document.getElementById('mobileNavToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+      });
+    });
+  }
+
+  // =========================================================================
+  // 3. INTERSECTION OBSERVER SCROLL REVEAL (AOS STYLE)
+  // =========================================================================
+  const revealElements = document.querySelectorAll('[data-reveal]');
+  
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = parseInt(entry.target.getAttribute('data-delay'), 10) || 0;
+          if (delay > 0) {
+            setTimeout(() => {
+              entry.target.classList.add('is-revealed');
+            }, delay);
+          } else {
+            entry.target.classList.add('is-revealed');
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    // Fallback for older browsers
+    revealElements.forEach(el => el.classList.add('is-revealed'));
+  }
+
+  // =========================================================================
+  // 4. ANIMATED STATS NUMBER COUNTERS
+  // =========================================================================
+  const statCounters = document.querySelectorAll('.stat-counter');
+  let statsStarted = false;
+
+  const startStatsCounters = () => {
+    if (statsStarted) return;
+    statsStarted = true;
+
+    statCounters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
+      let count = 0;
+      const duration = 1600; // ms
+      const startTime = performance.now();
+
+      const updateCounter = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // EaseOutQuart easing
+        const ease = 1 - Math.pow(1 - progress, 4);
+        count = Math.floor(ease * target);
+
+        counter.textContent = count;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = target;
+        }
+      };
+
+      requestAnimationFrame(updateCounter);
+    });
+  };
+
+  const statsWrapper = document.querySelector('.stats-ribbon-wrapper');
+  if (statsWrapper && 'IntersectionObserver' in window) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startStatsCounters();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    statsObserver.observe(statsWrapper);
+  } else {
+    startStatsCounters();
+  }
+
+  // =========================================================================
+  // 5. DATA WILAYAH TABS SWITCHING
+  // =========================================================================
   const wilayahBtns = document.querySelectorAll('.wilayah-nav-btn');
   const wilayahPanels = document.querySelectorAll('.wilayah-panel');
 
@@ -61,14 +190,28 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const targetKode = btn.getAttribute('data-wilayah');
 
-      // Update active button
+      // Update active button state
       wilayahBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      // Show matching panel
+      // Reset search if active
+      const searchInput = document.getElementById('prodiakonSearchInput');
+      if (searchInput && searchInput.value) {
+        searchInput.value = '';
+        const searchFeedback = document.getElementById('searchFeedback');
+        const clearBtn = document.getElementById('clearSearchBtn');
+        if (searchFeedback) searchFeedback.style.display = 'none';
+        if (clearBtn) clearBtn.style.display = 'none';
+        document.querySelectorAll('.prodiakon-card').forEach(c => c.style.display = 'flex');
+      }
+
+      // Smooth switch panel with entrance transition
       wilayahPanels.forEach(panel => {
         if (panel.getAttribute('id') === `panel-${targetKode}`) {
           panel.style.display = 'block';
+          panel.style.animation = 'none';
+          void panel.offsetWidth; // Trigger reflow
+          panel.style.animation = 'fadeIn 0.35s ease';
         } else {
           panel.style.display = 'none';
         }
@@ -76,12 +219,81 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. Modal Detail Prodiakon
+  // =========================================================================
+  // 6. INSTANT LIVE SEARCH FOR DATA PRODIAKON
+  // =========================================================================
+  const searchInput = document.getElementById('prodiakonSearchInput');
+  const clearSearchBtn = document.getElementById('clearSearchBtn');
+  const searchFeedback = document.getElementById('searchFeedback');
+  const allProdiakonCards = document.querySelectorAll('.prodiakon-card');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLowerCase();
+
+      if (clearSearchBtn) {
+        clearSearchBtn.style.display = query.length > 0 ? 'flex' : 'none';
+      }
+
+      if (query.length === 0) {
+        if (searchFeedback) searchFeedback.style.display = 'none';
+        const activeBtn = document.querySelector('.wilayah-nav-btn.active');
+        const activeKode = activeBtn ? activeBtn.getAttribute('data-wilayah') : 'wilayah-1';
+
+        wilayahPanels.forEach(p => {
+          p.style.display = (p.id === `panel-${activeKode}`) ? 'block' : 'none';
+        });
+        allProdiakonCards.forEach(c => {
+          c.style.display = 'flex';
+        });
+        return;
+      }
+
+      let totalMatches = 0;
+      wilayahPanels.forEach(panel => {
+        const cardsInPanel = panel.querySelectorAll('.prodiakon-card');
+        let panelHasMatch = false;
+
+        cardsInPanel.forEach(card => {
+          const name = (card.getAttribute('data-nama') || '').toLowerCase();
+          const lingkungan = (card.getAttribute('data-lingkungan') || '').toLowerCase();
+
+          if (name.includes(query) || lingkungan.includes(query)) {
+            card.style.display = 'flex';
+            panelHasMatch = true;
+            totalMatches++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        panel.style.display = panelHasMatch ? 'block' : 'none';
+      });
+
+      if (searchFeedback) {
+        searchFeedback.style.display = 'inline-block';
+        if (totalMatches > 0) {
+          searchFeedback.innerHTML = `<i class="bi bi-check-circle-fill text-gold me-1"></i> Ditemukan <strong>${totalMatches}</strong> pelayan altar untuk pencarian "${query}"`;
+        } else {
+          searchFeedback.innerHTML = `<i class="bi bi-exclamation-circle me-1" style="color: #ef4444;"></i> Tidak ditemukan data untuk kata kunci "${query}"`;
+        }
+      }
+    });
+
+    clearSearchBtn?.addEventListener('click', () => {
+      searchInput.value = '';
+      searchInput.dispatchEvent(new Event('input'));
+      searchInput.focus();
+    });
+  }
+
+  // =========================================================================
+  // 7. MODAL DETAIL PRODIAKON (WITH ENHANCED POPUP ANIMATION)
+  // =========================================================================
   const modalBackdrop = document.getElementById('detailModal');
   const modalCloseBtns = document.querySelectorAll('.close-modal-trigger');
   const detailButtons = document.querySelectorAll('.btn-detail-modal');
 
-  // Modal elements to fill
   const modalName = document.getElementById('modalProdiakonName');
   const modalAvatar = document.getElementById('modalProdiakonAvatar');
   const modalRole = document.getElementById('modalProdiakonRole');
@@ -107,13 +319,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modalMasaBakti) modalMasaBakti.textContent = masaBakti;
       if (modalJadwal) modalJadwal.textContent = jadwal;
 
-      // Set avatar initial
       if (modalAvatar) {
         const initials = nama.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
         modalAvatar.textContent = initials || 'PD';
       }
 
-      // Show modal
       if (modalBackdrop) {
         modalBackdrop.classList.add('show');
         document.body.style.overflow = 'hidden';
@@ -121,12 +331,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  function closeModal() {
+  const closeModal = () => {
     if (modalBackdrop) {
       modalBackdrop.classList.remove('show');
       document.body.style.overflow = '';
     }
-  }
+  };
 
   modalCloseBtns.forEach(btn => {
     btn.addEventListener('click', closeModal);

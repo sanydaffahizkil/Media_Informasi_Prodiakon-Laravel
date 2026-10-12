@@ -5,21 +5,26 @@
     <!-- =========================================================================
          1. HERO SECTION
          ========================================================================= -->
+    <!-- =========================================================================
+         1. HERO SECTION
+         ========================================================================= -->
     <section class="hero-section" id="hero">
         <div class="hero-bg-overlay"></div>
+        <div class="hero-glow-orb hero-glow-1"></div>
+        <div class="hero-glow-orb hero-glow-2"></div>
         <div class="hero-particles"></div>
         <div class="hero-content">
-            <div class="hero-badge">
+            <div class="hero-badge" data-reveal="fade-down">
                 <i class="bi bi-shield-check"></i> Paguyuban Prodiakon Periode 2025 – 2028
             </div>
-            <h1 class="hero-title">
-                Pelayanan Cinta Kasih &amp; Pengabdian Altar
+            <h1 class="hero-title" data-reveal="fade-up" data-delay="100">
+                Pelayanan Cinta Kasih &amp; <span class="text-gold-gradient">Pengabdian Altar</span>
             </h1>
-            <p class="hero-lead">
+            <p class="hero-lead" data-reveal="fade-up" data-delay="200">
                 Gereja Santo Bonaventura Paroki Pulomas — Menghadirkan Tubuh Kristus dengan ketulusan hati, melayani altar, serta menjangkau umat lansia dan orang sakit di Wilayah I sampai XI.
             </p>
-            <div class="hero-actions">
-                <a href="#data-prodiakon" class="btn-primary-gold">
+            <div class="hero-actions" data-reveal="fade-up" data-delay="300">
+                <a href="#data-prodiakon" class="btn-primary-gold btn-pulse">
                     <i class="bi bi-people-fill"></i> Data Prodiakon Wilayah
                 </a>
                 <a href="#sambutan" class="btn-outline-light">
@@ -30,11 +35,55 @@
     </section>
 
     <!-- =========================================================================
+         STATS COUNTER RIBBON (ANIMATED 4-CARD METRICS)
+         ========================================================================= -->
+    <div class="stats-ribbon-wrapper" data-reveal="fade-up">
+        <div class="container">
+            <div class="stats-ribbon-grid">
+                <div class="stat-box shimmer-card">
+                    <div class="stat-icon-glow"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div class="stat-number-wrap">
+                        <span class="stat-counter" data-target="11">0</span>
+                    </div>
+                    <div class="stat-label">Wilayah Paroki</div>
+                    <div class="stat-sub">Cakupan Pastoral Pulomas</div>
+                </div>
+                <div class="stat-box shimmer-card">
+                    <div class="stat-icon-glow"><i class="bi bi-houses-fill"></i></div>
+                    <div class="stat-number-wrap">
+                        <span class="stat-counter" data-target="52">0</span>
+                        <span class="stat-plus">+</span>
+                    </div>
+                    <div class="stat-label">Komunitas Lingkungan</div>
+                    <div class="stat-sub">Persekutuan Umat Beriman</div>
+                </div>
+                <div class="stat-box shimmer-card">
+                    <div class="stat-icon-glow"><i class="bi bi-person-hearts"></i></div>
+                    <div class="stat-number-wrap">
+                        <span class="stat-counter" data-target="124">0</span>
+                        <span class="stat-plus">+</span>
+                    </div>
+                    <div class="stat-label">Prodiakon Terlantik</div>
+                    <div class="stat-sub">Pelayan Liturgis & Kunjungan</div>
+                </div>
+                <div class="stat-box shimmer-card">
+                    <div class="stat-icon-glow"><i class="bi bi-calendar-check-fill"></i></div>
+                    <div class="stat-number-wrap">
+                        <span class="stat-text-highlight">2025–2028</span>
+                    </div>
+                    <div class="stat-label">Masa Pengabdian</div>
+                    <div class="stat-sub">Semangat Cinta Kasih Ilahi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
          2. SAMBUTAN ROMO PAROKI
          ========================================================================= -->
     <section class="section" id="sambutan">
         <div class="container">
-            <div style="text-align: center;">
+            <div style="text-align: center;" data-reveal="fade-up">
                 <span class="section-tag"><i class="bi bi-bookmark-heart"></i> Pesan Pastoral</span>
                 <h2 class="section-title">SAMBUTAN ROMO PAROKI</h2>
                 <p class="section-subtitle">Pesan dan berkat penggembalaan bagi para pelayan altar dan seluruh umat beriman.</p>
@@ -42,8 +91,8 @@
             </div>
 
             <div class="pastoral-grid">
-                <div class="pastoral-photo-wrap">
-                    <div class="pastoral-photo-frame">
+                <div class="pastoral-photo-wrap" data-reveal="fade-right">
+                    <div class="pastoral-photo-frame shimmer-card">
                         <img src="/images/romo.jpg" alt="{{ $content['sambutan_romo']['nama'] }}">
                     </div>
                     <div class="pastoral-badge-gold">
@@ -51,7 +100,7 @@
                     </div>
                 </div>
 
-                <div class="pastoral-text">
+                <div class="pastoral-text" data-reveal="fade-left">
                     <div class="pastoral-quote-box">
                         {{ $content['sambutan_romo']['kutipan_singkat'] }}
                     </div>
@@ -76,7 +125,7 @@
          ========================================================================= -->
     <section class="section section-alt" id="makna-vandel">
         <div class="container">
-            <div style="text-align: center;">
+            <div style="text-align: center;" data-reveal="fade-up">
                 <span class="section-tag"><i class="bi bi-award-fill"></i> Lambang Kebanggaan</span>
                 <h2 class="section-title">MAKNA LAMBANG VANDEL PRODIAKON</h2>
                 <p class="section-subtitle">{{ $content['makna_vandel']['subjudul'] }}</p>
@@ -84,16 +133,16 @@
             </div>
 
             <div class="vandel-grid">
-                <div class="vandel-image-card">
+                <div class="vandel-image-card shimmer-card" data-reveal="fade-right">
                     <img src="/images/vandel.jpg" alt="Vandel Prodiakon Paroki Santo Bonaventura">
                     <div style="margin-top: 14px; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
                         Vandel Resmi Paguyuban Prodiakon Santo Bonaventura Pulomas
                     </div>
                 </div>
 
-                <div class="vandel-elements-list">
-                    @foreach($content['makna_vandel']['elemen'] as $elemen)
-                        <div class="vandel-item">
+                <div class="vandel-elements-list" data-reveal="fade-left">
+                    @foreach($content['makna_vandel']['elemen'] as $index => $elemen)
+                        <div class="vandel-item shimmer-card" data-reveal="fade-up" data-delay="{{ $index * 100 }}">
                             <div class="vandel-item-icon">
                                 <i class="bi {{ $elemen['icon'] }}"></i>
                             </div>
@@ -113,7 +162,7 @@
          ========================================================================= -->
     <section class="section section-dark" id="moto">
         <div class="container">
-            <div class="moto-banner">
+            <div class="moto-banner" data-reveal="zoom-in">
                 <div class="moto-badge-period">
                     <i class="bi bi-calendar3 me-1"></i> MOTO PRODIAKON {{ $content['moto']['periode'] }}
                 </div>
@@ -125,8 +174,8 @@
                 </p>
 
                 <div class="moto-pillars-grid">
-                    @foreach($content['moto']['pilar'] as $pilar)
-                        <div class="pillar-card">
+                    @foreach($content['moto']['pilar'] as $index => $pilar)
+                        <div class="pillar-card shimmer-card" data-reveal="fade-up" data-delay="{{ ($index + 1) * 100 }}">
                             <div style="color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 10px;">
                                 <i class="bi bi-check2-circle"></i>
                             </div>
@@ -144,14 +193,14 @@
          ========================================================================= -->
     <section class="section" id="pelindung">
         <div class="container">
-            <div style="text-align: center;">
+            <div style="text-align: center;" data-reveal="fade-up">
                 <span class="section-tag"><i class="bi bi-stars"></i> Teladan Kesucian</span>
                 <h2 class="section-title">SEJARAH NAMA PELINDUNG PRODIAKON</h2>
                 <p class="section-subtitle">Meneladani Kehidupan dan Nyala Api Kasih Ilahi Santo Bonaventura.</p>
                 <div class="divider-gold"></div>
             </div>
 
-            <div class="patron-card" style="margin-top: 48px;">
+            <div class="patron-card shimmer-card" style="margin-top: 48px;" data-reveal="fade-up">
                 <div class="patron-info">
                     <h3>{{ $content['pelindung']['nama'] }}</h3>
                     <span class="patron-title-badge"><i class="bi bi-award me-1"></i> {{ $content['pelindung']['gelar'] }} &bull; Pesta Nama: {{ $content['pelindung']['pesta_nama'] }}</span>
@@ -185,7 +234,7 @@
          ========================================================================= -->
     <section class="section section-alt" id="pengurus">
         <div class="container">
-            <div style="text-align: center;">
+            <div style="text-align: center;" data-reveal="fade-up">
                 <span class="section-tag"><i class="bi bi-diagram-3-fill"></i> Kepengurusan</span>
                 <h2 class="section-title">DAFTAR PENGURUS</h2>
                 <p class="section-subtitle">Susunan Pengurus Paguyuban Prodiakon Santo Bonaventura Pulomas Periode {{ $content['pengurus']['periode'] }}.</p>
@@ -193,8 +242,8 @@
             </div>
 
             <div class="pengurus-grid">
-                @foreach($content['pengurus']['daftar'] as $p)
-                    <div class="pengurus-card">
+                @foreach($content['pengurus']['daftar'] as $index => $p)
+                    <div class="pengurus-card shimmer-card" data-reveal="fade-up" data-delay="{{ ($index % 4) * 80 }}">
                         <div class="pengurus-avatar">
                             {{ $p['inisial'] }}
                         </div>
@@ -212,7 +261,7 @@
          ========================================================================= -->
     <section class="section" id="tugas">
         <div class="container">
-            <div style="text-align: center;">
+            <div style="text-align: center;" data-reveal="fade-up">
                 <span class="section-tag"><i class="bi bi-briefcase-fill"></i> Tanggung Jawab</span>
                 <h2 class="section-title">TUGAS PENGURUS</h2>
                 <p class="section-subtitle">Bidang pelayanan dan rincian amanah pelayanan liturgis serta pastoral.</p>
@@ -220,8 +269,8 @@
             </div>
 
             <div class="tugas-grid">
-                @foreach($content['tugas_pengurus'] as $t)
-                    <div class="tugas-card">
+                @foreach($content['tugas_pengurus'] as $index => $t)
+                    <div class="tugas-card shimmer-card" data-reveal="fade-up" data-delay="{{ $index * 120 }}">
                         <div class="tugas-card-header">
                             <div class="tugas-card-icon">
                                 <i class="bi bi-journal-bookmark-fill"></i>
@@ -248,7 +297,7 @@
          ========================================================================= -->
     <section class="section section-alt" id="sasaran">
         <div class="container">
-            <div style="text-align: center;">
+            <div style="text-align: center;" data-reveal="fade-up">
                 <span class="section-tag"><i class="bi bi-compass-fill"></i> Rencana Strategis</span>
                 <h2 class="section-title">SASARAN PRODIAKON</h2>
                 <p class="section-subtitle">Target capaian dan komitmen pelayanan paguyuban untuk periode 2025–2028.</p>
@@ -256,8 +305,8 @@
             </div>
 
             <div class="sasaran-grid">
-                @foreach($content['sasaran'] as $s)
-                    <div class="sasaran-card">
+                @foreach($content['sasaran'] as $index => $s)
+                    <div class="sasaran-card shimmer-card" data-reveal="fade-up" data-delay="{{ $index * 120 }}">
                         <div class="sasaran-number">{{ $s['nomor'] }}</div>
                         <h3>{{ $s['judul'] }}</h3>
                         <p>{{ $s['uraian'] }}</p>
@@ -272,18 +321,28 @@
          ========================================================================= -->
     <section class="section" id="data-prodiakon">
         <div class="container">
-            <div style="text-align: center;">
+            <div style="text-align: center;" data-reveal="fade-up">
                 <span class="section-tag"><i class="bi bi-pin-map-fill"></i> Direktori Pelayan</span>
                 <h2 class="section-title">DATA PRODIAKON PULO MAS</h2>
-                <p class="section-subtitle">Pilih wilayah di bawah ini untuk melihat daftar prodiakon dan klik tombol detail untuk profil lengkap.</p>
+                <p class="section-subtitle">Pilih wilayah di bawah ini atau cari langsung nama pelayan altar dan lingkungan secara instan.</p>
                 <div class="divider-gold"></div>
+            </div>
+
+            <!-- Instant Search Bar -->
+            <div class="prodiakon-search-container" data-reveal="fade-up">
+                <div class="search-input-wrapper">
+                    <i class="bi bi-search search-icon"></i>
+                    <input type="text" id="prodiakonSearchInput" class="search-prodiakon-input" placeholder="Cari nama prodiakon atau lingkungan (cth: Michael, Fransiskus, Antonius)..." autocomplete="off">
+                    <button type="button" id="clearSearchBtn" class="clear-search-btn" title="Hapus pencarian"><i class="bi bi-x-circle-fill"></i></button>
+                </div>
+                <div id="searchFeedback" class="search-feedback-badge" style="display: none;"></div>
             </div>
 
             <!-- Interaktif Tab Wrapper (Meniru persis tampilan navigasi di foto user) -->
             <div class="data-wilayah-wrapper">
                 
                 <!-- Left Sidebar: List Wilayah persis foto -->
-                <aside class="wilayah-sidebar">
+                <aside class="wilayah-sidebar" data-reveal="fade-right">
                     <div class="wilayah-sidebar-header">
                         <h3>Wilayah Pelayanan</h3>
                     </div>
@@ -302,12 +361,12 @@
                 </aside>
 
                 <!-- Right Content Panel -->
-                <div class="wilayah-content-area">
+                <div class="wilayah-content-area" data-reveal="fade-left">
                     @foreach($content['data_wilayah'] as $index => $w)
                         <div class="wilayah-panel" id="panel-{{ $w['kode'] }}" style="{{ $index === 0 ? 'display: block;' : 'display: none;' }}">
                             
                             <!-- Wilayah Header Banner -->
-                            <div class="wilayah-header-card">
+                            <div class="wilayah-header-card shimmer-card">
                                 <div class="wilayah-header-info">
                                     <h3>{{ $w['nama'] }} <span style="font-size: 1.1rem; color: var(--accent-gold); font-weight: 600;">({{ $w['nama_pelindung'] }})</span></h3>
                                     <p><i class="bi bi-geo-alt-fill text-gold me-1"></i> Cakupan: {{ $w['cakupan'] }}</p>
@@ -333,7 +392,7 @@
                             <!-- Grid Cards of Prodiakon in this Wilayah -->
                             <div class="prodiakon-cards-grid">
                                 @foreach($w['daftar_prodiakon'] as $pd)
-                                    <div class="prodiakon-card">
+                                    <div class="prodiakon-card shimmer-card" data-nama="{{ strtolower($pd['nama']) }}" data-lingkungan="{{ strtolower($pd['lingkungan']) }}">
                                         <div>
                                             <div class="prodiakon-card-top">
                                                 <div class="prodiakon-avatar-circle">
