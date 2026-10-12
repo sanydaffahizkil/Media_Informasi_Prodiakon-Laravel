@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
 </head>
 <body>
     <!-- Top Scroll Progress Bar -->
@@ -27,7 +28,7 @@
     <nav class="main-nav">
         <div class="nav-container">
             <a href="#hero" class="nav-brand">
-                <div class="brand-cross-icon">☩</div>
+                <img src="/images/logo.png" alt="Logo Paroki Santo Bonaventura Pulomas" class="brand-logo-img">
                 <div class="brand-text">
                     <span class="brand-title">ST. BONAVENTURA</span>
                     <span class="brand-sub">PRODIAKON PULOMAS</span>
@@ -140,8 +141,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-                        <span style="font-size: 1.4rem; color: var(--accent-gold);">☩</span>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                        <img src="/images/logo.png" alt="Logo Gereja Santo Bonaventura" class="footer-logo-img">
                         <h3 style="margin: 0;">Gereja Santo Bonaventura</h3>
                     </div>
                     <p>Paguyuban Prodiakon Paroki Pulomas - Keuskupan Agung Jakarta.</p>
