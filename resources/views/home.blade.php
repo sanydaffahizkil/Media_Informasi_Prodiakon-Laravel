@@ -144,10 +144,19 @@
                     @foreach($content['makna_vandel']['elemen'] as $index => $elemen)
                         <div class="vandel-item shimmer-card" data-reveal="fade-up" data-delay="{{ $index * 100 }}">
                             <div class="vandel-item-icon">
-                                <i class="bi {{ $elemen['icon'] }}"></i>
+                                @if($elemen['icon'] === 'bi-plus-lg' || $elemen['icon'] === 'latin-cross')
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block; vertical-align:middle;">
+                                        <path d="M10 2h4v6h6v4h-6v10h-4V12H4V8h6V2z"/>
+                                    </svg>
+                                @else
+                                    <i class="bi {{ $elemen['icon'] }}"></i>
+                                @endif
                             </div>
-                            <div>
-                                <h3 class="vandel-item-title">{{ $elemen['simbol'] }}</h3>
+                            <div style="flex: 1;">
+                                <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 4px;">
+                                    <h3 class="vandel-item-title" style="margin-bottom: 0;">{{ $elemen['simbol'] }}</h3>
+                                    <span class="vandel-item-num">0{{ $index + 1 }}</span>
+                                </div>
                                 <p class="vandel-item-desc">{{ $elemen['makna'] }}</p>
                             </div>
                         </div>

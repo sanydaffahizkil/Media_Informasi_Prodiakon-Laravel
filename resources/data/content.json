@@ -25,29 +25,34 @@
     "deskripsi_umum": "Vandel Prodiakon Paroki Santo Bonaventura Pulomas mengandung simbol-simbol luhur yang merepresentasikan jati diri, spiritualitas Ekaristi, dan kesiapan melayani tanpa pamrih.",
     "elemen": [
       {
-        "simbol": "Hosti Kudus & Piala Ekaristi",
-        "makna": "Pusat dari seluruh panggilan Prodiakon adalah Ekaristi Mahakudus. Prodiakon diutus sebagai pelayan luar biasa untuk membagikan Tubuh Kristus kepada umat beriman dalam perayaan Ekaristi dan mengantarkannya kepada umat yang sakit di rumah.",
-        "icon": "bi-trophy"
+        "simbol": "SAMIR",
+        "makna": "Atribut utama yang dipakai Prodiakon saat melaksanakan tugas keprodiakonan.",
+        "icon": "bi-award-fill"
       },
       {
-        "simbol": "Salib Kristus",
-        "makna": "Dasar dari setiap pengorbanan dan pelayanan kasih. Meneladani pengorbanan Kristus yang wafat di kayu salib demi menebus umat manusia, mengajar prodiakon untuk melayani dengan semangat mati raga dan kerendahan hati.",
+        "simbol": "SIBORI dan HOSTI",
+        "makna": "Keikutsertaan Prodiakon membantu Imam menghadirkan Kristus dalam singgasana keagungan kepada umat beriman.",
+        "icon": "bi-trophy-fill"
+      },
+      {
+        "simbol": "WARNA BIRU BERLAPIS-LAPIS",
+        "makna": "Umat beriman yang terdiri dari berbagai tingkatan keimanan.",
+        "icon": "bi-layers-fill"
+      },
+      {
+        "simbol": "KITAB SUCI",
+        "makna": "Pegangan hidup umat Kristiani yang berisikan kabar keselamatan.",
+        "icon": "bi-book-half"
+      },
+      {
+        "simbol": "SALIB BESAR KEEMASAN",
+        "makna": "Karya penebusan umat manusia oleh Yesus Kristus yang telah rela menderita dengan mengorbankan diri-Nya wafat di kayu salib.",
         "icon": "bi-plus-lg"
       },
       {
-        "simbol": "Burung Merpati (Roh Kudus)",
-        "makna": "Lambang bimbingan Roh Kudus yang melimpahkan tujuh karunia rohani, memberikan hikmat, kekuatan, dan kesucian dalam menunaikan tugas liturgis.",
-        "icon": "bi-feather"
-      },
-      {
-        "simbol": "Warna Emas & Putih Liturgis",
-        "makna": "Warna emas melambangkan kemuliaan Allah, keagungan takhta surgawi, dan keluhuran martabat pelayanan. Warna putih melambangkan kemurnian hati, ketulusan, serta kesucian hidup rohani seorang pelayan altar.",
+        "simbol": "WARNA DASAR PUTIH",
+        "makna": "Tanpa didasari rasa kesucian dan hati yang bersih, tujuan umat manusia memperoleh harta surgawi tidak akan tercapai.",
         "icon": "bi-stars"
-      },
-      {
-        "simbol": "Tali & Rumbai Persatuan",
-        "makna": "Melambangkan ikatan tali persaudaraan yang erat di antara seluruh anggota prodiakon dan kesatuan persekutuan dengan Pastor Paroki serta Uskup Keuskupan Agung Jakarta.",
-        "icon": "bi-link-45deg"
       }
     ]
   },

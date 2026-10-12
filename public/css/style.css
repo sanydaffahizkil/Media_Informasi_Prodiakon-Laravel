@@ -860,6 +860,26 @@ h1, h2, h3, h4, .serif-font {
   line-height: 1.6;
 }
 
+.vandel-item-num {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  background: rgba(203, 162, 88, 0.12);
+  border: 1px solid var(--border-gold);
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.vandel-item:hover .vandel-item-num {
+  background: var(--accent-gold);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(203, 162, 88, 0.3);
+}
+
 /* Moto Section */
 .moto-banner {
   background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-navy) 100%);
