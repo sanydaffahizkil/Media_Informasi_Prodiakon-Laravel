@@ -7,7 +7,7 @@
     "website": "https://stbonaventura.org"
   },
   "sambutan_romo": {
-    "nama": "Romo Antonius Yakin Ciptamulya, Pr",
+    "nama": "Romo Stephanus Royke Djakarya, Pr.",
     "jabatan": "Pastor Paroki Santo Bonaventura Pulomas",
     "foto": "/images/romo.jpg",
     "kutipan_singkat": "\"Melayani dengan kerendahan hati, menghadirkan Tubuh Kristus di tengah persekutuan dan bagi mereka yang lemah dan sakit.\"",
@@ -71,62 +71,252 @@
     ]
   },
   "pelindung": {
-    "nama": "Santo Bonaventura (1221 – 1274)",
-    "gelar": "Uskup, Kardinal, dan Pujangga Gereja (Doctor Seraphicus)",
-    "pesta_nama": "15 Juli",
-    "sejarah": "Santo Bonaventura lahir di Bagnoregio, Italia, dengan nama Giovanni di Fidanza. Ketika masih kecil ia sembuh dari sakit parah berkat doa Santo Fransiskus dari Asisi, yang berseru 'O buona ventura!' (O masa depan yang baik!). Menjadi Magister Teologi di Universitas Paris dan kemudian Minister Jenderal Ordo Saudara Dina (Fransiskan). Ia diangkat menjadi Kardinal Uskup Albano dan kemudian dinobatkan sebagai Pujangga Gereja dengan gelar 'Doctor Seraphicus' karena tulisan-tulisannya yang memancarkan nyala api cinta ilahi.",
-    "teladan_pelayanan": "Bagi para Prodiakon Pulomas, Santo Bonaventura meneladankan bahwa ilmu pengetahuan dan tugas liturgis harus berpadu erat dengan cinta yang membara kepada Kristus. Pelayanan altar bukan mencari kedudukan, melainkan kerendahan hati dalam mengabdi kepada Allah dan sesama."
+    "nama": "Santo Stefanus",
+    "gelar": "Pelindung Prodiakon &bull; Diakon &amp; Martir Pertama (Protomartir)",
+    "pesta_nama": "26 Desember",
+    "usia_wafat": "35 Tahun",
+    "gambar": "/images/stefanus.jpg",
+    "doa_terakhir": "Tuhan, janganlah Kau tangguhkan dosa ini atas mereka, sebab mereka tidak tahu apa yang diperbuat.",
+    "bab_kisah": [
+      {
+        "nomor": "01",
+        "judul": "Pemilihan 7 Diakon Pertama di Yerusalem",
+        "uraian": "Setelah dipenuhi Roh Kudus pada hari Pantekosta, para rasul siang malam memberi kesaksian tentang kebangkitan dan penebusan Yesus kepada seluruh penduduk Yerusalem. Semakin hari semakin banyak orang yang bertobat; namun tenaga pewartapun terasa semakin kurang. Maka diperlukan bantuan dari orang-orang yang terkenal baik, beriman teguh dan penuh semangat. Karena itu mereka memilih 7 (tujuh) orang yang disebut diakon dan Stefanus merupakan yang pertama di antara mereka itu."
+      },
+      {
+        "nomor": "02",
+        "judul": "Pelayanan Kasih & Kuasa Hikmat Roh Kudus",
+        "uraian": "Disamping tugas membantu para janda dan orang-orang yang kurang mampu ini, Stefanus juga berkhotbah kepada orang Yahudi dari luar Palestina. Ia penuh roh dan kuasa serta mengadakan banyak mukjizat dan tanda. Karena nampaklah bahwa Tuhan beserta Stefanus, maka beberapa pemuka jemaat Yahudi dari Kirene dan Alexandria, Kilikia, dan Asia berupaya menyulitkan Stefanus dengan mengadakan soal jawab. Namun mereka tidak sanggup melawan hikmah Roh yang berbicara melalui Stefanus."
+      },
+      {
+        "nomor": "03",
+        "judul": "Fitnah & Kesaksian Berani di Mahkamah Agama",
+        "uraian": "Lalu mereka melontarkan fitnah, 'Kami telah mendengar ia menghujat nabi Musa dan Tuhan'. Kemudian para tua-tua dan ahli taurat menyeretnya ke pengadilan. Terhadap tuduhan palsu itu, Stefanus tidak menyangga, melainkan memaparkan riwayat bangsa Israel. Ia mengakhiri uraiannya dengan menyebut mereka, 'Orang keras kepala selalu menolak Roh Kudus sama seperti nenek moyangmu'. Sebab, sejak dahulu leluhur mereka menentang, bahkan membunuh para nabi. Mereka jugalah yang menyalibkan Yesus Almasih, yang kedatangannya dipersiapkan oleh para nabi itu. Mendengar itu para pemuka agama menjadi berang."
+      },
+      {
+        "nomor": "04",
+        "judul": "Penglihatan Langit Terbuka & Kemartiran Pertama",
+        "uraian": "Lalu Stefanus menatap langit dan berseru: 'Aku melihat langit terbuka dan Putra Manusia duduk disebelah kanan Allah'. Kemudian mereka beramai-ramai menyeret Stefanus keluar kota dan batu-batu beterbangan melumat tubuhnya. Ia tahu bahwa ajalnya sudah dekat. Lalu ia menengadah berdoa, 'Ya Tuhan Yesus, terimalah rohku'. Sambil berlutut Stefanus berseru nyaring: 'Tuhan, janganlah kau tangguhkan dosa ini atas mereka, sebab mereka tidak tahu apa yang diperbuat'."
+      },
+      {
+        "nomor": "05",
+        "judul": "Jiwa Diterima Tuhan & Awal Mula Kisah Paulus",
+        "uraian": "Kemudian ia tersungkur dan jiwanya langsung diterima Tuhan. Stefanus mati sebagai martir pertama. Tak jauh dari situ berdirilah pemuda dari Tarsus, menunggui dan menyetujui pembunuhan itu, Saulus namanya. Dialah yang kelak bertobat dan menjadi rasul bangsa bukan Yahudi yang terkenal dengan nama Paulus. Stefanus meninggal pada usia 35 tahun dan ia adalah Diakon dan martir pertama. Hari peringatannya dirayakan setiap 26 Desember."
+      }
+    ],
+    "teladan_pelayanan": "Santo Stefanus meneladankan bahwa pelayanan altar dan kasih kepada sesama yang paling rentan harus berakar pada iman yang teguh dan penuh Roh Kudus. Ia mengajarkan setiap prodiakon untuk berani menjadi saksi Kristus, bekerja dengan kerendahan hati, serta senantiasa memiliki kemurahan hati untuk mengampuni sesama."
   },
   "pengurus": {
-    "periode": "2025 – 2028",
-    "daftar": [
+    "periode": "2022 – 2025",
+    "penasehat": {
+      "nama": "Seksi Liturgi Gereja St. Bonaventura",
+      "jabatan": "Penasehat Spiritual & Liturgis",
+      "icon": "bi-shield-shaded"
+    },
+    "pimpinan_harian": [
       {
-        "nama": "Ignatius Bambang Supriyadi",
-        "jabatan": "Ketua Paguyuban Prodiakon",
-        "wilayah": "Wilayah VII - Lingkungan Santa Klara",
-        "inisial": "IBS"
+        "nama": "Ignatius Siswojo Budiman",
+        "jabatan": "Koordinator Prodiakon",
+        "inisial": "ISB",
+        "badge": "Koordinator",
+        "icon": "bi-person-badge-fill"
       },
       {
-        "nama": "Francisca Maria Retno Utami",
-        "jabatan": "Wakil Ketua",
-        "wilayah": "Wilayah II - Lingkungan Santo Fransiskus",
-        "inisial": "FMR"
+        "nama": "Jeovani David Wirjadi",
+        "jabatan": "Wakil Koordinator Prodiakon",
+        "inisial": "JDW",
+        "badge": "Wa. Koordinator",
+        "icon": "bi-person-check-fill"
+      }
+    ],
+    "pembina_pemerhati": [
+      {
+        "nama": "Antonius Trio Limas",
+        "jabatan": "Tim Pembina & Pemerhati",
+        "inisial": "ATL"
       },
       {
-        "nama": "Antonius Hendra Wijaya",
-        "jabatan": "Sekretaris I",
-        "wilayah": "Wilayah I - Lingkungan Santo Rafael",
+        "nama": "Yohanes Fery Olin Binsar",
+        "jabatan": "Tim Pembina & Pemerhati",
+        "inisial": "YFB"
+      },
+      {
+        "nama": "Yulius Suyatijo",
+        "jabatan": "Tim Pembina & Pemerhati",
+        "inisial": "YS"
+      },
+      {
+        "nama": "Antonius Setyo Mulyanto",
+        "jabatan": "Tim Pembina & Pemerhati",
+        "inisial": "ASM"
+      }
+    ],
+    "bidang": [
+      {
+        "id": "sekretaris",
+        "nama_bidang": "Sekretariat",
+        "koordinator": "Hendricus Superma Putra Mau",
+        "jabatan": "Sekretaris",
+        "inisial": "HSP",
+        "icon": "bi-card-heading",
+        "anggota": [
+          {
+            "nama": "Yermias Hendrik Sasabone",
+            "peran": "Seksi Administrasi"
+          },
+          {
+            "nama": "Tommy Istianto",
+            "peran": "Seksi Dokumentasi dan Inventaris"
+          },
+          {
+            "nama": "George Robert Gunawan",
+            "peran": "Seksi Dokumentasi dan Inventaris"
+          }
+        ]
+      },
+      {
+        "id": "bendahara",
+        "nama_bidang": "Bendahara",
+        "koordinator": "Paulus Tejo Koesno",
+        "jabatan": "Bendahara",
+        "inisial": "PTK",
+        "icon": "bi-wallet2",
+        "anggota": []
+      },
+      {
+        "id": "liturgi",
+        "nama_bidang": "Liturgi dan Tata Gerak",
+        "koordinator": "Agustinus Andhi Cahyadi",
+        "jabatan": "Koordinator Bidang Liturgi dan Tata Gerak",
+        "inisial": "AAC",
+        "icon": "bi-trophy-fill",
+        "anggota": [
+          {
+            "nama": "Timotius Teddy Susanto",
+            "peran": "Anggota"
+          },
+          {
+            "nama": "Antonius Sumarno",
+            "peran": "Anggota"
+          }
+        ]
+      },
+      {
+        "id": "rohani",
+        "nama_bidang": "Pembinaan Iman & Rohani",
+        "koordinator": "Paulus Roestianto",
+        "jabatan": "Koordinator Bidang Pembinaan Iman dan Pengembangan Rohani",
+        "inisial": "PR",
+        "icon": "bi-book-half",
+        "anggota": [
+          {
+            "nama": "Andreas Ngadino",
+            "peran": "Anggota"
+          },
+          {
+            "nama": "Matius Nody",
+            "peran": "Anggota"
+          }
+        ]
+      },
+      {
+        "id": "kegiatan",
+        "nama_bidang": "Kegiatan dan Kepanitiaan",
+        "koordinator": "Alfonsus Adi Wicaksono",
+        "jabatan": "Koordinator Bidang Kegiatan dan Kepanitiaan",
+        "inisial": "AAW",
+        "icon": "bi-calendar-event-fill",
+        "anggota": [
+          {
+            "nama": "Daniel Dhany Limantoro",
+            "peran": "Anggota"
+          },
+          {
+            "nama": "Manuturi Sibarani",
+            "peran": "Anggota"
+          },
+          {
+            "nama": "Alexander Ivan Tirta",
+            "peran": "Anggota"
+          }
+        ]
+      },
+      {
+        "id": "wilayah",
+        "nama_bidang": "Koordinator Wilayah",
+        "koordinator": "Koordinator Prodiakon Wilayah",
+        "jabatan": "Membawahi Wilayah 1 s/d 11",
+        "inisial": "KPW",
+        "icon": "bi-diagram-3-fill",
+        "anggota": []
+      }
+    ],
+    "koordinator_wilayah": [
+      {
+        "wilayah": "Wilayah 1",
+        "nama": "Stephanus Pudji Ludianto",
+        "kode": "wilayah-i",
+        "inisial": "SPL"
+      },
+      {
+        "wilayah": "Wilayah 2",
+        "nama": "Jeovani David Wirjadi",
+        "kode": "wilayah-ii",
+        "inisial": "JDW"
+      },
+      {
+        "wilayah": "Wilayah 3",
+        "nama": "Antonius Heru Widianto",
+        "kode": "wilayah-iii",
         "inisial": "AHW"
       },
       {
-        "nama": "Theresia Yenny Anggraeni",
-        "jabatan": "Sekretaris II",
-        "wilayah": "Wilayah VI - Lingkungan Santa Angela",
-        "inisial": "TYA"
+        "wilayah": "Wilayah 4",
+        "nama": "Benediktus Jarot Jatmika",
+        "kode": "wilayah-iv",
+        "inisial": "BJJ"
       },
       {
-        "nama": "Benedictus FX. Suryanto",
-        "jabatan": "Bendahara Umum",
-        "wilayah": "Wilayah VIII - Lingkungan Santo Matius",
-        "inisial": "BFS"
+        "wilayah": "Wilayah 5",
+        "nama": "Andreo Wahyudi Atmoko",
+        "kode": "wilayah-v",
+        "inisial": "AWA"
       },
       {
-        "nama": "Gregorius Ariyanto Kusuma",
-        "jabatan": "Koordinator Liturgi & Jadwal",
-        "wilayah": "Wilayah III - Lingkungan Santo Mikael",
-        "inisial": "GAK"
+        "wilayah": "Wilayah 6",
+        "nama": "Alfonsus Sonny Kusuma Wijaya",
+        "kode": "wilayah-vi",
+        "inisial": "ASK"
       },
       {
-        "nama": "Maria Bernadetha Sulistiawati",
-        "jabatan": "Koordinator Pelayanan Orang Sakit (Pastoral)",
-        "wilayah": "Wilayah V - Lingkungan Santa Theresia",
-        "inisial": "MBS"
+        "wilayah": "Wilayah 7",
+        "nama": "Yustin Wong",
+        "kode": "wilayah-vii",
+        "inisial": "YW"
       },
       {
-        "nama": "Yohanes Baptista Danu Saputra",
-        "jabatan": "Koordinator Pembinaan & Kerohanian",
-        "wilayah": "Wilayah IV - Lingkungan Santo Gabriel",
-        "inisial": "YBD"
+        "wilayah": "Wilayah 8",
+        "nama": "Yermias Hendrik Sasabone",
+        "kode": "wilayah-viii",
+        "inisial": "YHS"
+      },
+      {
+        "wilayah": "Wilayah 9",
+        "nama": "Agustinus Protomo Andhi Cahyadi",
+        "kode": "wilayah-ix",
+        "inisial": "APA"
+      },
+      {
+        "wilayah": "Wilayah 10",
+        "nama": "Antonius Indratno",
+        "kode": "wilayah-x",
+        "inisial": "AI"
+      },
+      {
+        "wilayah": "Wilayah 11",
+        "nama": "Ignatius Donny Joko Subakti",
+        "kode": "wilayah-xi",
+        "inisial": "IDJ"
       }
     ]
   },

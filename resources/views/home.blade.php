@@ -93,10 +93,10 @@
             <div class="pastoral-grid">
                 <div class="pastoral-photo-wrap" data-reveal="fade-right">
                     <div class="pastoral-photo-frame shimmer-card">
-                        <img src="/images/romo.jpg" alt="{{ $content['sambutan_romo']['nama'] }}">
+                        <img src="/images/romo.png" alt="{{ $content['sambutan_romo']['nama'] }}">
                     </div>
                     <div class="pastoral-badge-gold">
-                        <i class="bi bi-person-badge-fill me-1"></i> Pastor Paroki Pulomas
+                        <i class="bi bi-person-badge-fill me-1"></i> Romo Stephanus Royke Djakarya, Pr.
                     </div>
                 </div>
 
@@ -189,40 +189,78 @@
     </section>
 
     <!-- =========================================================================
-         5. SEJARAH NAMA PELINDUNG PRODIAKON
+         5. PELINDUNG PRODIAKON: SANTO STEFANUS
          ========================================================================= -->
     <section class="section" id="pelindung">
         <div class="container">
             <div style="text-align: center;" data-reveal="fade-up">
-                <span class="section-tag"><i class="bi bi-stars"></i> Teladan Kesucian</span>
-                <h2 class="section-title">SEJARAH NAMA PELINDUNG PRODIAKON</h2>
-                <p class="section-subtitle">Meneladani Kehidupan dan Nyala Api Kasih Ilahi Santo Bonaventura.</p>
+                <span class="section-tag"><i class="bi bi-shield-fill-check"></i> Teladan Kesucian</span>
+                <h2 class="section-title">SANTO STEFANUS</h2>
+                <p class="section-subtitle">Pelindung Para Diakon &bull; Diakon Pertama &amp; Martir Pertama Gereja Katolik (Protomartir)</p>
                 <div class="divider-gold"></div>
             </div>
 
-            <div class="patron-card shimmer-card" style="margin-top: 48px;" data-reveal="fade-up">
-                <div class="patron-info">
-                    <h3>{{ $content['pelindung']['nama'] }}</h3>
-                    <span class="patron-title-badge"><i class="bi bi-award me-1"></i> {{ $content['pelindung']['gelar'] }} &bull; Pesta Nama: {{ $content['pelindung']['pesta_nama'] }}</span>
-                    <p style="color: #334155; line-height: 1.8; margin-bottom: 16px;">
-                        {{ $content['pelindung']['sejarah'] }}
-                    </p>
-                    <div class="patron-quote">
-                        <strong>Keteladanan bagi Prodiakon:</strong>
-                        <p style="margin-top: 6px;">{{ $content['pelindung']['teladan_pelayanan'] }}</p>
+            <div class="stefanus-masterpiece-card shimmer-card" data-reveal="fade-up">
+                <!-- Left: Sacred Framed Portrait & Identity Info -->
+                <div class="stefanus-portrait-col">
+                    <div class="stefanus-portrait-frame">
+                        <img src="{{ asset('images/stefanus.jpg') }}" alt="Santo Stefanus - Pelindung Prodiakon" class="stefanus-img">
+                        <div class="stefanus-frame-badge">
+                            <i class="bi bi-patch-check-fill text-gold"></i> Protomartir
+                        </div>
+                    </div>
+                    
+                    <div class="stefanus-identity-card">
+                        <h3 class="stefanus-name">{{ $content['pelindung']['nama'] }}</h3>
+                        <div class="stefanus-gelar">{!! $content['pelindung']['gelar'] !!}</div>
+                        <div class="stefanus-meta-tags">
+                            <span class="meta-tag"><i class="bi bi-calendar-event-fill text-gold"></i> Pesta Nama: {{ $content['pelindung']['pesta_nama'] }}</span>
+                            <span class="meta-tag"><i class="bi bi-hourglass-split text-gold"></i> Usia: {{ $content['pelindung']['usia_wafat'] }}</span>
+                            <span class="meta-tag"><i class="bi bi-geo-alt-fill text-gold"></i> Yerusalem</span>
+                        </div>
+                    </div>
+
+                    <div class="stefanus-prayer-box">
+                        <i class="bi bi-quote quote-icon"></i>
+                        <p class="prayer-quote-text">
+                            "{{ $content['pelindung']['doa_terakhir'] }}"
+                        </p>
+                        <div class="prayer-cite">&mdash; Doa Pengampunan Santo Stefanus saat Wafat</div>
                     </div>
                 </div>
 
-                <div class="patron-visual-box">
-                    <div class="icon-wrap">
-                        <i class="bi bi-book-half"></i>
+                <!-- Right: Detailed Story Chapters & Pastoral Exemplar -->
+                <div class="stefanus-story-col">
+                    <div class="stefanus-story-header">
+                        <span class="story-tag"><i class="bi bi-journal-bookmark-fill"></i> Riwayat &amp; Kesaksian Iman</span>
+                        <h3 class="story-headline">Kisah Diakon Pertama yang Dipenuhi Roh Kudus</h3>
+                        <p class="story-subheadline">
+                            Keteladanan pelayanan meja, keberanian iman, dan kebesaran hati dalam mengampuni sesama.
+                        </p>
                     </div>
-                    <h4 style="color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 8px;">Doctor Seraphicus</h4>
-                    <p style="font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.6;">
-                        "Cinta kasih sejati kepada Kristus melampaui segala pengetahuan dan tercermin dalam pelayanan yang rendah hati."
-                    </p>
-                    <div style="margin-top: 16px; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-gold);">
-                        Doakanlah Kami
+
+                    <!-- Story Timeline Cards -->
+                    <div class="stefanus-timeline">
+                        @foreach($content['pelindung']['bab_kisah'] as $bab)
+                            <div class="timeline-step-card">
+                                <div class="step-badge-num">{{ $bab['nomor'] }}</div>
+                                <div class="step-content">
+                                    <h4 class="step-title">{{ $bab['judul'] }}</h4>
+                                    <p class="step-desc">{{ $bab['uraian'] }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <!-- Teladan Pelayanan Highlight -->
+                    <div class="stefanus-reflection-box">
+                        <div class="reflection-header">
+                            <i class="bi bi-heart-pulse-fill text-gold"></i>
+                            <h4>Keteladanan bagi Prodiakon Santo Bonaventura Pulomas</h4>
+                        </div>
+                        <p class="reflection-text">
+                            {{ $content['pelindung']['teladan_pelayanan'] }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -237,22 +275,450 @@
             <div style="text-align: center;" data-reveal="fade-up">
                 <span class="section-tag"><i class="bi bi-diagram-3-fill"></i> Kepengurusan</span>
                 <h2 class="section-title">DAFTAR PENGURUS</h2>
-                <p class="section-subtitle">Susunan Pengurus Paguyuban Prodiakon Santo Bonaventura Pulomas Periode {{ $content['pengurus']['periode'] }}.</p>
+                <p class="section-subtitle">Susunan Kepengurusan Paguyuban Prodiakon Santo Bonaventura, Paroki Pulomas Periode {{ $content['pengurus']['periode'] }}.</p>
                 <div class="divider-gold"></div>
+                <div class="pengurus-period-badge">
+                    <i class="bi bi-patch-check-fill text-gold"></i> Dokumen Resmi Periode {{ $content['pengurus']['periode'] }} &bull; Paroki Pulomas - Jakarta
+                </div>
             </div>
 
-            <div class="pengurus-grid">
-                @foreach($content['pengurus']['daftar'] as $index => $p)
-                    <div class="pengurus-card shimmer-card" data-reveal="fade-up" data-delay="{{ ($index % 4) * 80 }}">
-                        <div class="pengurus-avatar">
-                            {{ $p['inisial'] }}
-                        </div>
-                        <h3 class="pengurus-name">{{ $p['nama'] }}</h3>
-                        <div class="pengurus-role">{{ $p['jabatan'] }}</div>
-                        <div class="pengurus-region"><i class="bi bi-geo-alt me-1"></i> {{ $p['wilayah'] }}</div>
-                    </div>
-                @endforeach
+            <!-- Tab Switcher Navigation -->
+            <div class="pengurus-tabs-wrap" data-reveal="fade-up">
+                <div class="pengurus-tabs-nav" role="tablist">
+                    <button type="button" class="pengurus-tab-btn active" data-tab="bagan">
+                        <i class="bi bi-diagram-3-fill"></i> Bagan Struktur (Hierarki)
+                    </button>
+                    <button type="button" class="pengurus-tab-btn" data-tab="bidang">
+                        <i class="bi bi-grid-3x3-gap-fill"></i> Rincian Bidang & Seksi
+                    </button>
+                    <button type="button" class="pengurus-tab-btn" data-tab="wilayah">
+                        <i class="bi bi-geo-alt-fill"></i> 11 Koordinator Wilayah
+                    </button>
+                    <button type="button" class="pengurus-tab-btn" data-tab="pembina">
+                        <i class="bi bi-shield-check"></i> Pembina & Penasehat
+                    </button>
+                    <button type="button" class="pengurus-tab-btn" data-tab="semua">
+                        <i class="bi bi-collection-fill"></i> Tampilkan Semua
+                    </button>
+                </div>
             </div>
+
+            <!-- =========================================================================
+                 TAB 1: BAGAN STRUKTUR ORGANISASI (HIERARCHY ORGANOGRAM)
+                 ========================================================================= -->
+            <div class="pengurus-pane active" id="pane-bagan" data-reveal="fade-up">
+                <div class="bagan-card-box">
+                    <div class="bagan-header">
+                        <div class="bagan-title-area">
+                            <span class="bagan-badge"><i class="bi bi-award-fill"></i> Bagan Struktur Resmi</span>
+                            <h3 class="bagan-title">Bagan Struktur Organisasi Paguyuban Prodiakon</h3>
+                            <p class="bagan-desc">Gereja Santo Bonaventura, Paroki Pulomas &bull; Periode {{ $content['pengurus']['periode'] }}</p>
+                        </div>
+                        <div class="bagan-meta-pill">
+                            <i class="bi bi-diagram-3"></i> 6 Bidang Utama Pelayanan
+                        </div>
+                    </div>
+
+                    <!-- Organogram Tree Canvas -->
+                    <div class="organogram-viewport">
+                        <div class="organogram-tree">
+                            
+                            <!-- LEVEL 1: KOORDINATOR -->
+                            <div class="org-row org-row-root">
+                                <div class="org-node org-node-leader">
+                                    <div class="node-badge-top">KOORDINATOR</div>
+                                    <div class="node-avatar-gold">
+                                        <span>ISB</span>
+                                    </div>
+                                    <h4 class="node-name">{{ $content['pengurus']['pimpinan_harian'][0]['nama'] }}</h4>
+                                    <div class="node-title-sub">Koordinator Prodiakon</div>
+                                </div>
+                            </div>
+
+                            <!-- VERTICAL CONNECTOR STEM -->
+                            <div class="org-connector-vert"></div>
+
+                            <!-- LEVEL 2: WA. KOORDINATOR -->
+                            <div class="org-row org-row-wa">
+                                <div class="org-node org-node-leader">
+                                    <div class="node-badge-top">WA. KOORDINATOR</div>
+                                    <div class="node-avatar-gold">
+                                        <span>JDW</span>
+                                    </div>
+                                    <h4 class="node-name">{{ $content['pengurus']['pimpinan_harian'][1]['nama'] }}</h4>
+                                    <div class="node-title-sub">Wakil Koordinator Prodiakon</div>
+                                </div>
+                            </div>
+
+                            <!-- STEM FROM WA. KOORDINATOR TO PEMBINA DAN PEMERHATI -->
+                            <div class="org-connector-vert"></div>
+
+                            <!-- LEVEL: PEMBINA DAN PEMERHATI (DI BAWAH WA. KOORDINATOR) -->
+                            <div class="org-row org-row-pembina">
+                                <div class="org-node org-node-pembina">
+                                    <div class="node-badge-pembina">
+                                        <i class="bi bi-shield-shaded"></i> PEMBINA DAN PEMERHATI
+                                    </div>
+                                    <div class="pembina-penasehat-head">
+                                        <span class="penasehat-label">Penasehat:</span>
+                                        <span class="penasehat-val">{{ $content['pengurus']['penasehat']['nama'] }}</span>
+                                    </div>
+                                    <div class="pembina-names-grid">
+                                        @foreach($content['pengurus']['pembina_pemerhati'] as $pbm)
+                                            <div class="pembina-chip">
+                                                <span class="chip-avatar">{{ $pbm['inisial'] }}</span>
+                                                <span class="chip-name">{{ $pbm['nama'] }}</span>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STEM FROM PEMBINA TO 6 PILARS -->
+                            <div class="org-connector-vert"></div>
+
+                            <!-- HORIZONTAL DISTRIBUTION BUS (6 COLUMNS) -->
+                            <div class="org-bus-line"></div>
+
+                            <!-- LEVEL 3: 6 PILAR BIDANG -->
+                            <div class="org-row org-row-pillars">
+                                
+                                <!-- 1. SEKRETARIS -->
+                                <div class="org-pillar-col">
+                                    <div class="org-pillar-drop"></div>
+                                    <div class="org-node org-node-pillar">
+                                        <div class="pillar-role-badge">SEKRETARIS</div>
+                                        <div class="pillar-avatar">HSP</div>
+                                        <h5 class="pillar-name">{{ $content['pengurus']['bidang'][0]['koordinator'] }}</h5>
+                                        <div class="pillar-sub">Administrasi & Inventaris</div>
+                                        <div class="pillar-mini-team">
+                                            <span><i class="bi bi-people"></i> 3 Seksi Pendukung</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 2. BENDAHARA -->
+                                <div class="org-pillar-col">
+                                    <div class="org-pillar-drop"></div>
+                                    <div class="org-node org-node-pillar">
+                                        <div class="pillar-role-badge">BENDAHARA</div>
+                                        <div class="pillar-avatar">PTK</div>
+                                        <h5 class="pillar-name">{{ $content['pengurus']['bidang'][1]['koordinator'] }}</h5>
+                                        <div class="pillar-sub">Keuangan & Kas Pelayanan</div>
+                                        <div class="pillar-mini-team">
+                                            <span><i class="bi bi-wallet2"></i> Kas & Anggaran</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 3. LITURGI DAN TATA GERAK -->
+                                <div class="org-pillar-col">
+                                    <div class="org-pillar-drop"></div>
+                                    <div class="org-node org-node-pillar">
+                                        <div class="pillar-role-badge">LITURGI & TATA GERAK</div>
+                                        <div class="pillar-avatar">AAC</div>
+                                        <h5 class="pillar-name">{{ $content['pengurus']['bidang'][2]['koordinator'] }}</h5>
+                                        <div class="pillar-sub">Rubrik & Tata Gerak Altar</div>
+                                        <div class="pillar-mini-team">
+                                            <span><i class="bi bi-people"></i> 2 Anggota Tim</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 4. PEMBINAAN IMAN & ROHANI -->
+                                <div class="org-pillar-col">
+                                    <div class="org-pillar-drop"></div>
+                                    <div class="org-node org-node-pillar">
+                                        <div class="pillar-role-badge">PEMBINAAN IMAN & ROHANI</div>
+                                        <div class="pillar-avatar">PR</div>
+                                        <h5 class="pillar-name">{{ $content['pengurus']['bidang'][3]['koordinator'] }}</h5>
+                                        <div class="pillar-sub">Rekoleksi & Spiritualitas</div>
+                                        <div class="pillar-mini-team">
+                                            <span><i class="bi bi-people"></i> 2 Anggota Tim</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 5. KEGIATAN DAN KEPANITIAAN -->
+                                <div class="org-pillar-col">
+                                    <div class="org-pillar-drop"></div>
+                                    <div class="org-node org-node-pillar">
+                                        <div class="pillar-role-badge">KEGIATAN & KEPANITIAAN</div>
+                                        <div class="pillar-avatar">AAW</div>
+                                        <h5 class="pillar-name">{{ $content['pengurus']['bidang'][4]['koordinator'] }}</h5>
+                                        <div class="pillar-sub">Acara & Kepanitiaan</div>
+                                        <div class="pillar-mini-team">
+                                            <span><i class="bi bi-people"></i> 3 Anggota Tim</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 6. KOORDINATOR WILAYAH -->
+                                <div class="org-pillar-col">
+                                    <div class="org-pillar-drop"></div>
+                                    <div class="org-node org-node-pillar">
+                                        <div class="pillar-role-badge">KOORDINATOR WILAYAH</div>
+                                        <div class="pillar-avatar"><i class="bi bi-geo-alt-fill"></i></div>
+                                        <h5 class="pillar-name">Koordinator Wilayah</h5>
+                                        <div class="pillar-sub">Membawahi Wilayah 1 s/d 11</div>
+                                        <div class="pillar-mini-team">
+                                            <span><i class="bi bi-diagram-3"></i> 11 Wilayah Teritorial</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="bagan-footer-bar">
+                        <div class="bagan-legend">
+                            <span class="legend-dot"></span> Struktur Garis Komando & Koordinasi Pelayanan
+                        </div>
+                        <div class="bagan-scroll-tip">
+                            <i class="bi bi-arrows-expand"></i> Geser horizontal untuk melihat seluruh bagan pada layar ponsel
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================================================
+                 TAB 2: RINCIAN BIDANG & SEKSI (DETAIL CARDS)
+                 ========================================================================= -->
+            <div class="pengurus-pane" id="pane-bidang" data-reveal="fade-up">
+                
+                <!-- Pimpinan Harian Showcase -->
+                <div class="pimpinan-showcase-grid">
+                    @foreach($content['pengurus']['pimpinan_harian'] as $ph)
+                        <div class="pimpinan-card shimmer-card">
+                            <div class="pimpinan-card-top">
+                                <span class="pimpinan-badge"><i class="bi {{ $ph['icon'] }}"></i> {{ $ph['badge'] }}</span>
+                                <span class="pimpinan-initials">{{ $ph['inisial'] }}</span>
+                            </div>
+                            <h3 class="pimpinan-name">{{ $ph['nama'] }}</h3>
+                            <p class="pimpinan-role">{{ $ph['jabatan'] }}</p>
+                            <div class="pimpinan-divider"></div>
+                            <div class="pimpinan-desc">
+                                Memimpin, mengkoordinir, dan mengayomi seluruh pelayanan liturgis serta karya pastoral Prodiakon Paroki Santo Bonaventura Pulomas Periode {{ $content['pengurus']['periode'] }}.
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+                <!-- 5 Bidang Detail Cards -->
+                <div class="bidang-cards-grid">
+                    
+                    <!-- 1. SEKRETARIAT -->
+                    <div class="bidang-box shimmer-card">
+                        <div class="bidang-box-header">
+                            <div class="bidang-icon-wrap">
+                                <i class="bi bi-card-heading"></i>
+                            </div>
+                            <div>
+                                <span class="bidang-badge-cat">Sekretariat</span>
+                                <h4 class="bidang-box-title">Sekretariat & Inventaris</h4>
+                            </div>
+                        </div>
+                        <div class="bidang-koor-highlight">
+                            <span class="koor-label">Sekretaris:</span>
+                            <h5 class="koor-name">{{ $content['pengurus']['bidang'][0]['koordinator'] }}</h5>
+                        </div>
+                        <div class="bidang-subseksi-list">
+                            <div class="subseksi-title"><i class="bi bi-people-fill text-gold"></i> Seksi & Tim Kerja:</div>
+                            @foreach($content['pengurus']['bidang'][0]['anggota'] as $agt)
+                                <div class="subseksi-item">
+                                    <span class="subseksi-role">{{ $agt['peran'] }}</span>
+                                    <span class="subseksi-name">{{ $agt['nama'] }}</span>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- 2. BENDAHARA -->
+                    <div class="bidang-box shimmer-card">
+                        <div class="bidang-box-header">
+                            <div class="bidang-icon-wrap">
+                                <i class="bi bi-wallet2"></i>
+                            </div>
+                            <div>
+                                <span class="bidang-badge-cat">Keuangan</span>
+                                <h4 class="bidang-box-title">Bendahara</h4>
+                            </div>
+                        </div>
+                        <div class="bidang-koor-highlight">
+                            <span class="koor-label">Bendahara:</span>
+                            <h5 class="koor-name">{{ $content['pengurus']['bidang'][1]['koordinator'] }}</h5>
+                        </div>
+                        <div class="bidang-subseksi-list">
+                            <div class="subseksi-title"><i class="bi bi-shield-check text-gold"></i> Tanggung Jawab:</div>
+                            <div class="subseksi-item">
+                                <span class="subseksi-role">Pengelolaan Kas</span>
+                                <span class="subseksi-name">Pencatatan iuran, penerimaan persembahan dan operasional</span>
+                            </div>
+                            <div class="subseksi-item">
+                                <span class="subseksi-role">Akuntabilitas</span>
+                                <span class="subseksi-name">Laporan keuangan transparan secara berkala kepada Pastor Paroki</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. LITURGI DAN TATA GERAK -->
+                    <div class="bidang-box shimmer-card">
+                        <div class="bidang-box-header">
+                            <div class="bidang-icon-wrap">
+                                <i class="bi bi-trophy-fill"></i>
+                            </div>
+                            <div>
+                                <span class="bidang-badge-cat">Liturgis Altar</span>
+                                <h4 class="bidang-box-title">Bidang Liturgi & Tata Gerak</h4>
+                            </div>
+                        </div>
+                        <div class="bidang-koor-highlight">
+                            <span class="koor-label">Koordinator Bidang:</span>
+                            <h5 class="koor-name">{{ $content['pengurus']['bidang'][2]['koordinator'] }}</h5>
+                        </div>
+                        <div class="bidang-subseksi-list">
+                            <div class="subseksi-title"><i class="bi bi-people-fill text-gold"></i> Anggota Tim:</div>
+                            @foreach($content['pengurus']['bidang'][2]['anggota'] as $agt)
+                                <div class="subseksi-item">
+                                    <span class="subseksi-role">{{ $agt['peran'] }}</span>
+                                    <span class="subseksi-name">{{ $agt['nama'] }}</span>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- 4. PEMBINAAN IMAN & ROHANI -->
+                    <div class="bidang-box shimmer-card">
+                        <div class="bidang-box-header">
+                            <div class="bidang-icon-wrap">
+                                <i class="bi bi-book-half"></i>
+                            </div>
+                            <div>
+                                <span class="bidang-badge-cat">Spiritualitas</span>
+                                <h4 class="bidang-box-title">Bidang Pembinaan Iman & Rohani</h4>
+                            </div>
+                        </div>
+                        <div class="bidang-koor-highlight">
+                            <span class="koor-label">Koordinator Bidang:</span>
+                            <h5 class="koor-name">{{ $content['pengurus']['bidang'][3]['koordinator'] }}</h5>
+                        </div>
+                        <div class="bidang-subseksi-list">
+                            <div class="subseksi-title"><i class="bi bi-people-fill text-gold"></i> Anggota Tim:</div>
+                            @foreach($content['pengurus']['bidang'][3]['anggota'] as $agt)
+                                <div class="subseksi-item">
+                                    <span class="subseksi-role">{{ $agt['peran'] }}</span>
+                                    <span class="subseksi-name">{{ $agt['nama'] }}</span>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- 5. KEGIATAN DAN KEPANITIAAN -->
+                    <div class="bidang-box shimmer-card">
+                        <div class="bidang-box-header">
+                            <div class="bidang-icon-wrap">
+                                <i class="bi bi-calendar-event-fill"></i>
+                            </div>
+                            <div>
+                                <span class="bidang-badge-cat">Acara & Guyub</span>
+                                <h4 class="bidang-box-title">Bidang Kegiatan & Kepanitiaan</h4>
+                            </div>
+                        </div>
+                        <div class="bidang-koor-highlight">
+                            <span class="koor-label">Koordinator Bidang:</span>
+                            <h5 class="koor-name">{{ $content['pengurus']['bidang'][4]['koordinator'] }}</h5>
+                        </div>
+                        <div class="bidang-subseksi-list">
+                            <div class="subseksi-title"><i class="bi bi-people-fill text-gold"></i> Anggota Tim:</div>
+                            @foreach($content['pengurus']['bidang'][4]['anggota'] as $agt)
+                                <div class="subseksi-item">
+                                    <span class="subseksi-role">{{ $agt['peran'] }}</span>
+                                    <span class="subseksi-name">{{ $agt['nama'] }}</span>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- =========================================================================
+                 TAB 3: 11 KOORDINATOR WILAYAH
+                 ========================================================================= -->
+            <div class="pengurus-pane" id="pane-wilayah" data-reveal="fade-up">
+                <div class="koor-wilayah-intro">
+                    <div class="intro-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div>
+                        <h4 style="color: var(--primary-navy); margin-bottom: 4px;">Koordinator Wilayah I sampai XI</h4>
+                        <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">Para pelayan pastoral yang mengkoordinir penugasan liturgis dan pelayanan orang sakit di 11 Wilayah Paroki Santo Bonaventura Pulomas.</p>
+                    </div>
+                </div>
+
+                <div class="koor-wilayah-grid">
+                    @foreach($content['pengurus']['koordinator_wilayah'] as $kw)
+                        <div class="koor-wilayah-card shimmer-card">
+                            <div class="kw-header">
+                                <span class="kw-badge">{{ $kw['wilayah'] }}</span>
+                                <div class="kw-initial">{{ $kw['inisial'] }}</div>
+                            </div>
+                            <h4 class="kw-name">{{ $kw['nama'] }}</h4>
+                            <div class="kw-role">Koordinator {{ $kw['wilayah'] }}</div>
+                            <a href="#data-prodiakon" class="kw-action-link" data-wilayah="{{ $kw['kode'] }}">
+                                <span>Lihat Data Wilayah</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- =========================================================================
+                 TAB 4: PEMBINA & PENASEHAT
+                 ========================================================================= -->
+            <div class="pengurus-pane" id="pane-pembina" data-reveal="fade-up">
+                <div class="pembina-layout">
+                    
+                    <!-- Penasehat Card -->
+                    <div class="advisor-main-card shimmer-card">
+                        <div class="advisor-icon-wrap">
+                            <i class="bi {{ $content['pengurus']['penasehat']['icon'] }}"></i>
+                        </div>
+                        <span class="advisor-badge">PENASEHAT</span>
+                        <h3 class="advisor-name">{{ $content['pengurus']['penasehat']['nama'] }}</h3>
+                        <div class="advisor-role">{{ $content['pengurus']['penasehat']['jabatan'] }}</div>
+                        <p class="advisor-text">
+                            Mendampingi secara rohani dan liturgis agar setiap pelayanan altar dan pastoral senantiasa selaras dengan ajaran Gereja Katolik serta ketetapan Keuskupan Agung Jakarta.
+                        </p>
+                    </div>
+
+                    <!-- Tim Pembina dan Pemerhati -->
+                    <div class="pembina-panel shimmer-card">
+                        <div class="pembina-panel-header">
+                            <div class="pembina-panel-icon"><i class="bi bi-people-fill"></i></div>
+                            <div>
+                                <h4 style="color: var(--primary-navy); margin-bottom: 2px;">Tim Pembina dan Pemerhati</h4>
+                                <span style="font-size: 0.82rem; color: var(--text-muted);">Pendampingan Pastoral Paguyuban Periode {{ $content['pengurus']['periode'] }}</span>
+                            </div>
+                        </div>
+
+                        <div class="pembina-members-grid">
+                            @foreach($content['pengurus']['pembina_pemerhati'] as $pbm)
+                                <div class="pembina-member-card">
+                                    <div class="pembina-avatar">{{ $pbm['inisial'] }}</div>
+                                    <div class="pembina-info">
+                                        <h5 class="pembina-name">{{ $pbm['nama'] }}</h5>
+                                        <span class="pembina-role">{{ $pbm['jabatan'] }}</span>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 

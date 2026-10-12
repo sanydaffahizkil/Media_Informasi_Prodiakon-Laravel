@@ -426,6 +426,57 @@ document.addEventListener('DOMContentLoaded', () => {
     updateMapZoom(currentZoom > 1 ? 1 : 1.75);
   });
 
+  // =========================================================================
+  // PENGURUS SECTION: TABS & INTERACTION
+  // =========================================================================
+  const pengurusTabBtns = document.querySelectorAll('.pengurus-tab-btn');
+  const pengurusPanes = document.querySelectorAll('.pengurus-pane');
+
+  pengurusTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetTab = btn.getAttribute('data-tab');
+
+      // Update button active states
+      pengurusTabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (targetTab === 'semua') {
+        pengurusPanes.forEach(pane => {
+          pane.classList.remove('active');
+          pane.classList.add('show-all-mode');
+          pane.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-revealed'));
+        });
+      } else {
+        pengurusPanes.forEach(pane => {
+          pane.classList.remove('show-all-mode');
+          if (pane.id === `pane-${targetTab}`) {
+            pane.classList.add('active');
+            pane.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-revealed'));
+          } else {
+            pane.classList.remove('active');
+          }
+        });
+      }
+    });
+  });
+
+  // Jump from Koordinator Wilayah card to Data Prodiakon section
+  const kwLinks = document.querySelectorAll('.kw-action-link[data-wilayah]');
+  kwLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetWilayah = link.getAttribute('data-wilayah');
+      const targetBtn = document.querySelector(`.wilayah-nav-btn[data-wilayah="${targetWilayah}"]`);
+      if (targetBtn) {
+        targetBtn.click();
+      }
+      const dataSection = document.getElementById('data-prodiakon');
+      if (dataSection) {
+        dataSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
   // Global ESC Key Listener
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
