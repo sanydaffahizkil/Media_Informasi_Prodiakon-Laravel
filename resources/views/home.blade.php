@@ -134,7 +134,7 @@
 
             <div class="vandel-grid">
                 <div class="vandel-image-card shimmer-card" data-reveal="fade-right">
-                    <img src="/images/vandel.jpg" alt="Vandel Prodiakon Paroki Santo Bonaventura">
+                    <img src="/images/vandel.png" alt="Vandel Prodiakon Paroki Santo Bonaventura">
                     <div style="margin-top: 14px; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
                         Vandel Resmi Paguyuban Prodiakon Santo Bonaventura Pulomas
                     </div>
