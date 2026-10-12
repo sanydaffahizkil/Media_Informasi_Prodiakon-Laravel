@@ -32,6 +32,8 @@
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
+    "APP_URL": "https://probona.vercel.app",
+    "ASSET_URL": "https://probona.vercel.app",
     "APP_KEY": "base64:bDYOtMGRfJ9htOpl1x5WqlUxIxKi/lPHPs7K+ohwBjg=",
     "LARAVEL_STORAGE_PATH": "/tmp/storage",
     "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",

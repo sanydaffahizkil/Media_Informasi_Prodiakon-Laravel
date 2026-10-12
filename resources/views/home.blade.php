@@ -44,7 +44,7 @@
             <div class="pastoral-grid">
                 <div class="pastoral-photo-wrap">
                     <div class="pastoral-photo-frame">
-                        <img src="{{ asset('images/romo.jpg') }}" alt="{{ $content['sambutan_romo']['nama'] }}">
+                        <img src="/images/romo.jpg" alt="{{ $content['sambutan_romo']['nama'] }}">
                     </div>
                     <div class="pastoral-badge-gold">
                         <i class="bi bi-person-badge-fill me-1"></i> Pastor Paroki Pulomas
@@ -85,7 +85,7 @@
 
             <div class="vandel-grid">
                 <div class="vandel-image-card">
-                    <img src="{{ asset('images/vandel.jpg') }}" alt="Vandel Prodiakon Paroki Santo Bonaventura">
+                    <img src="/images/vandel.jpg" alt="Vandel Prodiakon Paroki Santo Bonaventura">
                     <div style="margin-top: 14px; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
                         Vandel Resmi Paguyuban Prodiakon Santo Bonaventura Pulomas
                     </div>
