@@ -2,7 +2,6 @@
   "version": 2,
   "framework": null,
   "outputDirectory": "public",
-  "buildCommand": null,
   "functions": {
     "api/index.php": {
       "runtime": "vercel-php@0.7.4"
@@ -32,7 +31,7 @@
   ],
   "env": {
     "APP_ENV": "production",
-    "APP_DEBUG": "false",
+    "APP_DEBUG": "true",
     "APP_KEY": "base64:bDYOtMGRfJ9htOpl1x5WqlUxIxKi/lPHPs7K+ohwBjg=",
     "VERCEL": "1",
     "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
