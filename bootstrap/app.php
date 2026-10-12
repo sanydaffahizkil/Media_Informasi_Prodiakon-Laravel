@@ -15,16 +15,9 @@ $app = Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        $exceptions->render(function (\Throwable $e, Request $request) {
-            return response(
-                "<h1>Original Exception</h1>" .
-                "<p><strong>Class:</strong> " . get_class($e) . "</p>" .
-                "<p><strong>Message:</strong> " . $e->getMessage() . "</p>" .
-                "<p><strong>Request URI:</strong> " . $request->getRequestUri() . "</p>" .
-                "<p><strong>Path Info:</strong> " . $request->getPathInfo() . "</p>",
-                200
-            );
-        });
+        $exceptions->shouldRenderJsonWhen(
+            fn (Request $request) => $request->is('api/*') || $request->expectsJson(),
+        );
     })->create();
 
 // Ensure writable storage on serverless platforms (Vercel / Lambda)

@@ -31,10 +31,4 @@ putenv('CACHE_STORE=array');
 putenv('LARAVEL_STORAGE_PATH=' . $tmpStorage);
 putenv('VIEW_COMPILED_PATH=' . $tmpStorage . '/framework/views');
 
-try {
-    require __DIR__ . '/../public/index.php';
-} catch (\Throwable $e) {
-    echo "<h1>Exception: " . $e->getMessage() . "</h1>";
-    echo "<p>File: " . $e->getFile() . ":" . $e->getLine() . "</p>";
-    echo "<pre>" . $e->getTraceAsString() . "</pre>";
-}
+require __DIR__ . '/../public/index.php';
