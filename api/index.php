@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 $storageDir = '/tmp/storage';
 $dirs = [
     $storageDir,
@@ -23,4 +27,8 @@ $_SERVER['LARAVEL_STORAGE_PATH'] = $storageDir;
 putenv('LARAVEL_STORAGE_PATH=' . $storageDir);
 putenv('VIEW_COMPILED_PATH=' . $storageDir . '/framework/views');
 
-require __DIR__ . '/../public/index.php';
+try {
+    require __DIR__ . '/../public/index.php';
+} catch (\Throwable $e) {
+    echo "Exception: " . $e->getMessage() . " in " . $e->getFile() . ":" . $e->getLine();
+}
