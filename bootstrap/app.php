@@ -15,7 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        $exceptions->shouldRenderJsonWhen(
-            fn (Request $request) => $request->is('api/*') || $request->expectsJson(),
-        );
+        $exceptions->render(function (\Throwable $e, Request $request) {
+            return response("<h1>Exception Caught: " . $e->getMessage() . "</h1><p>In " . $e->getFile() . " line " . $e->getLine() . "</p><pre>" . $e->getTraceAsString() . "</pre>", 500);
+        });
     })->create();
