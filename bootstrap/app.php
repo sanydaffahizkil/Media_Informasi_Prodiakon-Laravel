@@ -15,16 +15,9 @@ $app = Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        $exceptions->render(function (\Throwable $e, Request $request) {
-            header('Content-Type: text/plain');
-            echo "=== ROOT EXCEPTION FOUND ===" . PHP_EOL;
-            echo "Type: " . get_class($e) . PHP_EOL;
-            echo "Message: " . $e->getMessage() . PHP_EOL;
-            echo "File: " . $e->getFile() . ":" . $e->getLine() . PHP_EOL;
-            echo "URI: " . $request->getRequestUri() . PHP_EOL;
-            echo "Trace:" . PHP_EOL . $e->getTraceAsString() . PHP_EOL;
-            exit;
-        });
+        $exceptions->shouldRenderJsonWhen(
+            fn (Request $request) => $request->is('api/*') || $request->expectsJson(),
+        );
     })->create();
 
 // Ensure writable storage on serverless platforms (Vercel / Lambda)
