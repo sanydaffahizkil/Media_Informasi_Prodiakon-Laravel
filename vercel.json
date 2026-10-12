@@ -31,9 +31,9 @@
   ],
   "env": {
     "APP_ENV": "production",
-    "APP_DEBUG": "true",
+    "APP_DEBUG": "false",
     "APP_KEY": "base64:bDYOtMGRfJ9htOpl1x5WqlUxIxKi/lPHPs7K+ohwBjg=",
-    "VERCEL": "1",
+    "LARAVEL_STORAGE_PATH": "/tmp/storage",
     "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
     "SESSION_DRIVER": "cookie",
     "CACHE_STORE": "array",
