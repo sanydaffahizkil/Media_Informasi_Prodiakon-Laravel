@@ -543,7 +543,7 @@
                             </div>
                         </div>
                         <div class="bagan-touch-hint" id="inlineBaganTouchHint">
-                            <i class="bi bi-arrows-move me-1"></i> Geser/drag untuk menjelajah &bull; Tombol zoom untuk perbesar
+                            <i class="bi bi-arrows-move me-1"></i> Geser & zoom untuk melihat detail bagan
                         </div>
                     </div>
 

@@ -20,7 +20,7 @@
 </head>
 <body>
     <!-- Luxury Sacred Opening Curtain -->
-    <div class="welcome-curtain" id="welcomeCurtain" onclick="this.classList.add('hide-curtain'); setTimeout(() => this.remove(), 700);" aria-hidden="true">
+    <div class="welcome-curtain" id="welcomeCurtain" aria-hidden="true">
         <div class="welcome-curtain-glow"></div>
         <div class="welcome-curtain-box">
             <div class="welcome-curtain-logo">
@@ -277,7 +277,7 @@
                     <!-- Cloned organogram-tree rendered dynamically here -->
                 </div>
                 <div class="map-touch-hint" id="baganModalTouchHint">
-                    <i class="bi bi-arrows-move me-1"></i> Geser/drag untuk menjelajah &bull; Cubit 2 jari (pinch) di HP atau gunakan tombol zoom
+                    <i class="bi bi-arrows-move me-1"></i> Geser & cubit layar untuk zoom &bull; Tombol di atas untuk navigasi
                 </div>
             </div>
             <div class="map-lightbox-footer">

@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   const welcomeCurtain = document.getElementById('welcomeCurtain');
   if (welcomeCurtain) {
+    let curtainDismissed = false;
+
     const dismissCurtain = () => {
+      if (curtainDismissed) return;
+      curtainDismissed = true;
       welcomeCurtain.classList.add('hide-curtain');
       setTimeout(() => {
         if (welcomeCurtain.parentNode) {
@@ -18,10 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 850);
     };
 
+    // Tap or click allows skipping immediately
     welcomeCurtain.addEventListener('click', dismissCurtain);
 
-    // Automatically dissolve smoothly after initial sacred presentation
-    setTimeout(dismissCurtain, 900);
+    // Keep visible for ~2.2 seconds so the sacred loading animation,
+    // glowing logo, and golden progress bar are beautifully displayed on both mobile & desktop
+    setTimeout(dismissCurtain, 2200);
   }
 
   // =========================================================================
