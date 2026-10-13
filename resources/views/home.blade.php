@@ -356,7 +356,7 @@
             <!-- =========================================================================
                  TAB 1: BAGAN STRUKTUR ORGANISASI (HIERARCHY ORGANOGRAM)
                  ========================================================================= -->
-            <div class="pengurus-pane active" id="pane-bagan" data-reveal="fade-up">
+            <div class="pengurus-pane active" id="pane-bagan">
                 <div class="bagan-card-box">
                     <div class="bagan-header">
                         <div class="bagan-title-area">
@@ -551,7 +551,7 @@
             <!-- =========================================================================
                  TAB 2: RINCIAN BIDANG & SEKSI (DETAIL CARDS SESUAI PDF RESMI)
                  ========================================================================= -->
-            <div class="pengurus-pane" id="pane-bidang" data-reveal="fade-up">
+            <div class="pengurus-pane" id="pane-bidang">
                 
                 <!-- Pimpinan Harian Showcase -->
                 <div class="pimpinan-showcase-grid">
@@ -821,7 +821,7 @@
             <!-- =========================================================================
                  TAB 3: 11 KOORDINATOR WILAYAH (SESUAI PDF RESMI)
                  ========================================================================= -->
-            <div class="pengurus-pane" id="pane-wilayah" data-reveal="fade-up">
+            <div class="pengurus-pane" id="pane-wilayah">
                 <div class="koor-wilayah-intro">
                     <div class="intro-icon"><i class="bi bi-geo-alt-fill"></i></div>
                     <div>
@@ -861,7 +861,7 @@
             <!-- =========================================================================
                  TAB 4: TIM PEMBINA & PEMERHATI
                  ========================================================================= -->
-            <div class="pengurus-pane" id="pane-pembina" data-reveal="fade-up">
+            <div class="pengurus-pane" id="pane-pembina">
                 <!-- Tim Pembina dan Pemerhati Showcase (Foto Besar & Proporsional) -->
                 <div class="pembina-section-wrap">
                     <div class="pembina-section-header">
@@ -1041,7 +1041,7 @@
             <div class="data-wilayah-wrapper">
                 
                 <!-- Left Sidebar / Mobile Top Pill Strip: Wilayah Pelayanan -->
-                <aside class="wilayah-sidebar" data-reveal="fade-right">
+                <aside class="wilayah-sidebar">
                     <div class="wilayah-sidebar-header">
                         <div class="wilayah-header-title-box">
                             <i class="bi bi-geo-alt-fill text-gold me-2"></i>
@@ -1076,7 +1076,7 @@
                 </aside>
 
                 <!-- Right Content Panel -->
-                <div class="wilayah-content-area" data-reveal="fade-left">
+                <div class="wilayah-content-area">
                     @foreach($content['data_wilayah'] as $index => $w)
                         <div class="wilayah-panel" id="panel-{{ $w['kode'] }}" style="{{ $index === 0 ? 'display: block;' : 'display: none;' }}">
                             

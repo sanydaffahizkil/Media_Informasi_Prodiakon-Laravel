@@ -3330,6 +3330,10 @@ section[id] {
   letter-spacing: -0.01em;
 }
 
+.wilayah-mobile-swipe-badge {
+  display: none;
+}
+
 .wilayah-nav-list {
   list-style: none;
   overflow-y: auto;
@@ -3399,6 +3403,15 @@ section[id] {
   padding: 36px 40px;
   background: #fafbfc;
   overflow-y: auto;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+.wilayah-panel {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
 
 .wilayah-header-card {
@@ -4455,24 +4468,8 @@ section[id] {
    Responsive Breakpoints
    ========================================================================== */
 @media (max-width: 992px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 74px;
-    left: 0;
-    right: 0;
-    background: var(--dark-navy);
-    flex-direction: column;
-    padding: 20px;
-    border-bottom: 1px solid var(--border-gold);
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
   .mobile-toggle {
-    display: block;
+    display: flex;
   }
 
   .pastoral-grid,
@@ -5747,31 +5744,44 @@ section[id] {
   }
 
   .nav-links {
-    position: fixed;
-    top: 74px;
-    left: 0;
-    right: 0;
-    background: rgba(11, 21, 38, 0.98);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border-bottom: 2px solid var(--accent-gold);
-    padding: 20px 24px 28px;
-    flex-direction: column;
-    gap: 8px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    transform: translateY(-130%);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-    max-height: calc(100vh - 74px);
-    overflow-y: auto;
-    z-index: 999;
+    display: flex !important;
+    position: fixed !important;
+    top: 74px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background: rgba(11, 21, 38, 0.98) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border-bottom: 2px solid var(--accent-gold) !important;
+    padding: 20px 24px 28px !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+    transform: translateY(-130%) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, visibility 0.35s ease !important;
+    max-height: calc(100vh - 74px) !important;
+    overflow-y: auto !important;
+    z-index: 99999 !important;
   }
 
-  .nav-links.mobile-open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
+  .nav-links.mobile-open,
+  .nav-links.show {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .pengurus-pane,
+  .wilayah-content-area,
+  .wilayah-panel {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
   }
 
   .nav-link {
@@ -5947,8 +5957,10 @@ section[id] {
 /* --- MOBILE SCREENS UNDER 768PX --- */
 @media (max-width: 768px) {
   /* Section & Container Spacing */
-  .section {
-    padding: 56px 0;
+  .section,
+  section[id] {
+    padding: 72px 0 54px;
+    scroll-margin-top: 96px;
   }
 
   .container {

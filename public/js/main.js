@@ -189,17 +189,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   if (mobileNavToggle && navLinks) {
-    mobileNavToggle.addEventListener('click', (e) => {
+    const toggleMobileNav = (e) => {
+      e.preventDefault();
       e.stopPropagation();
       const isOpen = navLinks.classList.toggle('mobile-open');
+      navLinks.classList.toggle('show', isOpen);
       mobileNavToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       mobileNavToggle.innerHTML = isOpen ? '<i class="bi bi-x-lg"></i>' : '<i class="bi bi-list"></i>';
-    });
+    };
+
+    mobileNavToggle.addEventListener('click', toggleMobileNav);
 
     // Close mobile nav drawer when clicking any nav link
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('mobile-open');
+        navLinks.classList.remove('show');
         mobileNavToggle.setAttribute('aria-expanded', 'false');
         mobileNavToggle.innerHTML = '<i class="bi bi-list"></i>';
       });
@@ -208,8 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close when clicking outside
     document.addEventListener('click', (e) => {
       if (!navLinks.contains(e.target) && !mobileNavToggle.contains(e.target)) {
-        if (navLinks.classList.contains('mobile-open')) {
+        if (navLinks.classList.contains('mobile-open') || navLinks.classList.contains('show')) {
           navLinks.classList.remove('mobile-open');
+          navLinks.classList.remove('show');
           mobileNavToggle.setAttribute('aria-expanded', 'false');
           mobileNavToggle.innerHTML = '<i class="bi bi-list"></i>';
         }
@@ -227,8 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (targetElement) {
         e.preventDefault();
 
-        // Exact offset for fixed navbar (74px) + comfortable margin
-        const navHeight = 78;
+        // Exact dynamic offset for fixed navbar + comfortable breathing margin
+        const mainNav = document.querySelector('.main-nav');
+        const navHeight = (mainNav ? mainNav.offsetHeight : 74) + 24;
         const targetPosition = Math.max(0, targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight);
 
         window.scrollTo({
