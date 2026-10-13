@@ -4,12 +4,12 @@
         "alamat": "Jl. Pacuan Kuda No. 1, Pulo Mas, Kayu Putih, Pulo Gadung, Jakarta Timur 13210",
         "telepon": "(021) 489-1301",
         "email": "sekretariat@stbonaventura.org",
-        "website": "https:\/\/stbonaventura.org"
+        "website": "https://stbonaventura.org"
     },
     "sambutan_romo": {
         "nama": "Romo Stephanus Royke Djakarya, Pr.",
         "jabatan": "Pastor Paroki Santo Bonaventura Pulomas",
-        "foto": "\/images\/romo.jpg",
+        "foto": "/images/romo.jpg",
         "kutipan_singkat": "\"Melayani dengan kerendahan hati, menghadirkan Tubuh Kristus di tengah persekutuan dan bagi mereka yang lemah dan sakit.\"",
         "isi": [
             "Salam damai dalam kasih Kristus,",
@@ -21,7 +21,7 @@
     "makna_vandel": {
         "judul": "Makna Lambang Vandel Prodiakon",
         "subjudul": "Simbolisme Suci Pelayanan Altar dan Perutusan Umat",
-        "foto": "\/images\/vandel.png",
+        "foto": "/images/vandel.png",
         "deskripsi_umum": "Vandel Prodiakon Paroki Santo Bonaventura Pulomas mengandung simbol-simbol luhur yang merepresentasikan jati diri, spiritualitas Ekaristi, dan kesiapan melayani tanpa pamrih.",
         "elemen": [
             {
@@ -87,7 +87,7 @@
         "gelar": "Pelindung Prodiakon &bull; Diakon &amp; Martir Pertama (Protomartir)",
         "pesta_nama": "26 Desember",
         "usia_wafat": "35 Tahun",
-        "gambar": "\/images\/stefanus.jpg",
+        "gambar": "/images/stefanus.jpg",
         "doa_terakhir": "Tuhan, janganlah Kau tangguhkan dosa ini atas mereka, sebab mereka tidak tahu apa yang diperbuat.",
         "bab_kisah": [
             {
@@ -124,7 +124,7 @@
             "nama": "Seksi Liturgi Gereja St. Bonaventura",
             "jabatan": "Penasehat Liturgis & Rohani",
             "icon": "bi-shield-shaded",
-            "foto": "\/images\/pengurus\/penasehat-liturgi.jpg",
+            "foto": "/images/pengurus/penasehat-liturgi.jpg",
             "foto_slot_id": "slot-pengurus-penasehat"
         },
         "pimpinan_harian": [
@@ -133,7 +133,7 @@
                 "jabatan": "Koordinator Prodiakon",
                 "badge": "Koordinator",
                 "icon": "bi-person-badge-fill",
-                "foto": "\/images\/pengurus\/koordinator.jpg",
+                "foto": "/images/pengurus/koordinator.jpg",
                 "foto_slot_id": "slot-pengurus-koordinator"
             },
             {
@@ -141,7 +141,7 @@
                 "jabatan": "Wakil Koordinator Prodiakon",
                 "badge": "Wa. Koordinator",
                 "icon": "bi-person-check-fill",
-                "foto": "\/images\/pengurus\/wakil-koordinator.jpg",
+                "foto": "/images/pengurus/Jeovani David Wirjadi.png",
                 "foto_slot_id": "slot-pengurus-wa-koordinator"
             }
         ],
@@ -149,25 +149,25 @@
             {
                 "nama": "Antonius Trio Limas",
                 "jabatan": "Tim Pembina dan Pemerhati",
-                "foto": "\/images\/pengurus\/pembina-1.jpg",
+                "foto": "/images/pengurus/pembina-1.jpg",
                 "foto_slot_id": "slot-pengurus-pembina-1"
             },
             {
                 "nama": "Yohanes Fery Olin Binsar",
                 "jabatan": "Tim Pembina dan Pemerhati",
-                "foto": "\/images\/pengurus\/pembina-2.jpg",
+                "foto": "/images/pengurus/pembina-2.jpg",
                 "foto_slot_id": "slot-pengurus-pembina-2"
             },
             {
                 "nama": "Yulius Suyatijo",
                 "jabatan": "Tim Pembina dan Pemerhati",
-                "foto": "\/images\/pengurus\/pembina-3.jpg",
+                "foto": "/images/pengurus/pembina-3.jpg",
                 "foto_slot_id": "slot-pengurus-pembina-3"
             },
             {
                 "nama": "Antonius Setyo Mulyanto",
                 "jabatan": "Tim Pembina dan Pemerhati",
-                "foto": "\/images\/pengurus\/pembina-4.jpg",
+                "foto": "/images/pengurus/pembina-4.jpg",
                 "foto_slot_id": "slot-pengurus-pembina-4"
             }
         ],
@@ -178,25 +178,25 @@
                 "koordinator": "Hendricus Superma Putra Mau",
                 "jabatan": "Sekretaris",
                 "icon": "bi-file-earmark-text-fill",
-                "foto": "\/images\/pengurus\/sekretaris.jpg",
+                "foto": "/images/pengurus/sekretaris.jpg",
                 "foto_slot_id": "slot-pengurus-sekretaris",
                 "anggota": [
                     {
                         "nama": "Yermias Hendrik Sasabone",
                         "peran": "Seksi Administrasi",
-                        "foto": "\/images\/pengurus\/seksi-administrasi.jpg",
+                        "foto": "/images/pengurus/seksi-administrasi.jpg",
                         "foto_slot_id": "slot-pengurus-administrasi"
                     },
                     {
                         "nama": "Tommy Istianto",
                         "peran": "Seksi Dokumentasi dan Inventaris",
-                        "foto": "\/images\/pengurus\/seksi-dokumentasi-1.jpg",
+                        "foto": "/images/pengurus/seksi-dokumentasi-1.jpg",
                         "foto_slot_id": "slot-pengurus-dokumentasi-1"
                     },
                     {
                         "nama": "George Robert Gunawan",
                         "peran": "Seksi Dokumentasi dan Inventaris",
-                        "foto": "\/images\/pengurus\/seksi-dokumentasi-2.jpg",
+                        "foto": "/images/pengurus/Robert Gunawan.png",
                         "foto_slot_id": "slot-pengurus-dokumentasi-2"
                     }
                 ]
@@ -207,7 +207,7 @@
                 "koordinator": "Paulus Tejo Koesno",
                 "jabatan": "Bendahara",
                 "icon": "bi-wallet2",
-                "foto": "\/images\/pengurus\/bendahara.jpg",
+                "foto": "/images/pengurus/bendahara.jpg",
                 "foto_slot_id": "slot-pengurus-bendahara",
                 "anggota": []
             },
@@ -217,19 +217,19 @@
                 "koordinator": "Agustinus Andhi Cahyadi",
                 "jabatan": "Koordinator Bidang",
                 "icon": "bi-award-fill",
-                "foto": "\/images\/pengurus\/bidang-liturgi.jpg",
+                "foto": "/images/pengurus/bidang-liturgi.jpg",
                 "foto_slot_id": "slot-pengurus-liturgi",
                 "anggota": [
                     {
                         "nama": "Timotius Teddy Susanto",
                         "peran": "Anggota",
-                        "foto": "\/images\/pengurus\/anggota-liturgi-1.jpg",
+                        "foto": "/images/pengurus/anggota-liturgi-1.jpg",
                         "foto_slot_id": "slot-pengurus-liturgi-1"
                     },
                     {
                         "nama": "Antonius Sumarno",
                         "peran": "Anggota",
-                        "foto": "\/images\/pengurus\/anggota-liturgi-2.jpg",
+                        "foto": "/images/pengurus/anggota-liturgi-2.jpg",
                         "foto_slot_id": "slot-pengurus-liturgi-2"
                     }
                 ]
@@ -240,19 +240,19 @@
                 "koordinator": "Paulus Roestianto",
                 "jabatan": "Koordinator Bidang",
                 "icon": "bi-book-half",
-                "foto": "\/images\/pengurus\/bidang-rohani.jpg",
+                "foto": "/images/pengurus/Paulus Roestianto.png",
                 "foto_slot_id": "slot-pengurus-rohani",
                 "anggota": [
                     {
                         "nama": "Andreas Ngadino",
                         "peran": "Anggota",
-                        "foto": "\/images\/pengurus\/anggota-rohani-1.jpg",
+                        "foto": "/images/pengurus/anggota-rohani-1.jpg",
                         "foto_slot_id": "slot-pengurus-rohani-1"
                     },
                     {
                         "nama": "Matius Nody",
                         "peran": "Anggota",
-                        "foto": "\/images\/pengurus\/anggota-rohani-2.jpg",
+                        "foto": "/images/pengurus/anggota-rohani-2.jpg",
                         "foto_slot_id": "slot-pengurus-rohani-2"
                     }
                 ]
@@ -263,25 +263,25 @@
                 "koordinator": "Alfonsus Adi Wicaksono",
                 "jabatan": "Koordinator Bidang",
                 "icon": "bi-calendar-event-fill",
-                "foto": "\/images\/pengurus\/bidang-kegiatan.jpg",
+                "foto": "/images/pengurus/bidang-kegiatan.jpg",
                 "foto_slot_id": "slot-pengurus-kegiatan",
                 "anggota": [
                     {
                         "nama": "Daniel Dhany Limantoro",
                         "peran": "Anggota",
-                        "foto": "\/images\/pengurus\/anggota-kegiatan-1.jpg",
+                        "foto": "/images/pengurus/anggota-kegiatan-1.jpg",
                         "foto_slot_id": "slot-pengurus-kegiatan-1"
                     },
                     {
                         "nama": "Manuturi Sibarani",
                         "peran": "Anggota",
-                        "foto": "\/images\/pengurus\/anggota-kegiatan-2.jpg",
+                        "foto": "/images/pengurus/anggota-kegiatan-2.jpg",
                         "foto_slot_id": "slot-pengurus-kegiatan-2"
                     },
                     {
                         "nama": "Alexander Ivan Tirta",
                         "peran": "Anggota",
-                        "foto": "\/images\/pengurus\/anggota-kegiatan-3.jpg",
+                        "foto": "/images/pengurus/anggota-kegiatan-3.jpg",
                         "foto_slot_id": "slot-pengurus-kegiatan-3"
                     }
                 ]
@@ -293,77 +293,77 @@
                 "wilayah": "Wilayah 1",
                 "nama": "Stephanus Pudji Ludianto",
                 "peran": "Koordinator Wilayah 1",
-                "foto": "\/images\/pengurus\/koor-wilayah-1.jpg"
+                "foto": "/images/pengurus/Stephanus Pudji Ludianto.png"
             },
             {
                 "kode": "wilayah-ii",
                 "wilayah": "Wilayah 2",
                 "nama": "Jeovani David Wirjadi",
                 "peran": "Koordinator Wilayah 2",
-                "foto": "\/images\/pengurus\/koor-wilayah-2.jpg"
+                "foto": "/images/pengurus/Jeovani David Wirjadi.png"
             },
             {
                 "kode": "wilayah-iii",
                 "wilayah": "Wilayah 3",
                 "nama": "Antonius Heru Widianto",
                 "peran": "Koordinator Wilayah 3",
-                "foto": "\/images\/pengurus\/koor-wilayah-3.jpg"
+                "foto": "/images/pengurus/koor-wilayah-3.jpg"
             },
             {
                 "kode": "wilayah-iv",
                 "wilayah": "Wilayah 4",
                 "nama": "Benediktus Jarot Jatmika",
                 "peran": "Koordinator Wilayah 4",
-                "foto": "\/images\/pengurus\/koor-wilayah-4.jpg"
+                "foto": "/images/pengurus/koor-wilayah-4.jpg"
             },
             {
                 "kode": "wilayah-v",
                 "wilayah": "Wilayah 5",
                 "nama": "Andreo Wahyudi Atmoko",
                 "peran": "Koordinator Wilayah 5",
-                "foto": "\/images\/pengurus\/koor-wilayah-5.jpg"
+                "foto": "/images/pengurus/koor-wilayah-5.jpg"
             },
             {
                 "kode": "wilayah-vi",
                 "wilayah": "Wilayah 6",
                 "nama": "Alfonsus Sonny Kusuma Wijaya",
                 "peran": "Koordinator Wilayah 6",
-                "foto": "\/images\/pengurus\/koor-wilayah-6.jpg"
+                "foto": "/images/pengurus/koor-wilayah-6.jpg"
             },
             {
                 "kode": "wilayah-vii",
                 "wilayah": "Wilayah 7",
                 "nama": "Yustin Wong",
                 "peran": "Koordinator Wilayah 7",
-                "foto": "\/images\/pengurus\/koor-wilayah-7.jpg"
+                "foto": "/images/pengurus/koor-wilayah-7.jpg"
             },
             {
                 "kode": "wilayah-viii",
                 "wilayah": "Wilayah 8",
                 "nama": "Yermias Hendrik Sasabone",
                 "peran": "Koordinator Wilayah 8",
-                "foto": "\/images\/pengurus\/koor-wilayah-8.jpg"
+                "foto": "/images/pengurus/koor-wilayah-8.jpg"
             },
             {
                 "kode": "wilayah-ix",
                 "wilayah": "Wilayah 9",
                 "nama": "Agustinus Protomo Andhi Cahyadi",
                 "peran": "Koordinator Wilayah 9",
-                "foto": "\/images\/pengurus\/koor-wilayah-9.jpg"
+                "foto": "/images/pengurus/koor-wilayah-9.jpg"
             },
             {
                 "kode": "wilayah-x",
                 "wilayah": "Wilayah 10",
                 "nama": "Antonius Indratno",
                 "peran": "Koordinator Wilayah 10",
-                "foto": "\/images\/pengurus\/koor-wilayah-10.jpg"
+                "foto": "/images/pengurus/koor-wilayah-10.jpg"
             },
             {
                 "kode": "wilayah-xi",
                 "wilayah": "Wilayah 11",
                 "nama": "Ignatius Donny Joko Subakti",
                 "peran": "Koordinator Wilayah 11",
-                "foto": "\/images\/pengurus\/koor-wilayah-11.jpg"
+                "foto": "/images/pengurus/koor-wilayah-11.jpg"
             }
         ]
     },
@@ -406,7 +406,7 @@
             "poin": [
                 "Mengkoordinir & melaksanakan pengelolaan administrasi kesekretariatan, korespondensi dan kearsipan termasuk pengelolaan inventarisasi prodiakon.",
                 "Melakukan koordinasi antar pengurus dengan pengurus, antara pengurus dengan anggota, dan dengan pihak luar.",
-                "Memfasilitasi dan mempersiapkan kebutuhan rapat- rapat, serta membuat laporan hasil rapat termasuk menjadi pelaksana \/ Moderator rapat.",
+                "Memfasilitasi dan mempersiapkan kebutuhan rapat- rapat, serta membuat laporan hasil rapat termasuk menjadi pelaksana / Moderator rapat.",
                 "Merencanakan dan melaksanakan perekrutan prodiakon baru pada saat menjelang akhir kepengurusan.",
                 "Menjaga dan memelihara solidaritas kepengurusan."
             ]
@@ -417,8 +417,8 @@
             "icon": "bi-journal-text",
             "poin": [
                 "Membantu Sekretaris 1 dalam melaksanakan fungsi kesekratriatan.",
-                "Membuat Laporan \/ risalah rapat-rapat dan kegiatan periodik prodiakon dalam rapat pleno prodiakon 3 bulanan",
-                "Mendokumentasikan peraturan, materi & \/ data data yang berkenaan dengan aktifitas prodiakon."
+                "Membuat Laporan / risalah rapat-rapat dan kegiatan periodik prodiakon dalam rapat pleno prodiakon 3 bulanan",
+                "Mendokumentasikan peraturan, materi & / data data yang berkenaan dengan aktifitas prodiakon."
             ]
         },
         {
@@ -450,8 +450,8 @@
             "kategori": "Liturgi & Jadwal",
             "icon": "bi-calendar3",
             "poin": [
-                "Membuat dan mempersiapkan daftar tugas prodiakon untuk 3 bulanan, meliputi : Tugas Misa Biasa ( Sabtu & Minggu ), Misa Harian (Pagi), Misa hari hari Besar \/khusus, Misa Jum'at pertama, Doa umat dll.",
-                "Menginformasikan jadwal tugas ke semua anggota prodiakon melalui W\/A dan menempel list tugas prodiakon di ruang Prodiakon dan ruang Sakristi.",
+                "Membuat dan mempersiapkan daftar tugas prodiakon untuk 3 bulanan, meliputi : Tugas Misa Biasa ( Sabtu & Minggu ), Misa Harian (Pagi), Misa hari hari Besar /khusus, Misa Jum'at pertama, Doa umat dll.",
+                "Menginformasikan jadwal tugas ke semua anggota prodiakon melalui W/A dan menempel list tugas prodiakon di ruang Prodiakon dan ruang Sakristi.",
                 "Berkoordinasi dengan seksi Liturgi berkenaan tugas prodiakon."
             ]
         },
@@ -485,7 +485,7 @@
                 "Mempersiapkan materi yang standard bagi pembekalan calon prodiakon baru maupun prodiakon lama dan dilakukan secara periodik setiap anggota prodiakon memahami fungsi dan tugas prodiakon secara benar dan bertanggung jawab.",
                 "Mempersiapkan dan Melaksanakan pembekalan secara berkelanjutan sehingga setiap prodiakon mampu dan handal dalam melaksanakan tugasnya.",
                 "Dalam pelaksanaan pembekalan, seksi pembekalan dapat bekerjasama dengan seksi lainnya.",
-                "Mempersiapkan dan merencanakan aktifitas yang dapat mengembangkan dan menguatkan rohani prodiakon dalam sikap dan tanggung jawab sebagai sosok prodiakon yang baik dan benar. (Misal Reatret, Pelatihan : membawakan homily, pendalaman kitab suci, mengundang romo \/ pembicara lainnya, dll)"
+                "Mempersiapkan dan merencanakan aktifitas yang dapat mengembangkan dan menguatkan rohani prodiakon dalam sikap dan tanggung jawab sebagai sosok prodiakon yang baik dan benar. (Misal Reatret, Pelatihan : membawakan homily, pendalaman kitab suci, mengundang romo / pembicara lainnya, dll)"
             ]
         },
         {
@@ -502,7 +502,7 @@
             "icon": "bi-camera-reels-fill",
             "poin": [
                 "Menyampaikan dan menginformasikan segala sesuatu yang dianggap penting terutama tentang peran dan fungsi prodiakon, sehingga diharapkan dapat memberikan pengaruh yang baik dan positif dalam pelayanan umat.",
-                "Bertanggung jawab atas segala aktifitas yang menyangkut Informasi yang dapat dapat dituangkan \/ disampaikan melalui media cetak ( Buku Prodiakon, Brosur, Banner dsb ) maupun dalam bentuk Visual seperti Video & media online ( Youtube, Vlog dsb )",
+                "Bertanggung jawab atas segala aktifitas yang menyangkut Informasi yang dapat dapat dituangkan / disampaikan melalui media cetak ( Buku Prodiakon, Brosur, Banner dsb ) maupun dalam bentuk Visual seperti Video & media online ( Youtube, Vlog dsb )",
                 "Mengevaluasi sikap dan opini umat terhadap aktifitas prodiakon berkenaan dengan pendapat, keluhan, pemikiran, kritikan, pujian, kepuasan dsb",
                 "Mendokumentasikan setiap aktivitas prodiakon yang penting. Sie Humas & Dokumentasi dapat bekerja sama dengan KOMSOS dan seksi seksi lainnya."
             ]
@@ -532,7 +532,7 @@
         "judul": "SASARAN PRODIAKON",
         "subjudul": "Arah Dasar Keuskupan Agung Jakarta Tahun 2022 – 2026",
         "pengantar": "Untuk melaksanakan arah dasar Keuskupan Agung Jakarta tahun 2022 – 2026, melalui tata pelayanan pastoral - evangelisasi yang sinergis, dialogis, partisipatif dan transformatif, seluruh Prodiakon Paroki Pulomas berkomitmen untuk :",
-        "foto": "\/images\/sasaran.jpg",
+        "foto": "/images/sasaran.jpg",
         "doa_penutup": "Semoga Allah Yang Maha Rahim, yang telah memulai pekerjaan baik dalam diri kita, berkenan menyempurnakannya dan Bunda Maria menyertai, menuntun serta meneguhkan upaya-upaya kita.",
         "komitmen": [
             {
@@ -600,9 +600,9 @@
                     "inisial": "AKS",
                     "wilayah_romawi": "I",
                     "slug": "andreas-k-sutedjo",
-                    "foto": "\/images\/prodiakon\/prodiakon-01.jpg",
+                    "foto": "/images/pengurus/Andreas K. Sutedjo.png",
                     "foto_slot_id": "slot-prodiakon-1",
-                    "foto_istri": "\/images\/prodiakon\/istri-01.jpg",
+                    "foto_istri": "/images/pengurus/Liny W.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-1"
                 },
                 {
@@ -628,9 +628,9 @@
                     "inisial": "DHA",
                     "wilayah_romawi": "I",
                     "slug": "daniel-hadi-atmadja",
-                    "foto": "\/images\/prodiakon\/prodiakon-02.jpg",
+                    "foto": "/images/pengurus/Daniel Hadi Atmadja.png",
                     "foto_slot_id": "slot-prodiakon-2",
-                    "foto_istri": "\/images\/prodiakon\/istri-02.jpg",
+                    "foto_istri": "/images/pengurus/Ratna Danu Lie.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-2"
                 },
                 {
@@ -656,9 +656,9 @@
                     "inisial": "RHS",
                     "wilayah_romawi": "I",
                     "slug": "rio-hartanto-surjadi",
-                    "foto": "\/images\/prodiakon\/prodiakon-03.jpg",
+                    "foto": "/images/pengurus/Rio Hartanto Surjadi.png",
                     "foto_slot_id": "slot-prodiakon-3",
-                    "foto_istri": "\/images\/prodiakon\/istri-03.jpg",
+                    "foto_istri": "/images/pengurus/Vitalia Widjaja.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-3"
                 },
                 {
@@ -684,9 +684,9 @@
                     "inisial": "PR",
                     "wilayah_romawi": "I",
                     "slug": "paulus-roestianto",
-                    "foto": "\/images\/prodiakon\/prodiakon-04.jpg",
+                    "foto": "/images/pengurus/Paulus Roestianto.png",
                     "foto_slot_id": "slot-prodiakon-4",
-                    "foto_istri": "\/images\/prodiakon\/istri-04.jpg",
+                    "foto_istri": "/images/pengurus/Soelistijowati.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-4"
                 },
                 {
@@ -712,13 +712,13 @@
                     "inisial": "SPL",
                     "wilayah_romawi": "I",
                     "slug": "stephanus-pudji-ludianto",
-                    "foto": "\/images\/prodiakon\/prodiakon-05.jpg",
+                    "foto": "/images/pengurus/Stephanus Pudji Ludianto.png",
                     "foto_slot_id": "slot-prodiakon-5",
-                    "foto_istri": "\/images\/prodiakon\/istri-05.jpg",
+                    "foto_istri": "/images/pengurus/Angela Mercyawati Subianto.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-5"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koordinator.jpg",
+            "koordinator_foto": "/images/pengurus/koordinator.jpg",
             "koordinator_jabatan": "Koordinator Prodiakon Paroki"
         },
         {
@@ -753,9 +753,9 @@
                     "inisial": "AKS",
                     "wilayah_romawi": "I",
                     "slug": "andreas-k-sutedjo",
-                    "foto": "\/images\/prodiakon\/prodiakon-01.jpg",
+                    "foto": "/images/pengurus/Andreas K. Sutedjo.png",
                     "foto_slot_id": "slot-prodiakon-1",
-                    "foto_istri": "\/images\/prodiakon\/istri-01.jpg",
+                    "foto_istri": "/images/pengurus/Liny W.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-1"
                 },
                 {
@@ -781,9 +781,9 @@
                     "inisial": "DHA",
                     "wilayah_romawi": "I",
                     "slug": "daniel-hadi-atmadja",
-                    "foto": "\/images\/prodiakon\/prodiakon-02.jpg",
+                    "foto": "/images/pengurus/Daniel Hadi Atmadja.png",
                     "foto_slot_id": "slot-prodiakon-2",
-                    "foto_istri": "\/images\/prodiakon\/istri-02.jpg",
+                    "foto_istri": "/images/pengurus/Ratna Danu Lie.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-2"
                 },
                 {
@@ -809,9 +809,9 @@
                     "inisial": "RHS",
                     "wilayah_romawi": "I",
                     "slug": "rio-hartanto-surjadi",
-                    "foto": "\/images\/prodiakon\/prodiakon-03.jpg",
+                    "foto": "/images/pengurus/Rio Hartanto Surjadi.png",
                     "foto_slot_id": "slot-prodiakon-3",
-                    "foto_istri": "\/images\/prodiakon\/istri-03.jpg",
+                    "foto_istri": "/images/pengurus/Vitalia Widjaja.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-3"
                 },
                 {
@@ -837,9 +837,9 @@
                     "inisial": "PR",
                     "wilayah_romawi": "I",
                     "slug": "paulus-roestianto",
-                    "foto": "\/images\/prodiakon\/prodiakon-04.jpg",
+                    "foto": "/images/pengurus/Paulus Roestianto.png",
                     "foto_slot_id": "slot-prodiakon-4",
-                    "foto_istri": "\/images\/prodiakon\/istri-04.jpg",
+                    "foto_istri": "/images/pengurus/Soelistijowati.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-4"
                 },
                 {
@@ -865,9 +865,9 @@
                     "inisial": "SPL",
                     "wilayah_romawi": "I",
                     "slug": "stephanus-pudji-ludianto",
-                    "foto": "\/images\/prodiakon\/prodiakon-05.jpg",
+                    "foto": "/images/pengurus/Stephanus Pudji Ludianto.png",
                     "foto_slot_id": "slot-prodiakon-5",
-                    "foto_istri": "\/images\/prodiakon\/istri-05.jpg",
+                    "foto_istri": "/images/pengurus/Angela Mercyawati Subianto.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-5"
                 },
                 {
@@ -893,13 +893,13 @@
                     "inisial": "RG",
                     "wilayah_romawi": "I",
                     "slug": "robert-gunawan",
-                    "foto": "\/images\/prodiakon\/prodiakon-06.jpg",
+                    "foto": "/images/pengurus/Robert Gunawan.png",
                     "foto_slot_id": "slot-prodiakon-6",
-                    "foto_istri": "\/images\/prodiakon\/istri-06.jpg",
+                    "foto_istri": "/images/prodiakon/istri-06.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-6"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koor-wilayah-1.jpg",
+            "koordinator_foto": "/images/pengurus/Stephanus Pudji Ludianto.png",
             "koordinator_jabatan": "Koordinator Wilayah 1"
         },
         {
@@ -934,9 +934,9 @@
                     "inisial": "JDW",
                     "wilayah_romawi": "II",
                     "slug": "jeovani-david-wirjadi",
-                    "foto": "\/images\/prodiakon\/prodiakon-07.jpg",
+                    "foto": "/images/pengurus/Jeovani David Wirjadi.png",
                     "foto_slot_id": "slot-prodiakon-7",
-                    "foto_istri": "\/images\/prodiakon\/istri-07.jpg",
+                    "foto_istri": "/images/prodiakon/istri-07.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-7"
                 },
                 {
@@ -962,9 +962,9 @@
                     "inisial": "ABR",
                     "wilayah_romawi": "II",
                     "slug": "antonius-budi-ryanto",
-                    "foto": "\/images\/prodiakon\/prodiakon-08.jpg",
+                    "foto": "/images/prodiakon/prodiakon-08.jpg",
                     "foto_slot_id": "slot-prodiakon-8",
-                    "foto_istri": "\/images\/prodiakon\/istri-08.jpg",
+                    "foto_istri": "/images/prodiakon/istri-08.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-8"
                 },
                 {
@@ -990,9 +990,9 @@
                     "inisial": "AS",
                     "wilayah_romawi": "II",
                     "slug": "antonius-sumarno",
-                    "foto": "\/images\/prodiakon\/prodiakon-09.jpg",
+                    "foto": "/images/prodiakon/prodiakon-09.jpg",
                     "foto_slot_id": "slot-prodiakon-9",
-                    "foto_istri": "\/images\/prodiakon\/istri-09.jpg",
+                    "foto_istri": "/images/prodiakon/istri-09.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-9"
                 },
                 {
@@ -1018,9 +1018,9 @@
                     "inisial": "HA",
                     "wilayah_romawi": "II",
                     "slug": "himawan-ariyanto",
-                    "foto": "\/images\/prodiakon\/prodiakon-10.jpg",
+                    "foto": "/images/prodiakon/prodiakon-10.jpg",
                     "foto_slot_id": "slot-prodiakon-10",
-                    "foto_istri": "\/images\/prodiakon\/istri-10.jpg",
+                    "foto_istri": "/images/prodiakon/istri-10.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-10"
                 },
                 {
@@ -1046,9 +1046,9 @@
                     "inisial": "YSA",
                     "wilayah_romawi": "II",
                     "slug": "yosef-sugiharto-adikusumo",
-                    "foto": "\/images\/prodiakon\/prodiakon-11.jpg",
+                    "foto": "/images/prodiakon/prodiakon-11.jpg",
                     "foto_slot_id": "slot-prodiakon-11",
-                    "foto_istri": "\/images\/prodiakon\/istri-11.jpg",
+                    "foto_istri": "/images/prodiakon/istri-11.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-11"
                 },
                 {
@@ -1074,9 +1074,9 @@
                     "inisial": "JG",
                     "wilayah_romawi": "II",
                     "slug": "jusman-gultom",
-                    "foto": "\/images\/prodiakon\/prodiakon-12.jpg",
+                    "foto": "/images/prodiakon/prodiakon-12.jpg",
                     "foto_slot_id": "slot-prodiakon-12",
-                    "foto_istri": "\/images\/prodiakon\/istri-12.jpg",
+                    "foto_istri": "/images/prodiakon/istri-12.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-12"
                 },
                 {
@@ -1102,9 +1102,9 @@
                     "inisial": "EB",
                     "wilayah_romawi": "II",
                     "slug": "erwin-budianto",
-                    "foto": "\/images\/prodiakon\/prodiakon-13.jpg",
+                    "foto": "/images/prodiakon/prodiakon-13.jpg",
                     "foto_slot_id": "slot-prodiakon-13",
-                    "foto_istri": "\/images\/prodiakon\/istri-13.jpg",
+                    "foto_istri": "/images/prodiakon/istri-13.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-13"
                 },
                 {
@@ -1130,9 +1130,9 @@
                     "inisial": "BSM",
                     "wilayah_romawi": "II",
                     "slug": "bambang-sunanto-martanto",
-                    "foto": "\/images\/prodiakon\/prodiakon-14.jpg",
+                    "foto": "/images/prodiakon/prodiakon-14.jpg",
                     "foto_slot_id": "slot-prodiakon-14",
-                    "foto_istri": "\/images\/prodiakon\/istri-14.jpg",
+                    "foto_istri": "/images/prodiakon/istri-14.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-14"
                 },
                 {
@@ -1158,13 +1158,13 @@
                     "inisial": "DDL",
                     "wilayah_romawi": "II",
                     "slug": "daniel-dhany-limantoro",
-                    "foto": "\/images\/prodiakon\/prodiakon-15.jpg",
+                    "foto": "/images/prodiakon/prodiakon-15.jpg",
                     "foto_slot_id": "slot-prodiakon-15",
-                    "foto_istri": "\/images\/prodiakon\/istri-15.jpg",
+                    "foto_istri": "/images/prodiakon/istri-15.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-15"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koor-wilayah-2.jpg",
+            "koordinator_foto": "/images/pengurus/Jeovani David Wirjadi.png",
             "koordinator_jabatan": "Koordinator Wilayah 2"
         },
         {
@@ -1199,9 +1199,9 @@
                     "inisial": "FOB",
                     "wilayah_romawi": "III",
                     "slug": "ferry-olin-binsar",
-                    "foto": "\/images\/prodiakon\/prodiakon-16.jpg",
+                    "foto": "/images/prodiakon/prodiakon-16.jpg",
                     "foto_slot_id": "slot-prodiakon-16",
-                    "foto_istri": "\/images\/prodiakon\/istri-16.jpg",
+                    "foto_istri": "/images/prodiakon/istri-16.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-16"
                 },
                 {
@@ -1227,9 +1227,9 @@
                     "inisial": "HSP",
                     "wilayah_romawi": "III",
                     "slug": "hendricus-superma-putra-mau",
-                    "foto": "\/images\/prodiakon\/prodiakon-17.jpg",
+                    "foto": "/images/prodiakon/prodiakon-17.jpg",
                     "foto_slot_id": "slot-prodiakon-17",
-                    "foto_istri": "\/images\/prodiakon\/istri-17.jpg",
+                    "foto_istri": "/images/prodiakon/istri-17.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-17"
                 },
                 {
@@ -1255,9 +1255,9 @@
                     "inisial": "JP",
                     "wilayah_romawi": "III",
                     "slug": "john-pasaribu",
-                    "foto": "\/images\/prodiakon\/prodiakon-18.jpg",
+                    "foto": "/images/prodiakon/prodiakon-18.jpg",
                     "foto_slot_id": "slot-prodiakon-18",
-                    "foto_istri": "\/images\/prodiakon\/istri-18.jpg",
+                    "foto_istri": "/images/prodiakon/istri-18.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-18"
                 },
                 {
@@ -1283,13 +1283,13 @@
                     "inisial": "AHW",
                     "wilayah_romawi": "III",
                     "slug": "anthonius-heru-widianto",
-                    "foto": "\/images\/prodiakon\/prodiakon-19.jpg",
+                    "foto": "/images/prodiakon/prodiakon-19.jpg",
                     "foto_slot_id": "slot-prodiakon-19",
-                    "foto_istri": "\/images\/prodiakon\/istri-19.jpg",
+                    "foto_istri": "/images/prodiakon/istri-19.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-19"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koor-wilayah-3.jpg",
+            "koordinator_foto": "/images/pengurus/koor-wilayah-3.jpg",
             "koordinator_jabatan": "Koordinator Wilayah 3"
         },
         {
@@ -1324,9 +1324,9 @@
                     "inisial": "MRP",
                     "wilayah_romawi": "IV",
                     "slug": "martinus-robert-polana",
-                    "foto": "\/images\/prodiakon\/prodiakon-20.jpg",
+                    "foto": "/images/prodiakon/prodiakon-20.jpg",
                     "foto_slot_id": "slot-prodiakon-20",
-                    "foto_istri": "\/images\/prodiakon\/istri-20.jpg",
+                    "foto_istri": "/images/prodiakon/istri-20.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-20"
                 },
                 {
@@ -1352,9 +1352,9 @@
                     "inisial": "RS",
                     "wilayah_romawi": "IV",
                     "slug": "risto-samosir",
-                    "foto": "\/images\/prodiakon\/prodiakon-21.jpg",
+                    "foto": "/images/prodiakon/prodiakon-21.jpg",
                     "foto_slot_id": "slot-prodiakon-21",
-                    "foto_istri": "\/images\/prodiakon\/istri-21.jpg",
+                    "foto_istri": "/images/prodiakon/istri-21.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-21"
                 },
                 {
@@ -1380,9 +1380,9 @@
                     "inisial": "FMS",
                     "wilayah_romawi": "IV",
                     "slug": "fransiskus-michael-setuso",
-                    "foto": "\/images\/prodiakon\/prodiakon-22.jpg",
+                    "foto": "/images/prodiakon/prodiakon-22.jpg",
                     "foto_slot_id": "slot-prodiakon-22",
-                    "foto_istri": "\/images\/prodiakon\/istri-22.jpg",
+                    "foto_istri": "/images/prodiakon/istri-22.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-22"
                 },
                 {
@@ -1408,9 +1408,9 @@
                     "inisial": "FAN",
                     "wilayah_romawi": "IV",
                     "slug": "fx-adviadi-nugroho",
-                    "foto": "\/images\/prodiakon\/prodiakon-23.jpg",
+                    "foto": "/images/prodiakon/prodiakon-23.jpg",
                     "foto_slot_id": "slot-prodiakon-23",
-                    "foto_istri": "\/images\/prodiakon\/istri-23.jpg",
+                    "foto_istri": "/images/prodiakon/istri-23.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-23"
                 },
                 {
@@ -1436,9 +1436,9 @@
                     "inisial": "EAS",
                     "wilayah_romawi": "IV",
                     "slug": "ernest-abraham-surjadipradja",
-                    "foto": "\/images\/prodiakon\/prodiakon-24.jpg",
+                    "foto": "/images/prodiakon/prodiakon-24.jpg",
                     "foto_slot_id": "slot-prodiakon-24",
-                    "foto_istri": "\/images\/prodiakon\/istri-24.jpg",
+                    "foto_istri": "/images/prodiakon/istri-24.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-24"
                 },
                 {
@@ -1464,9 +1464,9 @@
                     "inisial": "JJ",
                     "wilayah_romawi": "IV",
                     "slug": "jarot-jatmika",
-                    "foto": "\/images\/prodiakon\/prodiakon-25.jpg",
+                    "foto": "/images/prodiakon/prodiakon-25.jpg",
                     "foto_slot_id": "slot-prodiakon-25",
-                    "foto_istri": "\/images\/prodiakon\/istri-25.jpg",
+                    "foto_istri": "/images/prodiakon/istri-25.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-25"
                 },
                 {
@@ -1492,9 +1492,9 @@
                     "inisial": "SM",
                     "wilayah_romawi": "IV",
                     "slug": "setyo-mulyanto",
-                    "foto": "\/images\/prodiakon\/prodiakon-26.jpg",
+                    "foto": "/images/prodiakon/prodiakon-26.jpg",
                     "foto_slot_id": "slot-prodiakon-26",
-                    "foto_istri": "\/images\/prodiakon\/istri-26.jpg",
+                    "foto_istri": "/images/prodiakon/istri-26.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-26"
                 },
                 {
@@ -1520,13 +1520,13 @@
                     "inisial": "AAW",
                     "wilayah_romawi": "IV",
                     "slug": "alfonsus-adi-wicaksono",
-                    "foto": "\/images\/prodiakon\/prodiakon-27.jpg",
+                    "foto": "/images/prodiakon/prodiakon-27.jpg",
                     "foto_slot_id": "slot-prodiakon-27",
-                    "foto_istri": "\/images\/prodiakon\/istri-27.jpg",
+                    "foto_istri": "/images/prodiakon/istri-27.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-27"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koor-wilayah-4.jpg",
+            "koordinator_foto": "/images/pengurus/koor-wilayah-4.jpg",
             "koordinator_jabatan": "Koordinator Wilayah 4"
         },
         {
@@ -1546,28 +1546,28 @@
                     "tempat_lahir": "Pringsewu, Lampung",
                     "tgl_lahir": "",
                     "nama_baptis": "Andreo",
-                    "tempat_baptis": "St. Yusup \/ Pringsewu",
+                    "tempat_baptis": "St. Yusup / Pringsewu",
                     "tgl_baptis": "02 Maret 1969",
                     "nama_krisma": "-",
-                    "tempat_krisma": "St. Yusup \/ Pringsewu",
+                    "tempat_krisma": "St. Yusup / Pringsewu",
                     "tgl_krisma": "26 November 1978",
                     "istri": "Eva Dana",
                     "tempat_lahir_istri": "Jakarta",
                     "tgl_lahir_istri": "12 Januari 1970",
-                    "nama_baptis_istri": "Maria (Gereja St. Yohanes \/ Jakarta, 19 Juli 1970)",
-                    "nama_krisma_istri": "Bernadeth (Gereja St. Stefanus \/ Jakarta, 31 Oktober 1982)",
-                    "tempat_perkawinan": "Kapel Kanisius \/ Jakarta",
+                    "nama_baptis_istri": "Maria (Gereja St. Yohanes / Jakarta, 19 Juli 1970)",
+                    "nama_krisma_istri": "Bernadeth (Gereja St. Stefanus / Jakarta, 31 Oktober 1982)",
+                    "tempat_perkawinan": "Kapel Kanisius / Jakarta",
                     "tgl_perkawinan": "06 Juli 1996",
                     "inisial": "WA",
                     "wilayah_romawi": "V",
                     "slug": "wahyudi-atmoko",
-                    "foto": "\/images\/prodiakon\/prodiakon-28.jpg",
+                    "foto": "/images/prodiakon/prodiakon-28.jpg",
                     "foto_slot_id": "slot-prodiakon-28",
-                    "foto_istri": "\/images\/prodiakon\/istri-28.jpg",
+                    "foto_istri": "/images/prodiakon/istri-28.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-28"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koor-wilayah-5.jpg",
+            "koordinator_foto": "/images/pengurus/koor-wilayah-5.jpg",
             "koordinator_jabatan": "Koordinator Wilayah 5"
         },
         {
@@ -1602,9 +1602,9 @@
                     "inisial": "SN",
                     "wilayah_romawi": "VI",
                     "slug": "simon-nurak",
-                    "foto": "\/images\/prodiakon\/prodiakon-29.jpg",
+                    "foto": "/images/prodiakon/prodiakon-29.jpg",
                     "foto_slot_id": "slot-prodiakon-29",
-                    "foto_istri": "\/images\/prodiakon\/istri-29.jpg",
+                    "foto_istri": "/images/prodiakon/istri-29.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-29"
                 },
                 {
@@ -1630,9 +1630,9 @@
                     "inisial": "K",
                     "wilayah_romawi": "VI",
                     "slug": "krisdianto",
-                    "foto": "\/images\/prodiakon\/prodiakon-30.jpg",
+                    "foto": "/images/prodiakon/prodiakon-30.jpg",
                     "foto_slot_id": "slot-prodiakon-30",
-                    "foto_istri": "\/images\/prodiakon\/istri-30.jpg",
+                    "foto_istri": "/images/prodiakon/istri-30.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-30"
                 },
                 {
@@ -1658,9 +1658,9 @@
                     "inisial": "RS",
                     "wilayah_romawi": "VI",
                     "slug": "rudy-sugiarto",
-                    "foto": "\/images\/prodiakon\/prodiakon-31.jpg",
+                    "foto": "/images/prodiakon/prodiakon-31.jpg",
                     "foto_slot_id": "slot-prodiakon-31",
-                    "foto_istri": "\/images\/prodiakon\/istri-31.jpg",
+                    "foto_istri": "/images/prodiakon/istri-31.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-31"
                 },
                 {
@@ -1686,13 +1686,13 @@
                     "inisial": "SQ",
                     "wilayah_romawi": "VI",
                     "slug": "sandy-qlintang",
-                    "foto": "\/images\/prodiakon\/prodiakon-32.jpg",
+                    "foto": "/images/prodiakon/prodiakon-32.jpg",
                     "foto_slot_id": "slot-prodiakon-32",
-                    "foto_istri": "\/images\/prodiakon\/istri-32.jpg",
+                    "foto_istri": "/images/prodiakon/istri-32.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-32"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koor-wilayah-6.jpg",
+            "koordinator_foto": "/images/pengurus/koor-wilayah-6.jpg",
             "koordinator_jabatan": "Koordinator Wilayah 6"
         },
         {
@@ -1727,9 +1727,9 @@
                     "inisial": "HSH",
                     "wilayah_romawi": "VII",
                     "slug": "hady-surjono-halim",
-                    "foto": "\/images\/prodiakon\/prodiakon-33.jpg",
+                    "foto": "/images/prodiakon/prodiakon-33.jpg",
                     "foto_slot_id": "slot-prodiakon-33",
-                    "foto_istri": "\/images\/prodiakon\/istri-33.jpg",
+                    "foto_istri": "/images/prodiakon/istri-33.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-33"
                 },
                 {
@@ -1755,9 +1755,9 @@
                     "inisial": "HS",
                     "wilayah_romawi": "VII",
                     "slug": "hardjono-singgih",
-                    "foto": "\/images\/prodiakon\/prodiakon-34.jpg",
+                    "foto": "/images/prodiakon/prodiakon-34.jpg",
                     "foto_slot_id": "slot-prodiakon-34",
-                    "foto_istri": "\/images\/prodiakon\/istri-34.jpg",
+                    "foto_istri": "/images/prodiakon/istri-34.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-34"
                 },
                 {
@@ -1783,13 +1783,13 @@
                     "inisial": "LY",
                     "wilayah_romawi": "VII",
                     "slug": "liantoro-yoseph",
-                    "foto": "\/images\/prodiakon\/prodiakon-35.jpg",
+                    "foto": "/images/prodiakon/prodiakon-35.jpg",
                     "foto_slot_id": "slot-prodiakon-35",
-                    "foto_istri": "\/images\/prodiakon\/istri-35.jpg",
+                    "foto_istri": "/images/prodiakon/istri-35.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-35"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koor-wilayah-7.jpg",
+            "koordinator_foto": "/images/pengurus/koor-wilayah-7.jpg",
             "koordinator_jabatan": "Koordinator Wilayah 7"
         },
         {
@@ -1824,9 +1824,9 @@
                     "inisial": "GKA",
                     "wilayah_romawi": "VIII",
                     "slug": "goei-king-an",
-                    "foto": "\/images\/prodiakon\/prodiakon-36.jpg",
+                    "foto": "/images/prodiakon/prodiakon-36.jpg",
                     "foto_slot_id": "slot-prodiakon-36",
-                    "foto_istri": "\/images\/prodiakon\/istri-36.jpg",
+                    "foto_istri": "/images/prodiakon/istri-36.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-36"
                 },
                 {
@@ -1852,9 +1852,9 @@
                     "inisial": "AHM",
                     "wilayah_romawi": "VIII",
                     "slug": "andreas-henry-mixson-lumban-batu",
-                    "foto": "\/images\/prodiakon\/prodiakon-37.jpg",
+                    "foto": "/images/prodiakon/prodiakon-37.jpg",
                     "foto_slot_id": "slot-prodiakon-37",
-                    "foto_istri": "\/images\/prodiakon\/istri-37.jpg",
+                    "foto_istri": "/images/prodiakon/istri-37.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-37"
                 },
                 {
@@ -1880,9 +1880,9 @@
                     "inisial": "LKH",
                     "wilayah_romawi": "VIII",
                     "slug": "lim-kian-heng",
-                    "foto": "\/images\/prodiakon\/prodiakon-38.jpg",
+                    "foto": "/images/prodiakon/prodiakon-38.jpg",
                     "foto_slot_id": "slot-prodiakon-38",
-                    "foto_istri": "\/images\/prodiakon\/istri-38.jpg",
+                    "foto_istri": "/images/prodiakon/istri-38.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-38"
                 },
                 {
@@ -1908,9 +1908,9 @@
                     "inisial": "FHD",
                     "wilayah_romawi": "VIII",
                     "slug": "fx-harijanto-djojodihardjo",
-                    "foto": "\/images\/prodiakon\/prodiakon-39.jpg",
+                    "foto": "/images/prodiakon/prodiakon-39.jpg",
                     "foto_slot_id": "slot-prodiakon-39",
-                    "foto_istri": "\/images\/prodiakon\/istri-39.jpg",
+                    "foto_istri": "/images/prodiakon/istri-39.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-39"
                 },
                 {
@@ -1936,13 +1936,13 @@
                     "inisial": "ISB",
                     "wilayah_romawi": "VIII",
                     "slug": "ignatius-siswojo-budiman",
-                    "foto": "\/images\/prodiakon\/prodiakon-40.jpg",
+                    "foto": "/images/prodiakon/prodiakon-40.jpg",
                     "foto_slot_id": "slot-prodiakon-40",
-                    "foto_istri": "\/images\/prodiakon\/istri-40.jpg",
+                    "foto_istri": "/images/prodiakon/istri-40.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-40"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koor-wilayah-8.jpg",
+            "koordinator_foto": "/images/pengurus/koor-wilayah-8.jpg",
             "koordinator_jabatan": "Koordinator Wilayah 8"
         },
         {
@@ -1977,9 +1977,9 @@
                     "inisial": "HHS",
                     "wilayah_romawi": "IX",
                     "slug": "hubertus-hartono-sondakh",
-                    "foto": "\/images\/prodiakon\/prodiakon-41.jpg",
+                    "foto": "/images/prodiakon/prodiakon-41.jpg",
                     "foto_slot_id": "slot-prodiakon-41",
-                    "foto_istri": "\/images\/prodiakon\/istri-41.jpg",
+                    "foto_istri": "/images/prodiakon/istri-41.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-41"
                 },
                 {
@@ -2005,9 +2005,9 @@
                     "inisial": "APA",
                     "wilayah_romawi": "IX",
                     "slug": "agustinus-protomo-andhi-cahyadi",
-                    "foto": "\/images\/prodiakon\/prodiakon-42.jpg",
+                    "foto": "/images/prodiakon/prodiakon-42.jpg",
                     "foto_slot_id": "slot-prodiakon-42",
-                    "foto_istri": "\/images\/prodiakon\/istri-42.jpg",
+                    "foto_istri": "/images/prodiakon/istri-42.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-42"
                 },
                 {
@@ -2033,9 +2033,9 @@
                     "inisial": "PN",
                     "wilayah_romawi": "IX",
                     "slug": "philipus-nambu",
-                    "foto": "\/images\/prodiakon\/prodiakon-43.jpg",
+                    "foto": "/images/prodiakon/prodiakon-43.jpg",
                     "foto_slot_id": "slot-prodiakon-43",
-                    "foto_istri": "\/images\/prodiakon\/istri-43.jpg",
+                    "foto_istri": "/images/prodiakon/istri-43.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-43"
                 },
                 {
@@ -2061,13 +2061,13 @@
                     "inisial": "SLW",
                     "wilayah_romawi": "IX",
                     "slug": "sofyan-lundu-wijaya-sitanggang",
-                    "foto": "\/images\/prodiakon\/prodiakon-44.jpg",
+                    "foto": "/images/prodiakon/prodiakon-44.jpg",
                     "foto_slot_id": "slot-prodiakon-44",
-                    "foto_istri": "\/images\/prodiakon\/istri-44.jpg",
+                    "foto_istri": "/images/prodiakon/istri-44.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-44"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koor-wilayah-9.jpg",
+            "koordinator_foto": "/images/pengurus/koor-wilayah-9.jpg",
             "koordinator_jabatan": "Koordinator Wilayah 9"
         },
         {
@@ -2102,9 +2102,9 @@
                     "inisial": "NHO",
                     "wilayah_romawi": "X",
                     "slug": "nicodemus-handoko-onggowarsito",
-                    "foto": "\/images\/prodiakon\/prodiakon-45.jpg",
+                    "foto": "/images/prodiakon/prodiakon-45.jpg",
                     "foto_slot_id": "slot-prodiakon-45",
-                    "foto_istri": "\/images\/prodiakon\/istri-45.jpg",
+                    "foto_istri": "/images/prodiakon/istri-45.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-45"
                 },
                 {
@@ -2130,9 +2130,9 @@
                     "inisial": "AST",
                     "wilayah_romawi": "X",
                     "slug": "antonius-suryanto-trisnadi",
-                    "foto": "\/images\/prodiakon\/prodiakon-46.jpg",
+                    "foto": "/images/prodiakon/prodiakon-46.jpg",
                     "foto_slot_id": "slot-prodiakon-46",
-                    "foto_istri": "\/images\/prodiakon\/istri-46.jpg",
+                    "foto_istri": "/images/prodiakon/istri-46.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-46"
                 },
                 {
@@ -2158,9 +2158,9 @@
                     "inisial": "JTP",
                     "wilayah_romawi": "X",
                     "slug": "johannes-tanis-parera",
-                    "foto": "\/images\/prodiakon\/prodiakon-47.jpg",
+                    "foto": "/images/prodiakon/prodiakon-47.jpg",
                     "foto_slot_id": "slot-prodiakon-47",
-                    "foto_istri": "\/images\/prodiakon\/istri-47.jpg",
+                    "foto_istri": "/images/prodiakon/istri-47.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-47"
                 },
                 {
@@ -2186,9 +2186,9 @@
                     "inisial": "IA",
                     "wilayah_romawi": "X",
                     "slug": "indratno-antonius",
-                    "foto": "\/images\/prodiakon\/prodiakon-48.jpg",
+                    "foto": "/images/prodiakon/prodiakon-48.jpg",
                     "foto_slot_id": "slot-prodiakon-48",
-                    "foto_istri": "\/images\/prodiakon\/istri-48.jpg",
+                    "foto_istri": "/images/prodiakon/istri-48.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-48"
                 },
                 {
@@ -2214,9 +2214,9 @@
                     "inisial": "ATL",
                     "wilayah_romawi": "X",
                     "slug": "antonius-trio-limas",
-                    "foto": "\/images\/prodiakon\/prodiakon-49.jpg",
+                    "foto": "/images/prodiakon/prodiakon-49.jpg",
                     "foto_slot_id": "slot-prodiakon-49",
-                    "foto_istri": "\/images\/prodiakon\/istri-49.jpg",
+                    "foto_istri": "/images/prodiakon/istri-49.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-49"
                 },
                 {
@@ -2242,9 +2242,9 @@
                     "inisial": "IS",
                     "wilayah_romawi": "X",
                     "slug": "ign-sucipto",
-                    "foto": "\/images\/prodiakon\/prodiakon-50.jpg",
+                    "foto": "/images/prodiakon/prodiakon-50.jpg",
                     "foto_slot_id": "slot-prodiakon-50",
-                    "foto_istri": "\/images\/prodiakon\/istri-50.jpg",
+                    "foto_istri": "/images/prodiakon/istri-50.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-50"
                 },
                 {
@@ -2270,13 +2270,13 @@
                     "inisial": "YS",
                     "wilayah_romawi": "X",
                     "slug": "yulius-suyatijo",
-                    "foto": "\/images\/prodiakon\/prodiakon-51.jpg",
+                    "foto": "/images/prodiakon/prodiakon-51.jpg",
                     "foto_slot_id": "slot-prodiakon-51",
-                    "foto_istri": "\/images\/prodiakon\/istri-51.jpg",
+                    "foto_istri": "/images/prodiakon/istri-51.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-51"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koor-wilayah-10.jpg",
+            "koordinator_foto": "/images/pengurus/koor-wilayah-10.jpg",
             "koordinator_jabatan": "Koordinator Wilayah 10"
         },
         {
@@ -2311,9 +2311,9 @@
                     "inisial": "SK",
                     "wilayah_romawi": "XI",
                     "slug": "susanto-kartiko",
-                    "foto": "\/images\/prodiakon\/prodiakon-52.jpg",
+                    "foto": "/images/prodiakon/prodiakon-52.jpg",
                     "foto_slot_id": "slot-prodiakon-52",
-                    "foto_istri": "\/images\/prodiakon\/istri-52.jpg",
+                    "foto_istri": "/images/prodiakon/istri-52.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-52"
                 },
                 {
@@ -2339,13 +2339,13 @@
                     "inisial": "IDJ",
                     "wilayah_romawi": "XI",
                     "slug": "ign-donny-j-subakti",
-                    "foto": "\/images\/prodiakon\/prodiakon-53.jpg",
+                    "foto": "/images/prodiakon/prodiakon-53.jpg",
                     "foto_slot_id": "slot-prodiakon-53",
-                    "foto_istri": "\/images\/prodiakon\/istri-53.jpg",
+                    "foto_istri": "/images/prodiakon/istri-53.jpg",
                     "foto_slot_id_istri": "slot-prodiakon-istri-53"
                 }
             ],
-            "koordinator_foto": "\/images\/pengurus\/koor-wilayah-11.jpg",
+            "koordinator_foto": "/images/pengurus/koor-wilayah-11.jpg",
             "koordinator_jabatan": "Koordinator Wilayah 11"
         }
     ],
@@ -2373,8 +2373,9 @@
             "inisial": "AKS",
             "wilayah_romawi": "I",
             "slug": "andreas-k-sutedjo",
-            "foto": "\/images\/prodiakon\/prodiakon-01.jpg",
-            "foto_slot_id": "slot-prodiakon-1"
+            "foto": "/images/pengurus/Andreas K. Sutedjo.png",
+            "foto_slot_id": "slot-prodiakon-1",
+            "foto_istri": "/images/pengurus/Liny W.png"
         },
         {
             "no": 2,
@@ -2399,8 +2400,9 @@
             "inisial": "DHA",
             "wilayah_romawi": "I",
             "slug": "daniel-hadi-atmadja",
-            "foto": "\/images\/prodiakon\/prodiakon-02.jpg",
-            "foto_slot_id": "slot-prodiakon-2"
+            "foto": "/images/pengurus/Daniel Hadi Atmadja.png",
+            "foto_slot_id": "slot-prodiakon-2",
+            "foto_istri": "/images/pengurus/Ratna Danu Lie.png"
         },
         {
             "no": 3,
@@ -2425,8 +2427,9 @@
             "inisial": "RHS",
             "wilayah_romawi": "I",
             "slug": "rio-hartanto-surjadi",
-            "foto": "\/images\/prodiakon\/prodiakon-03.jpg",
-            "foto_slot_id": "slot-prodiakon-3"
+            "foto": "/images/pengurus/Rio Hartanto Surjadi.png",
+            "foto_slot_id": "slot-prodiakon-3",
+            "foto_istri": "/images/pengurus/Vitalia Widjaja.png"
         },
         {
             "no": 4,
@@ -2451,8 +2454,9 @@
             "inisial": "PR",
             "wilayah_romawi": "I",
             "slug": "paulus-roestianto",
-            "foto": "\/images\/prodiakon\/prodiakon-04.jpg",
-            "foto_slot_id": "slot-prodiakon-4"
+            "foto": "/images/pengurus/Paulus Roestianto.png",
+            "foto_slot_id": "slot-prodiakon-4",
+            "foto_istri": "/images/pengurus/Soelistijowati.png"
         },
         {
             "no": 5,
@@ -2477,8 +2481,9 @@
             "inisial": "SPL",
             "wilayah_romawi": "I",
             "slug": "stephanus-pudji-ludianto",
-            "foto": "\/images\/prodiakon\/prodiakon-05.jpg",
-            "foto_slot_id": "slot-prodiakon-5"
+            "foto": "/images/pengurus/Stephanus Pudji Ludianto.png",
+            "foto_slot_id": "slot-prodiakon-5",
+            "foto_istri": "/images/pengurus/Angela Mercyawati Subianto.png"
         },
         {
             "no": 6,
@@ -2503,7 +2508,7 @@
             "inisial": "RG",
             "wilayah_romawi": "I",
             "slug": "robert-gunawan",
-            "foto": "\/images\/prodiakon\/prodiakon-06.jpg",
+            "foto": "/images/pengurus/Robert Gunawan.png",
             "foto_slot_id": "slot-prodiakon-6"
         },
         {
@@ -2529,7 +2534,7 @@
             "inisial": "JDW",
             "wilayah_romawi": "II",
             "slug": "jeovani-david-wirjadi",
-            "foto": "\/images\/prodiakon\/prodiakon-07.jpg",
+            "foto": "/images/pengurus/Jeovani David Wirjadi.png",
             "foto_slot_id": "slot-prodiakon-7"
         },
         {
@@ -2555,7 +2560,7 @@
             "inisial": "ABR",
             "wilayah_romawi": "II",
             "slug": "antonius-budi-ryanto",
-            "foto": "\/images\/prodiakon\/prodiakon-08.jpg",
+            "foto": "/images/prodiakon/prodiakon-08.jpg",
             "foto_slot_id": "slot-prodiakon-8"
         },
         {
@@ -2581,7 +2586,7 @@
             "inisial": "AS",
             "wilayah_romawi": "II",
             "slug": "antonius-sumarno",
-            "foto": "\/images\/prodiakon\/prodiakon-09.jpg",
+            "foto": "/images/prodiakon/prodiakon-09.jpg",
             "foto_slot_id": "slot-prodiakon-9"
         },
         {
@@ -2607,7 +2612,7 @@
             "inisial": "HA",
             "wilayah_romawi": "II",
             "slug": "himawan-ariyanto",
-            "foto": "\/images\/prodiakon\/prodiakon-10.jpg",
+            "foto": "/images/prodiakon/prodiakon-10.jpg",
             "foto_slot_id": "slot-prodiakon-10"
         },
         {
@@ -2633,7 +2638,7 @@
             "inisial": "YSA",
             "wilayah_romawi": "II",
             "slug": "yosef-sugiharto-adikusumo",
-            "foto": "\/images\/prodiakon\/prodiakon-11.jpg",
+            "foto": "/images/prodiakon/prodiakon-11.jpg",
             "foto_slot_id": "slot-prodiakon-11"
         },
         {
@@ -2659,7 +2664,7 @@
             "inisial": "JG",
             "wilayah_romawi": "II",
             "slug": "jusman-gultom",
-            "foto": "\/images\/prodiakon\/prodiakon-12.jpg",
+            "foto": "/images/prodiakon/prodiakon-12.jpg",
             "foto_slot_id": "slot-prodiakon-12"
         },
         {
@@ -2685,7 +2690,7 @@
             "inisial": "EB",
             "wilayah_romawi": "II",
             "slug": "erwin-budianto",
-            "foto": "\/images\/prodiakon\/prodiakon-13.jpg",
+            "foto": "/images/prodiakon/prodiakon-13.jpg",
             "foto_slot_id": "slot-prodiakon-13"
         },
         {
@@ -2711,7 +2716,7 @@
             "inisial": "BSM",
             "wilayah_romawi": "II",
             "slug": "bambang-sunanto-martanto",
-            "foto": "\/images\/prodiakon\/prodiakon-14.jpg",
+            "foto": "/images/prodiakon/prodiakon-14.jpg",
             "foto_slot_id": "slot-prodiakon-14"
         },
         {
@@ -2737,7 +2742,7 @@
             "inisial": "DDL",
             "wilayah_romawi": "II",
             "slug": "daniel-dhany-limantoro",
-            "foto": "\/images\/prodiakon\/prodiakon-15.jpg",
+            "foto": "/images/prodiakon/prodiakon-15.jpg",
             "foto_slot_id": "slot-prodiakon-15"
         },
         {
@@ -2763,7 +2768,7 @@
             "inisial": "FOB",
             "wilayah_romawi": "III",
             "slug": "ferry-olin-binsar",
-            "foto": "\/images\/prodiakon\/prodiakon-16.jpg",
+            "foto": "/images/prodiakon/prodiakon-16.jpg",
             "foto_slot_id": "slot-prodiakon-16"
         },
         {
@@ -2789,7 +2794,7 @@
             "inisial": "HSP",
             "wilayah_romawi": "III",
             "slug": "hendricus-superma-putra-mau",
-            "foto": "\/images\/prodiakon\/prodiakon-17.jpg",
+            "foto": "/images/prodiakon/prodiakon-17.jpg",
             "foto_slot_id": "slot-prodiakon-17"
         },
         {
@@ -2815,7 +2820,7 @@
             "inisial": "JP",
             "wilayah_romawi": "III",
             "slug": "john-pasaribu",
-            "foto": "\/images\/prodiakon\/prodiakon-18.jpg",
+            "foto": "/images/prodiakon/prodiakon-18.jpg",
             "foto_slot_id": "slot-prodiakon-18"
         },
         {
@@ -2841,7 +2846,7 @@
             "inisial": "AHW",
             "wilayah_romawi": "III",
             "slug": "anthonius-heru-widianto",
-            "foto": "\/images\/prodiakon\/prodiakon-19.jpg",
+            "foto": "/images/prodiakon/prodiakon-19.jpg",
             "foto_slot_id": "slot-prodiakon-19"
         },
         {
@@ -2867,7 +2872,7 @@
             "inisial": "MRP",
             "wilayah_romawi": "IV",
             "slug": "martinus-robert-polana",
-            "foto": "\/images\/prodiakon\/prodiakon-20.jpg",
+            "foto": "/images/prodiakon/prodiakon-20.jpg",
             "foto_slot_id": "slot-prodiakon-20"
         },
         {
@@ -2893,7 +2898,7 @@
             "inisial": "RS",
             "wilayah_romawi": "IV",
             "slug": "risto-samosir",
-            "foto": "\/images\/prodiakon\/prodiakon-21.jpg",
+            "foto": "/images/prodiakon/prodiakon-21.jpg",
             "foto_slot_id": "slot-prodiakon-21"
         },
         {
@@ -2919,7 +2924,7 @@
             "inisial": "FMS",
             "wilayah_romawi": "IV",
             "slug": "fransiskus-michael-setuso",
-            "foto": "\/images\/prodiakon\/prodiakon-22.jpg",
+            "foto": "/images/prodiakon/prodiakon-22.jpg",
             "foto_slot_id": "slot-prodiakon-22"
         },
         {
@@ -2945,7 +2950,7 @@
             "inisial": "FAN",
             "wilayah_romawi": "IV",
             "slug": "fx-adviadi-nugroho",
-            "foto": "\/images\/prodiakon\/prodiakon-23.jpg",
+            "foto": "/images/prodiakon/prodiakon-23.jpg",
             "foto_slot_id": "slot-prodiakon-23"
         },
         {
@@ -2971,7 +2976,7 @@
             "inisial": "EAS",
             "wilayah_romawi": "IV",
             "slug": "ernest-abraham-surjadipradja",
-            "foto": "\/images\/prodiakon\/prodiakon-24.jpg",
+            "foto": "/images/prodiakon/prodiakon-24.jpg",
             "foto_slot_id": "slot-prodiakon-24"
         },
         {
@@ -2997,7 +3002,7 @@
             "inisial": "JJ",
             "wilayah_romawi": "IV",
             "slug": "jarot-jatmika",
-            "foto": "\/images\/prodiakon\/prodiakon-25.jpg",
+            "foto": "/images/prodiakon/prodiakon-25.jpg",
             "foto_slot_id": "slot-prodiakon-25"
         },
         {
@@ -3023,7 +3028,7 @@
             "inisial": "SM",
             "wilayah_romawi": "IV",
             "slug": "setyo-mulyanto",
-            "foto": "\/images\/prodiakon\/prodiakon-26.jpg",
+            "foto": "/images/prodiakon/prodiakon-26.jpg",
             "foto_slot_id": "slot-prodiakon-26"
         },
         {
@@ -3049,7 +3054,7 @@
             "inisial": "AAW",
             "wilayah_romawi": "IV",
             "slug": "alfonsus-adi-wicaksono",
-            "foto": "\/images\/prodiakon\/prodiakon-27.jpg",
+            "foto": "/images/prodiakon/prodiakon-27.jpg",
             "foto_slot_id": "slot-prodiakon-27"
         },
         {
@@ -3060,22 +3065,22 @@
             "tempat_lahir": "Pringsewu, Lampung",
             "tgl_lahir": "",
             "nama_baptis": "Andreo",
-            "tempat_baptis": "St. Yusup \/ Pringsewu",
+            "tempat_baptis": "St. Yusup / Pringsewu",
             "tgl_baptis": "02 Maret 1969",
             "nama_krisma": "-",
-            "tempat_krisma": "St. Yusup \/ Pringsewu",
+            "tempat_krisma": "St. Yusup / Pringsewu",
             "tgl_krisma": "26 November 1978",
             "istri": "Eva Dana",
             "tempat_lahir_istri": "Jakarta",
             "tgl_lahir_istri": "12 Januari 1970",
-            "nama_baptis_istri": "Maria (Gereja St. Yohanes \/ Jakarta, 19 Juli 1970)",
-            "nama_krisma_istri": "Bernadeth (Gereja St. Stefanus \/ Jakarta, 31 Oktober 1982)",
-            "tempat_perkawinan": "Kapel Kanisius \/ Jakarta",
+            "nama_baptis_istri": "Maria (Gereja St. Yohanes / Jakarta, 19 Juli 1970)",
+            "nama_krisma_istri": "Bernadeth (Gereja St. Stefanus / Jakarta, 31 Oktober 1982)",
+            "tempat_perkawinan": "Kapel Kanisius / Jakarta",
             "tgl_perkawinan": "06 Juli 1996",
             "inisial": "WA",
             "wilayah_romawi": "V",
             "slug": "wahyudi-atmoko",
-            "foto": "\/images\/prodiakon\/prodiakon-28.jpg",
+            "foto": "/images/prodiakon/prodiakon-28.jpg",
             "foto_slot_id": "slot-prodiakon-28"
         },
         {
@@ -3101,7 +3106,7 @@
             "inisial": "SN",
             "wilayah_romawi": "VI",
             "slug": "simon-nurak",
-            "foto": "\/images\/prodiakon\/prodiakon-29.jpg",
+            "foto": "/images/prodiakon/prodiakon-29.jpg",
             "foto_slot_id": "slot-prodiakon-29"
         },
         {
@@ -3127,7 +3132,7 @@
             "inisial": "K",
             "wilayah_romawi": "VI",
             "slug": "krisdianto",
-            "foto": "\/images\/prodiakon\/prodiakon-30.jpg",
+            "foto": "/images/prodiakon/prodiakon-30.jpg",
             "foto_slot_id": "slot-prodiakon-30"
         },
         {
@@ -3153,7 +3158,7 @@
             "inisial": "RS",
             "wilayah_romawi": "VI",
             "slug": "rudy-sugiarto",
-            "foto": "\/images\/prodiakon\/prodiakon-31.jpg",
+            "foto": "/images/prodiakon/prodiakon-31.jpg",
             "foto_slot_id": "slot-prodiakon-31"
         },
         {
@@ -3179,7 +3184,7 @@
             "inisial": "SQ",
             "wilayah_romawi": "VI",
             "slug": "sandy-qlintang",
-            "foto": "\/images\/prodiakon\/prodiakon-32.jpg",
+            "foto": "/images/prodiakon/prodiakon-32.jpg",
             "foto_slot_id": "slot-prodiakon-32"
         },
         {
@@ -3205,7 +3210,7 @@
             "inisial": "HSH",
             "wilayah_romawi": "VII",
             "slug": "hady-surjono-halim",
-            "foto": "\/images\/prodiakon\/prodiakon-33.jpg",
+            "foto": "/images/prodiakon/prodiakon-33.jpg",
             "foto_slot_id": "slot-prodiakon-33"
         },
         {
@@ -3231,7 +3236,7 @@
             "inisial": "HS",
             "wilayah_romawi": "VII",
             "slug": "hardjono-singgih",
-            "foto": "\/images\/prodiakon\/prodiakon-34.jpg",
+            "foto": "/images/prodiakon/prodiakon-34.jpg",
             "foto_slot_id": "slot-prodiakon-34"
         },
         {
@@ -3257,7 +3262,7 @@
             "inisial": "LY",
             "wilayah_romawi": "VII",
             "slug": "liantoro-yoseph",
-            "foto": "\/images\/prodiakon\/prodiakon-35.jpg",
+            "foto": "/images/prodiakon/prodiakon-35.jpg",
             "foto_slot_id": "slot-prodiakon-35"
         },
         {
@@ -3283,7 +3288,7 @@
             "inisial": "GKA",
             "wilayah_romawi": "VIII",
             "slug": "goei-king-an",
-            "foto": "\/images\/prodiakon\/prodiakon-36.jpg",
+            "foto": "/images/prodiakon/prodiakon-36.jpg",
             "foto_slot_id": "slot-prodiakon-36"
         },
         {
@@ -3309,7 +3314,7 @@
             "inisial": "AHM",
             "wilayah_romawi": "VIII",
             "slug": "andreas-henry-mixson-lumban-batu",
-            "foto": "\/images\/prodiakon\/prodiakon-37.jpg",
+            "foto": "/images/prodiakon/prodiakon-37.jpg",
             "foto_slot_id": "slot-prodiakon-37"
         },
         {
@@ -3335,7 +3340,7 @@
             "inisial": "LKH",
             "wilayah_romawi": "VIII",
             "slug": "lim-kian-heng",
-            "foto": "\/images\/prodiakon\/prodiakon-38.jpg",
+            "foto": "/images/prodiakon/prodiakon-38.jpg",
             "foto_slot_id": "slot-prodiakon-38"
         },
         {
@@ -3361,7 +3366,7 @@
             "inisial": "FHD",
             "wilayah_romawi": "VIII",
             "slug": "fx-harijanto-djojodihardjo",
-            "foto": "\/images\/prodiakon\/prodiakon-39.jpg",
+            "foto": "/images/prodiakon/prodiakon-39.jpg",
             "foto_slot_id": "slot-prodiakon-39"
         },
         {
@@ -3387,7 +3392,7 @@
             "inisial": "ISB",
             "wilayah_romawi": "VIII",
             "slug": "ignatius-siswojo-budiman",
-            "foto": "\/images\/prodiakon\/prodiakon-40.jpg",
+            "foto": "/images/prodiakon/prodiakon-40.jpg",
             "foto_slot_id": "slot-prodiakon-40"
         },
         {
@@ -3413,7 +3418,7 @@
             "inisial": "HHS",
             "wilayah_romawi": "IX",
             "slug": "hubertus-hartono-sondakh",
-            "foto": "\/images\/prodiakon\/prodiakon-41.jpg",
+            "foto": "/images/prodiakon/prodiakon-41.jpg",
             "foto_slot_id": "slot-prodiakon-41"
         },
         {
@@ -3439,7 +3444,7 @@
             "inisial": "APA",
             "wilayah_romawi": "IX",
             "slug": "agustinus-protomo-andhi-cahyadi",
-            "foto": "\/images\/prodiakon\/prodiakon-42.jpg",
+            "foto": "/images/prodiakon/prodiakon-42.jpg",
             "foto_slot_id": "slot-prodiakon-42"
         },
         {
@@ -3465,7 +3470,7 @@
             "inisial": "PN",
             "wilayah_romawi": "IX",
             "slug": "philipus-nambu",
-            "foto": "\/images\/prodiakon\/prodiakon-43.jpg",
+            "foto": "/images/prodiakon/prodiakon-43.jpg",
             "foto_slot_id": "slot-prodiakon-43"
         },
         {
@@ -3491,7 +3496,7 @@
             "inisial": "SLW",
             "wilayah_romawi": "IX",
             "slug": "sofyan-lundu-wijaya-sitanggang",
-            "foto": "\/images\/prodiakon\/prodiakon-44.jpg",
+            "foto": "/images/prodiakon/prodiakon-44.jpg",
             "foto_slot_id": "slot-prodiakon-44"
         },
         {
@@ -3517,7 +3522,7 @@
             "inisial": "NHO",
             "wilayah_romawi": "X",
             "slug": "nicodemus-handoko-onggowarsito",
-            "foto": "\/images\/prodiakon\/prodiakon-45.jpg",
+            "foto": "/images/prodiakon/prodiakon-45.jpg",
             "foto_slot_id": "slot-prodiakon-45"
         },
         {
@@ -3543,7 +3548,7 @@
             "inisial": "AST",
             "wilayah_romawi": "X",
             "slug": "antonius-suryanto-trisnadi",
-            "foto": "\/images\/prodiakon\/prodiakon-46.jpg",
+            "foto": "/images/prodiakon/prodiakon-46.jpg",
             "foto_slot_id": "slot-prodiakon-46"
         },
         {
@@ -3569,7 +3574,7 @@
             "inisial": "JTP",
             "wilayah_romawi": "X",
             "slug": "johannes-tanis-parera",
-            "foto": "\/images\/prodiakon\/prodiakon-47.jpg",
+            "foto": "/images/prodiakon/prodiakon-47.jpg",
             "foto_slot_id": "slot-prodiakon-47"
         },
         {
@@ -3595,7 +3600,7 @@
             "inisial": "IA",
             "wilayah_romawi": "X",
             "slug": "indratno-antonius",
-            "foto": "\/images\/prodiakon\/prodiakon-48.jpg",
+            "foto": "/images/prodiakon/prodiakon-48.jpg",
             "foto_slot_id": "slot-prodiakon-48"
         },
         {
@@ -3621,7 +3626,7 @@
             "inisial": "ATL",
             "wilayah_romawi": "X",
             "slug": "antonius-trio-limas",
-            "foto": "\/images\/prodiakon\/prodiakon-49.jpg",
+            "foto": "/images/prodiakon/prodiakon-49.jpg",
             "foto_slot_id": "slot-prodiakon-49"
         },
         {
@@ -3647,7 +3652,7 @@
             "inisial": "IS",
             "wilayah_romawi": "X",
             "slug": "ign-sucipto",
-            "foto": "\/images\/prodiakon\/prodiakon-50.jpg",
+            "foto": "/images/prodiakon/prodiakon-50.jpg",
             "foto_slot_id": "slot-prodiakon-50"
         },
         {
@@ -3673,7 +3678,7 @@
             "inisial": "YS",
             "wilayah_romawi": "X",
             "slug": "yulius-suyatijo",
-            "foto": "\/images\/prodiakon\/prodiakon-51.jpg",
+            "foto": "/images/prodiakon/prodiakon-51.jpg",
             "foto_slot_id": "slot-prodiakon-51"
         },
         {
@@ -3699,7 +3704,7 @@
             "inisial": "SK",
             "wilayah_romawi": "XI",
             "slug": "susanto-kartiko",
-            "foto": "\/images\/prodiakon\/prodiakon-52.jpg",
+            "foto": "/images/prodiakon/prodiakon-52.jpg",
             "foto_slot_id": "slot-prodiakon-52"
         },
         {
@@ -3725,7 +3730,7 @@
             "inisial": "IDJ",
             "wilayah_romawi": "XI",
             "slug": "ign-donny-j-subakti",
-            "foto": "\/images\/prodiakon\/prodiakon-53.jpg",
+            "foto": "/images/prodiakon/prodiakon-53.jpg",
             "foto_slot_id": "slot-prodiakon-53"
         }
     ]
