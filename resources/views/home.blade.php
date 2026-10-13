@@ -5,9 +5,6 @@
     <!-- =========================================================================
          1. HERO SECTION
          ========================================================================= -->
-    <!-- =========================================================================
-         1. HERO SECTION
-         ========================================================================= -->
     <section class="hero-section" id="hero">
         <div class="hero-bg-overlay"></div>
         <div class="hero-glow-orb hero-glow-1"></div>
@@ -732,33 +729,56 @@
     </section>
 
     <!-- =========================================================================
-         7. TUGAS PENGURUS
+         7. DESKRIPSI TUGAS PRODIAKON PAROKI
          ========================================================================= -->
     <section class="section" id="tugas">
         <div class="container">
             <div style="text-align: center;" data-reveal="fade-up">
-                <span class="section-tag"><i class="bi bi-briefcase-fill"></i> Tanggung Jawab</span>
-                <h2 class="section-title">TUGAS PENGURUS</h2>
-                <p class="section-subtitle">Bidang pelayanan dan rincian amanah pelayanan liturgis serta pastoral.</p>
+                <span class="section-tag"><i class="bi bi-briefcase-fill"></i> Uraian Amanah Pelayanan</span>
+                <h2 class="section-title">DESKRIPSI TUGAS PRODIAKON PAROKI</h2>
+                <p class="section-subtitle">Rincian wewenang, tanggung jawab, dan koordinasi kepengurusan Paguyuban Prodiakon Gereja Santo Bonaventura Paroki Pulo Mas.</p>
                 <div class="divider-gold"></div>
             </div>
 
             <div class="tugas-grid">
                 @foreach($content['tugas_pengurus'] as $index => $t)
-                    <div class="tugas-card shimmer-card" data-reveal="fade-up" data-delay="{{ $index * 120 }}">
+                    <div class="tugas-card shimmer-card" data-reveal="fade-up" data-delay="{{ ($index % 4) * 100 }}">
                         <div class="tugas-card-header">
                             <div class="tugas-card-icon">
-                                <i class="bi bi-journal-bookmark-fill"></i>
+                                <i class="bi {{ $t['icon'] ?? 'bi-journal-bookmark-fill' }}"></i>
                             </div>
-                            <h3>{{ $t['bidang'] }}</h3>
+                            <div style="flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
+                                <h3>{{ $t['jabatan'] }}</h3>
+                                @if(!empty($t['kategori']))
+                                    <span class="tugas-badge">{{ $t['kategori'] }}</span>
+                                @endif
+                            </div>
                         </div>
-                        <p>{{ $t['deskripsi'] }}</p>
+
                         <ul class="tugas-list">
                             @foreach($t['poin'] as $point)
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    <span>{{ $point }}</span>
-                                </li>
+                                @if(is_array($point))
+                                    <li class="tugas-sub-container" style="display: block; padding: 0;">
+                                        <div class="tugas-sub-block">
+                                            <div class="tugas-sub-title">
+                                                <i class="bi bi-chevron-right text-gold me-1"></i> {{ $point['sub'] }}
+                                            </div>
+                                            <ul class="tugas-list" style="margin-top: 8px;">
+                                                @foreach($point['items'] as $item)
+                                                    <li>
+                                                        <i class="bi bi-check-circle-fill"></i>
+                                                        <span>{{ $item }}</span>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </li>
+                                @else
+                                    <li>
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        <span>{{ $point }}</span>
+                                    </li>
+                                @endif
                             @endforeach
                         </ul>
                     </div>

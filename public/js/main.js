@@ -41,12 +41,102 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleScrollProgress, { passive: true });
   handleScrollProgress();
 
+  // =========================================================================
+  // LUXURY SMOOTH SCROLL ENGINE (CUBIC-BEZIER EASING)
+  // =========================================================================
+  const smoothScrollTo = (targetY, duration = 850) => {
+    const startY = window.pageYOffset;
+    const diff = targetY - startY;
+    if (Math.abs(diff) < 2) return;
+
+    let startTime = null;
+
+    // easeInOutCubic: slow acceleration -> silky glide -> ultra-soft deceleration
+    const easeInOutCubic = (t) => {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    };
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const ease = easeInOutCubic(progress);
+
+      window.scrollTo(0, startY + diff * ease);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
   backToTopBtn?.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+    smoothScrollTo(0, 850);
+  });
+
+  // Smooth scroll for all internal anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = anchor.getAttribute('href');
+      if (targetId === '#' || !targetId) return;
+
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+
+        // Calculate offset for fixed navbar (74px) + breathing room
+        const navHeight = 74;
+        const targetPosition = Math.max(0, targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight);
+
+        // Dynamic duration based on scroll distance (650ms - 1050ms)
+        const distance = Math.abs(targetPosition - window.pageYOffset);
+        const duration = Math.min(Math.max(distance * 0.45, 650), 1050);
+
+        smoothScrollTo(targetPosition, duration);
+
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        }
+      }
     });
   });
+
+  // =========================================================================
+  // MULTI-LAYER HERO PARALLAX ON SCROLL DOWN
+  // =========================================================================
+  const heroSection = document.getElementById('hero');
+  const heroOverlay = heroSection?.querySelector('.hero-bg-overlay');
+  const heroContent = heroSection?.querySelector('.hero-content');
+  const heroGlow1 = heroSection?.querySelector('.hero-glow-1');
+  const heroGlow2 = heroSection?.querySelector('.hero-glow-2');
+
+  let parallaxTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!parallaxTicking) {
+      window.requestAnimationFrame(() => {
+        const scrolled = window.pageYOffset;
+        if (heroSection && scrolled <= window.innerHeight * 1.2) {
+          if (heroOverlay) {
+            heroOverlay.style.transform = `translate3d(0, ${scrolled * 0.32}px, 0) scale(1.02)`;
+          }
+          if (heroContent) {
+            const fade = Math.max(0, 1 - (scrolled / (window.innerHeight * 0.82)));
+            heroContent.style.transform = `translate3d(0, ${scrolled * 0.18}px, 0)`;
+            heroContent.style.opacity = fade;
+          }
+          if (heroGlow1) {
+            heroGlow1.style.transform = `translate3d(0, ${scrolled * 0.15}px, 0)`;
+          }
+          if (heroGlow2) {
+            heroGlow2.style.transform = `translate3d(0, ${-scrolled * 0.08}px, 0)`;
+          }
+        }
+        parallaxTicking = false;
+      });
+      parallaxTicking = true;
+    }
+  }, { passive: true });
 
   // =========================================================================
   // 2. NAVBAR SCROLL EFFECT & SPY

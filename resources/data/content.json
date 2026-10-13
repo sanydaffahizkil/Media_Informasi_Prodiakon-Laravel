@@ -327,39 +327,162 @@
   },
   "tugas_pengurus": [
     {
-      "bidang": "Pelayanan Liturgis Altar",
-      "deskripsi": "Mengatur jadwal penugasan prodiakon untuk Misa Harian, Misa Mingguan, Hari Raya Liturgis, Misa Perkawinan, serta Misa Requiem di Paroki Santo Bonaventura.",
+      "jabatan": "PENASEHAT",
+      "kategori": "Penasehat",
+      "icon": "bi-shield-check",
       "poin": [
-        "Penyusunan jadwal giliran tugas secara adil dan transparan.",
-        "Memastikan ketepatan waktu hadir (minimal 30 menit sebelum Misa dimulai).",
-        "Menjaga kesiapan pakaian liturgis (jubah, singel, salib gantung) dalam keadaan bersih dan rapi."
+        "Memberikan masukan, nasehat dan pertimbangan pertimbangan kepada ketua dan wakil ketua dalam penetapan dan pelaksanaan program kerja prodiakon."
       ]
     },
     {
-      "bidang": "Pelayanan Komuni Orang Sakit & Lansia",
-      "deskripsi": "Mengkoordinir pelayanan pengantaran Komuni Kudus kepada umat lansia dan orang sakit di lingkungan-lingkungan Wilayah I sampai XI.",
+      "jabatan": "KOORDINATOR",
+      "kategori": "Pimpinan",
+      "icon": "bi-person-badge-fill",
       "poin": [
-        "Pendataan umat sakit dan lansia yang membutuhkan Komuni pertama Jumat atau mingguan.",
-        "Koordinasi dengan Ketua Lingkungan dan Seksi Pelayanan Paroki.",
-        "Pelaksanaan doa dan tata cara pembagian komuni orang sakit sesuai rubrik pastoral Gereja Katolik."
+        "Mengkoordinasikan dan mengorganisasikan seluruh penyelengaraan kegiatan prodiakon mulai dari perencanaan dan pelaksanaan program kerja serta mempertanggungjawabkannya kepada Seksi Liturgi Dewan Paroki Pulo Mas.",
+        {
+          "sub": "Khusus",
+          "items": [
+            "Mengkoordinasi dan memfasilitasi Seksi-seksi Pembekalan & pengembangan Rohani, Humas & Dokumentasi, Peralatan Liturgi, dan Koordinator wil 6 - 11."
+          ]
+        }
       ]
     },
     {
-      "bidang": "Pembinaan & Spiritualitas",
-      "deskripsi": "Menyelenggarakan rekoleksi rohani, pembekalan teologis, dan evaluasi berkala guna menyegarkan kembali komitmen batiniah setiap prodiakon.",
+      "jabatan": "WAKIL KOORDINATOR",
+      "kategori": "Pimpinan",
+      "icon": "bi-person-check-fill",
       "poin": [
-        "Rekoleksi tahunan bersama Pastor Paroki menjelang pembaruan janji janji prodiakon.",
-        "Latihan rubrik dan tata gerak liturgis secara berkala.",
-        "Pendalaman Kitab Suci dan dokumen ajaran Gereja mengenai Sakramen Ekaristi."
+        "Melaksanakan Tugas - Tugas Ketua apabila Ketua berhalangan. Membantu Ketua dalam Menyusun dan melaksanakan program kerja prodiakon.",
+        "Mengkoordinasi dan memfasilitasi Seksi-seksi : Penjadwalan Tugas, Sie Tata Gerak dan penguatan pelayanan, Seksi Acara dan kegiatan lainnya serta dengan Koodinatror Wil 1 – 5."
       ]
     },
     {
-      "bidang": "Administrasi, Logistik & Keuangan",
-      "deskripsi": "Mengelola data keanggotaan, inventaris perlengkapan prodiakon, serta akuntabilitas keuangan paguyuban.",
+      "jabatan": "SEKRETARIS 1",
+      "kategori": "Kesekretariatan",
+      "icon": "bi-file-earmark-text-fill",
       "poin": [
-        "Pembaruan database anggota di setiap wilayah dan lingkungan.",
-        "Pemeliharaan piksis, bursa, dan sarana ibadat pelayanan.",
-        "Penyusunan laporan pertanggungjawaban secara berkala dan terbuka."
+        "Mengkoordinir & melaksanakan pengelolaan administrasi kesekretariatan, korespondensi dan kearsipan termasuk pengelolaan inventarisasi prodiakon.",
+        "Melakukan koordinasi antar pengurus dengan pengurus, antara pengurus dengan anggota, dan dengan pihak luar.",
+        "Memfasilitasi dan mempersiapkan kebutuhan rapat- rapat, serta membuat laporan hasil rapat termasuk menjadi pelaksana / Moderator rapat.",
+        "Merencanakan dan melaksanakan perekrutan prodiakon baru pada saat menjelang akhir kepengurusan.",
+        "Menjaga dan memelihara solidaritas kepengurusan."
+      ]
+    },
+    {
+      "jabatan": "SEKRETARIS 2",
+      "kategori": "Kesekretariatan",
+      "icon": "bi-journal-text",
+      "poin": [
+        "Membantu Sekretaris 1 dalam melaksanakan fungsi kesekratriatan.",
+        "Membuat Laporan / risalah rapat-rapat dan kegiatan periodik prodiakon dalam rapat pleno prodiakon 3 bulanan",
+        "Mendokumentasikan peraturan, materi & / data data yang berkenaan dengan aktifitas prodiakon."
+      ]
+    },
+    {
+      "jabatan": "BENDAHARA 1",
+      "kategori": "Keuangan",
+      "icon": "bi-cash-coin",
+      "poin": [
+        "Melaksanakan tata pembukuan penerimaan, pengeluaran dan pembayaran keuangan Prodiakon.",
+        "Menyusun laporan dan pembukuan serta melaksanakan pengelolaan keuangan prodiakon.",
+        "Menyusun dan mengkoordinasikan anggaran prodiakon untuk RKDP",
+        "Memfasilitasi kebutuhan pembiayaan program kerja prodiakon."
+      ]
+    },
+    {
+      "jabatan": "BENDAHARA 2",
+      "kategori": "Keuangan",
+      "icon": "bi-wallet2",
+      "poin": [
+        "Aktif membantu pelaksanaan tugas Bendahara 1.",
+        "Menggantikan bendahara 1 jika bendara 1 berhalangan.",
+        "Mengatur dan mengelola bukti transaksi.",
+        "Mencatat dan membukukan transaksi keuangan prodiakon.",
+        "Bersama sama dengan bendahara1 membuka join account di bank untuk keperluan kas prodiakon",
+        "Melaksanakan kolekte bila ada kegiatan pertemuan yang melibatkan seluruh prodiakon."
+      ]
+    },
+    {
+      "jabatan": "SIE PENJADWALAN TUGAS",
+      "kategori": "Liturgi & Jadwal",
+      "icon": "bi-calendar3",
+      "poin": [
+        "Membuat dan mempersiapkan daftar tugas prodiakon untuk 3 bulanan, meliputi : Tugas Misa Biasa ( Sabtu & Minggu ), Misa Harian (Pagi), Misa hari hari Besar /khusus, Misa Jum'at pertama, Doa umat dll.",
+        "Menginformasikan jadwal tugas ke semua anggota prodiakon melalui W/A dan menempel list tugas prodiakon di ruang Prodiakon dan ruang Sakristi.",
+        "Berkoordinasi dengan seksi Liturgi berkenaan tugas prodiakon."
+      ]
+    },
+    {
+      "jabatan": "SIE TATA GERAK & PENGUATAN PELAYANAN",
+      "kategori": "Liturgi & Pelayanan",
+      "icon": "bi-person-arms-up",
+      "poin": [
+        {
+          "sub": "Tata Gerak",
+          "items": [
+            "Menyiapkan dan Membuat panduan tata gerak prodiakon yang berlaku di paroki Pulo Mas, baik secara tertulis maupun secara visual (video). Secara periodic atau bila di perlukan dapat mengadakan pembekalan tata gerak ibadat ( misal : Ibadat Kematian, Pemberkatan Rumah dsb)",
+            "Menjadi pusat informasi bagi setiap prodiakon untuk tata gerak prodiakon dalam melaksanakan tugasnya.",
+            "Melakukan koordinasi dengan Ketua Liturgi untuk panduan tata gerak bagi prodiakon."
+          ]
+        },
+        {
+          "sub": "Penguatan Pelayanan",
+          "items": [
+            "Melakukan koordinasi dan komunikasi dengan pihak pihak terkait dengan tugas pelayanan prodiakon, baik eksternal ( Rumah sakit, panti jompo, dll ) maupun internal (koordinator wilayah dan lingkungan) .",
+            "Melakukan kaderisasi untuk calon prodiakon baru (berkoordinasi ketua lingkungan & Korwil )"
+          ]
+        }
+      ]
+    },
+    {
+      "jabatan": "SIE PEMBEKALAN & PENGEMBANGAN ROHANI",
+      "kategori": "Spiritualitas",
+      "icon": "bi-book-half",
+      "poin": [
+        "Mempersiapkan materi yang standard bagi pembekalan calon prodiakon baru maupun prodiakon lama dan dilakukan secara periodik setiap anggota prodiakon memahami fungsi dan tugas prodiakon secara benar dan bertanggung jawab.",
+        "Mempersiapkan dan Melaksanakan pembekalan secara berkelanjutan sehingga setiap prodiakon mampu dan handal dalam melaksanakan tugasnya.",
+        "Dalam pelaksanaan pembekalan, seksi pembekalan dapat bekerjasama dengan seksi lainnya.",
+        "Mempersiapkan dan merencanakan aktifitas yang dapat mengembangkan dan menguatkan rohani prodiakon dalam sikap dan tanggung jawab sebagai sosok prodiakon yang baik dan benar. (Misal Reatret, Pelatihan : membawakan homily, pendalaman kitab suci, mengundang romo / pembicara lainnya, dll)"
+      ]
+    },
+    {
+      "jabatan": "SIE ACARA & KEGIATAN LAINNYA",
+      "kategori": "Acara & Kegiatan",
+      "icon": "bi-calendar-event-fill",
+      "poin": [
+        "Mempersiapkan dan memastikan pelaksanaan acara acara prodiakon seperti acara serah terima kepengurusan, pertemuan rutin 3 bulanan, Tepro dll dengan bekerja sama dengan seksi seksi yang terkait, agar setiap acara prodiakon dapat berjalan dengan baik dan lancar."
+      ]
+    },
+    {
+      "jabatan": "SIE HUMAS & DOKUMENTASI",
+      "kategori": "Komunikasi & Media",
+      "icon": "bi-camera-reels-fill",
+      "poin": [
+        "Menyampaikan dan menginformasikan segala sesuatu yang dianggap penting terutama tentang peran dan fungsi prodiakon, sehingga diharapkan dapat memberikan pengaruh yang baik dan positif dalam pelayanan umat.",
+        "Bertanggung jawab atas segala aktifitas yang menyangkut Informasi yang dapat dapat dituangkan / disampaikan melalui media cetak ( Buku Prodiakon, Brosur, Banner dsb ) maupun dalam bentuk Visual seperti Video & media online ( Youtube, Vlog dsb )",
+        "Mengevaluasi sikap dan opini umat terhadap aktifitas prodiakon berkenaan dengan pendapat, keluhan, pemikiran, kritikan, pujian, kepuasan dsb",
+        "Mendokumentasikan setiap aktivitas prodiakon yang penting. Sie Humas & Dokumentasi dapat bekerja sama dengan KOMSOS dan seksi seksi lainnya."
+      ]
+    },
+    {
+      "jabatan": "PERALATAN LITURGI",
+      "kategori": "Inventaris & Logistik",
+      "icon": "bi-trophy-fill",
+      "poin": [
+        "Menyimpan, merawat dan membuat daftar inventaris peralatan liturgi.",
+        "Mensosialisasikan pengenalan peralatan liturgi kepada prodiakon atau calon prodiakon baru bila di perlukan."
+      ]
+    },
+    {
+      "jabatan": "KOORDINATOR WILAYAH",
+      "kategori": "Wilayah I – XI",
+      "icon": "bi-geo-alt-fill",
+      "poin": [
+        "Mengkoordinir pembagian tugas anggota prodiakon untuk pelayanan di wilayah masing masing.",
+        "Saling bekerja sama dengan koordinator prodiakon wilayah lainnya untuk saling membantu agar pelayanan di setiap wilayah dapat terlayani dengan baik.",
+        "Memfasilitasi dan komunikasikan kegiatan prodiakon wilayah dengan ketua lingkungan dan koordinator wilayah masing masing.",
+        "Melaporkan dan mengkomunikasikan kegiatan dan permasalahan kegiatan prodiakon wilayah ke pengurus prodiakon."
       ]
     }
   ],

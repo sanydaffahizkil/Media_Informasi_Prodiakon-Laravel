@@ -30,8 +30,9 @@
             <a href="#hero" class="nav-brand">
                 <img src="/images/logo.png" alt="Logo Paroki Santo Bonaventura Pulomas" class="brand-logo-img">
                 <div class="brand-text">
-                    <span class="brand-title">ST. BONAVENTURA</span>
-                    <span class="brand-sub">PRODIAKON PULOMAS</span>
+                    <span class="brand-line-1">Gereja</span>
+                    <span class="brand-line-2">Santo Bonaventura</span>
+                    <span class="brand-line-3">Paroki Pulo Mas</span>
                 </div>
             </a>
 
@@ -141,9 +142,13 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 12px;">
                         <img src="/images/logo.png" alt="Logo Gereja Santo Bonaventura" class="footer-logo-img">
-                        <h3 style="margin: 0;">Gereja Santo Bonaventura</h3>
+                        <div class="brand-text">
+                            <span class="brand-line-1">Gereja</span>
+                            <span class="brand-line-2">Santo Bonaventura</span>
+                            <span class="brand-line-3">Paroki Pulo Mas</span>
+                        </div>
                     </div>
                     <p>Paguyuban Prodiakon Paroki Pulomas - Keuskupan Agung Jakarta.</p>
                     <p style="margin-top: 8px;">Mewujudkan pelayanan altar yang kudus, bersatu dalam Ekaristi, dan berbuah dalam kasih pastoral bagi seluruh umat beriman.</p>
