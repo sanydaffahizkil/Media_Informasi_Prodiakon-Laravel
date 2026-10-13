@@ -175,20 +175,39 @@
                 <h2 class="moto-main-quote">
                     {{ $content['moto']['semboyan'] }}
                 </h2>
-                <p class="moto-sub-quote">
-                    {{ $content['moto']['sub_semboyan'] }}
-                </p>
 
+                <!-- Ayat Emas Kitab Suci -->
+                <div class="moto-scripture-card shimmer-card" data-reveal="fade-up">
+                    <i class="bi bi-quote scripture-quote-icon"></i>
+                    <p class="moto-scripture-verse">“{{ $content['moto']['ayat'] }}”</p>
+                    <div class="moto-scripture-source">({{ $content['moto']['sumber_ayat'] }})</div>
+                </div>
+
+                <!-- 2 Pilar Utama Semboyan -->
                 <div class="moto-pillars-grid">
                     @foreach($content['moto']['pilar'] as $index => $pilar)
-                        <div class="pillar-card shimmer-card" data-reveal="fade-up" data-delay="{{ ($index + 1) * 100 }}">
-                            <div style="color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 10px;">
-                                <i class="bi bi-check2-circle"></i>
+                        <div class="pillar-card shimmer-card" data-reveal="fade-up" data-delay="{{ ($index + 1) * 120 }}">
+                            <div class="pillar-icon">
+                                <i class="bi {{ $pilar['icon'] }}"></i>
                             </div>
                             <h4>{{ $pilar['judul'] }}</h4>
+                            <div class="pillar-sub">{{ $pilar['sub'] }}</div>
                             <p>{{ $pilar['keterangan'] }}</p>
                         </div>
                     @endforeach
+                </div>
+
+                <!-- Renungan & Makna Spiritual Pelayanan -->
+                <div class="moto-reflection-card" data-reveal="fade-up" data-delay="300">
+                    <div class="moto-reflection-header">
+                        <i class="bi bi-book-half text-gold"></i>
+                        <span>Renungan &amp; Penghayatan Iman Pelayanan</span>
+                    </div>
+                    <div class="moto-reflection-body">
+                        @foreach($content['moto']['paragraf'] as $paragraf)
+                            <p>{{ $paragraf }}</p>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
@@ -795,18 +814,47 @@
             <div style="text-align: center;" data-reveal="fade-up">
                 <span class="section-tag"><i class="bi bi-compass-fill"></i> Rencana Strategis</span>
                 <h2 class="section-title">SASARAN PRODIAKON</h2>
-                <p class="section-subtitle">Target capaian dan komitmen pelayanan paguyuban untuk periode 2025–2028.</p>
+                <p class="section-subtitle">{{ $content['sasaran']['subjudul'] }}</p>
                 <div class="divider-gold"></div>
             </div>
 
-            <div class="sasaran-grid">
-                @foreach($content['sasaran'] as $index => $s)
-                    <div class="sasaran-card shimmer-card" data-reveal="fade-up" data-delay="{{ $index * 120 }}">
-                        <div class="sasaran-number">{{ $s['nomor'] }}</div>
-                        <h3>{{ $s['judul'] }}</h3>
-                        <p>{{ $s['uraian'] }}</p>
+            <div class="sasaran-showcase">
+                <!-- Sisi Kiri: Pengantar, Foto Sakral & Doa Penutup -->
+                <div class="sasaran-visual-col" data-reveal="fade-right">
+                    <div class="sasaran-intro-box shimmer-card">
+                        <div class="sasaran-ardas-badge">
+                            <i class="bi bi-compass-fill text-gold"></i> Arah Dasar KAJ 2022 – 2026
+                        </div>
+                        <p class="sasaran-lead-text">{{ $content['sasaran']['pengantar'] }}</p>
                     </div>
-                @endforeach
+
+                    <div class="sasaran-image-frame shimmer-card">
+                        <img src="{{ $content['sasaran']['foto'] }}" alt="Ilustrasi Sasaran Pelayanan Prodiakon Pulomas">
+                    </div>
+
+                    <div class="sasaran-prayer-card shimmer-card">
+                        <i class="bi bi-quote quote-icon"></i>
+                        <p class="sasaran-prayer-text">"{{ $content['sasaran']['doa_penutup'] }}"</p>
+                    </div>
+                </div>
+
+                <!-- Sisi Kanan: 5 Komitmen Pelayanan -->
+                <div class="sasaran-commitments-list" data-reveal="fade-left">
+                    @foreach($content['sasaran']['komitmen'] as $index => $k)
+                        <div class="sasaran-item-card shimmer-card" data-reveal="fade-up" data-delay="{{ $index * 100 }}">
+                            <div class="sasaran-item-icon">
+                                <i class="bi {{ $k['icon'] }}"></i>
+                            </div>
+                            <div class="sasaran-item-body">
+                                <div class="sasaran-item-header">
+                                    <h3 class="sasaran-item-title">{{ $k['judul'] }}</h3>
+                                    <span class="sasaran-item-num">{{ $k['nomor'] }}</span>
+                                </div>
+                                <p class="sasaran-item-desc">{{ $k['deskripsi'] }}</p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </section>

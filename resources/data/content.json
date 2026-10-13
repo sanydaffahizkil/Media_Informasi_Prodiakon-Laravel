@@ -58,20 +58,27 @@
   },
   "moto": {
     "periode": "2025 – 2028",
-    "semboyan": "BERAKAR DALAM EKARISTI, BERBUAH DALAM PELAYANAN KASIH",
-    "sub_semboyan": "\"Sebab Anak Manusia juga datang bukan untuk dilayani, melainkan untuk melayani.\" (Markus 10:45)",
+    "semboyan": "DIPERCAYA UNTUK MELAYANI, DIBENTUK UNTUK BERBUAH",
+    "ayat": "Bukan kamu yang memilih Aku, tetapi Akulah yang memilih kamu. Dan Aku telah menetapkan kamu, supaya kamu pergi dan menghasilkan buah dan buahmu itu tetap.",
+    "sumber_ayat": "Yohanes 15:16",
+    "paragraf": [
+      "Menjadi Prodiakon adalah sebuah panggilan dan kepercayaan untuk mengambil bagian dalam pelayanan Kristus bagi Gereja dan umat-Nya. Kepercayaan ini bukan karena kita telah mampu melakukan segalanya, melainkan karena Tuhan memberi kesempatan kepada kita untuk melayani, belajar, dan bertumbuh melalui setiap pengalaman yang dijalani.",
+      "Dalam perjalanan ini, pelayanan bukan sekadar menjalankan tugas liturgi atau memenuhi jadwal yang telah ditetapkan. Lebih dari itu, pelayanan menjadi ungkapan iman dan kasih yang nyata. Kehadiran kita diharapkan tidak hanya dirasakan saat bertugas di altar, tetapi juga melalui kepedulian, perhatian, dan kesediaan untuk hadir bagi umat dan sesama.",
+      "Setiap perjumpaan, pengalaman, dan tantangan dalam pelayanan menjadi kesempatan untuk saling belajar dan memperkaya. Kita bertumbuh bersama, semakin mengenal makna kerendahan hati, dan belajar memahami bahwa melayani bukan hanya tentang apa yang kita lakukan, tetapi juga tentang kasih yang kita bagikan dan kebaikan yang dapat kita hadirkan dalam kehidupan orang lain.",
+      "Semangat “Dipercaya untuk Melayani, Dibentuk untuk Berbuah” mengingatkan kita bahwa pelayanan adalah sebuah perjalanan iman yang terus bertumbuh. Semoga kepercayaan yang telah diberikan semakin menguatkan langkah kita untuk melayani dengan tulus, bertumbuh dalam kasih, dan menghadirkan buah-buah kebaikan bagi Gereja dan sesama."
+    ],
     "pilar": [
       {
-        "judul": "Kekudusan Pribadi",
-        "keterangan": "Menjaga hidup doa dan integritas moral sebagai cermin kehadiran Kristus."
+        "judul": "Dipercaya untuk Melayani",
+        "sub": "Panggilan & Kepercayaan Ilahi",
+        "keterangan": "Sebuah panggilan suci untuk mengambil bagian dalam pelayanan Kristus bagi Gereja dan umat-Nya. Kepercayaan ini bukan karena kita telah mampu melakukan segalanya, melainkan karena Tuhan memberi kesempatan kepada kita untuk melayani dengan tulus dan rendah hati.",
+        "icon": "bi-heart-fill"
       },
       {
-        "judul": "Ketepatan & Ketaatan Liturgi",
-        "keterangan": "Menjalankan tata perayaan liturgi Gereja Katolik secara tertib, khidmat, dan setia."
-      },
-      {
-        "judul": "Kepekaan Pastoral",
-        "keterangan": "Sigap menyapa umat yang sakit, terpinggirkan, dan membutuhkan sentuhan kasih Kristus."
+        "judul": "Dibentuk untuk Berbuah",
+        "sub": "Pertumbuhan Iman & Kasih Nyata",
+        "keterangan": "Melalui setiap pengalaman dan tantangan pelayanan, kita dibentuk untuk bertumbuh bersama, semakin mengenal makna kerendahan hati, dan menghasilkan buah-buah kebaikan yang tetap bagi Gereja dan sesama.",
+        "icon": "bi-tree-fill"
       }
     ]
   },
@@ -486,28 +493,45 @@
       ]
     }
   ],
-  "sasaran": [
-    {
-      "nomor": "01",
-      "judul": "Kedisiplinan & Kesucian Liturgis",
-      "uraian": "Tercapainya kehadiran 100% tepat waktu pada setiap penugasan Misa altar dengan tata laku yang mencerminkan rasa hormat dan takzim pada Sakramen Mahakudus."
-    },
-    {
-      "nomor": "02",
-      "judul": "Cakupan 100% Umat Sakit & Lansia",
-      "uraian": "Menjangkau seluruh umat yang terhalang hadir ke gereja di Wilayah I sampai XI secara berkala, memastikan tidak ada domba yang tertinggal dari berkat Ekaristi."
-    },
-    {
-      "nomor": "03",
-      "judul": "Pembaruan Rohani Berkelanjutan",
-      "uraian": "Menyelenggarakan 2 kali rekoleksi dan pembekalan liturgis dalam setahun untuk memperdalam penghayatan spiritualitas Santo Bonaventura."
-    },
-    {
-      "nomor": "04",
-      "judul": "Sinergi Guyub & Komunikasi Terpadu",
-      "uraian": "Membangun sistem informasi dan komunikasi yang cepat, akurat, dan transparan antara pengurus, koordinator wilayah, dan dewan paroki."
-    }
-  ],
+  "sasaran": {
+    "judul": "SASARAN PRODIAKON",
+    "subjudul": "Arah Dasar Keuskupan Agung Jakarta Tahun 2022 – 2026",
+    "pengantar": "Untuk melaksanakan arah dasar Keuskupan Agung Jakarta tahun 2022 – 2026, melalui tata pelayanan pastoral - evangelisasi yang sinergis, dialogis, partisipatif dan transformatif, seluruh Prodiakon Paroki Pulomas berkomitmen untuk :",
+    "foto": "/images/sasaran.jpg",
+    "doa_penutup": "Semoga Allah Yang Maha Rahim, yang telah memulai pekerjaan baik dalam diri kita, berkenan menyempurnakannya dan Bunda Maria menyertai, menuntun serta meneguhkan upaya-upaya kita.",
+    "komitmen": [
+      {
+        "nomor": "01",
+        "judul": "Pastoral Keluarga",
+        "deskripsi": "Mengembangkan pastoral keluarga yang utuh dan terpadu.",
+        "icon": "bi-house-heart-fill"
+      },
+      {
+        "nomor": "02",
+        "judul": "Kualitas Pelayanan",
+        "deskripsi": "Meningkatkan kualitas pelayanan.",
+        "icon": "bi-patch-check-fill"
+      },
+      {
+        "nomor": "03",
+        "judul": "Katekese & Liturgi",
+        "deskripsi": "Meningkatkan katekese dan liturgi yang hidup dan memerdekakan.",
+        "icon": "bi-book-half"
+      },
+      {
+        "nomor": "04",
+        "judul": "Belarasa & Keadilan Sosial",
+        "deskripsi": "Meningkatkan belarasa melalui dialog dan kerjasama dengan semua orang yang berkehendak baik untuk mewujudkan masyarakat yang adil, toleran dan manusiawi khususnya untuk mereka yang miskin, menderita dan tersisih.",
+        "icon": "bi-heart-pulse-fill"
+      },
+      {
+        "nomor": "05",
+        "judul": "Keutuhan Lingkungan Hidup",
+        "deskripsi": "Meningkatkan keterlibatan dalam menjaga lingkungan hidup di wilayah masing- masing.",
+        "icon": "bi-tree-fill"
+      }
+    ]
+  },
   "data_wilayah": [
     {
       "kode": "peta",

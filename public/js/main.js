@@ -42,40 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
   handleScrollProgress();
 
   // =========================================================================
-  // LUXURY SMOOTH SCROLL ENGINE (CUBIC-BEZIER EASING)
-  // =========================================================================
-  const smoothScrollTo = (targetY, duration = 850) => {
-    const startY = window.pageYOffset;
-    const diff = targetY - startY;
-    if (Math.abs(diff) < 2) return;
-
-    let startTime = null;
-
-    // easeInOutCubic: slow acceleration -> silky glide -> ultra-soft deceleration
-    const easeInOutCubic = (t) => {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    };
-
-    const step = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      const ease = easeInOutCubic(progress);
-
-      window.scrollTo(0, startY + diff * ease);
-
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
-    };
-
-    requestAnimationFrame(step);
-  };
-
   backToTopBtn?.addEventListener('click', () => {
-    smoothScrollTo(0, 850);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
 
-  // Smooth scroll for all internal anchor links
+  // Fast, instant-response navigation for all internal anchor links (#)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const targetId = anchor.getAttribute('href');
@@ -85,15 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (targetElement) {
         e.preventDefault();
 
-        // Calculate offset for fixed navbar (74px) + breathing room
-        const navHeight = 74;
+        // Exact offset for fixed navbar (74px) + comfortable margin
+        const navHeight = 78;
         const targetPosition = Math.max(0, targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight);
 
-        // Dynamic duration based on scroll distance (650ms - 1050ms)
-        const distance = Math.abs(targetPosition - window.pageYOffset);
-        const duration = Math.min(Math.max(distance * 0.45, 650), 1050);
-
-        smoothScrollTo(targetPosition, duration);
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
 
         if (history.pushState) {
           history.pushState(null, null, targetId);
