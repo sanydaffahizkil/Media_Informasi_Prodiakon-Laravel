@@ -75,7 +75,7 @@
     </main>
 
     <!-- Modal Popup Detail Prodiakon (Dengan Wadah Foto & Data Lengkap Excel) -->
-    <div class="modal-backdrop" id="detailModal">
+    <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="modalProdiakonName">
         <div class="modal-card">
             <div class="modal-header-luxury">
                 <div>
@@ -87,38 +87,63 @@
                 <button type="button" class="modal-close-btn close-modal-trigger" aria-label="Tutup">&times;</button>
             </div>
             <div class="modal-body">
-                <!-- Wadah Foto Profil Prodiakon (Besar & Jelas) -->
-                <div class="modal-profile-header">
-                    <div class="modal-photo-container" id="modalPhotoTrigger" title="Klik untuk melihat foto ukuran penuh" style="cursor: pointer;">
-                        <img src="/images/default-avatar.svg" alt="Foto Prodiakon" id="modalProdiakonImg" class="modal-real-photo" onerror="this.src='/images/default-avatar.svg';">
-                        <span class="modal-photo-slot-hint"><i class="bi bi-camera"></i> Wadah Foto</span>
-                        <div class="modal-photo-zoom-badge"><i class="bi bi-arrows-fullscreen"></i> Perbesar</div>
+                <!-- Wadah Foto Profil Pasangan: Prodiakon & Istri (Besar & Jelas) -->
+                <div class="modal-couple-header">
+                    <div class="modal-couple-photos-grid">
+                        <!-- Foto Prodiakon (Suami) -->
+                        <div class="modal-partner-photo-card">
+                            <div class="modal-partner-role-pill">
+                                <i class="bi bi-person-fill text-gold"></i> Prodiakon (Suami)
+                            </div>
+                            <div class="modal-photo-container" id="modalPhotoTrigger" title="Klik untuk melihat foto Prodiakon (HD)" style="cursor: pointer;">
+                                <img src="/images/default-avatar.svg" alt="Foto Prodiakon" id="modalProdiakonImg" class="modal-real-photo" onerror="this.src='/images/default-avatar.svg';">
+                                <span class="modal-photo-slot-hint"><i class="bi bi-camera"></i> Wadah Foto</span>
+                                <div class="modal-photo-zoom-badge"><i class="bi bi-arrows-fullscreen"></i> HD</div>
+                            </div>
+                            <button type="button" class="btn-zoom-modal-action" id="btnZoomModalAction" title="Perbesar Foto Suami">
+                                <i class="bi bi-arrows-fullscreen text-gold me-1"></i> Foto Suami
+                            </button>
+                        </div>
+
+                        <!-- Foto Istri Prodiakon -->
+                        <div class="modal-partner-photo-card">
+                            <div class="modal-partner-role-pill">
+                                <i class="bi bi-person-heart text-gold"></i> Istri Prodiakon
+                            </div>
+                            <div class="modal-photo-container" id="modalWifePhotoTrigger" title="Klik untuk melihat foto Istri (HD)" style="cursor: pointer;">
+                                <img src="/images/default-avatar-wife.svg" alt="Foto Istri Prodiakon" id="modalIstriImg" class="modal-real-photo" onerror="this.src='/images/default-avatar-wife.svg';">
+                                <span class="modal-photo-slot-hint"><i class="bi bi-camera"></i> Wadah Foto</span>
+                                <div class="modal-photo-zoom-badge"><i class="bi bi-arrows-fullscreen"></i> HD</div>
+                            </div>
+                            <button type="button" class="btn-zoom-modal-action" id="btnZoomWifeAction" title="Perbesar Foto Istri">
+                                <i class="bi bi-arrows-fullscreen text-gold me-1"></i> Foto Istri
+                            </button>
+                        </div>
                     </div>
-                    <div class="modal-profile-name">
+
+                    <!-- Status Paroki & Tag Wilayah -->
+                    <div class="modal-couple-meta-bar">
                         <div class="modal-badge-group">
                             <span class="modal-profile-tag" id="modalProdiakonWilayahTag">Wilayah I</span>
-                            <span class="modal-no-tag" id="modalProdiakonNoTag">No. 01</span>
+                            <span class="modal-no-tag" id="modalProdiakonNoTag" style="display: none;"></span>
                         </div>
                         <div class="modal-status-active">
-                            <i class="bi bi-patch-check-fill text-gold"></i> Terdaftar di Buku Induk Paroki
+                            <i class="bi bi-patch-check-fill text-gold"></i> Terdaftar di Buku Induk Paroki &amp; Reksa Pastoral
                         </div>
-                        <button type="button" class="btn-zoom-modal-action" id="btnZoomModalAction">
-                            <i class="bi bi-arrows-fullscreen text-gold me-1"></i> Lihat Foto Penuh (HD)
-                        </button>
                     </div>
                 </div>
 
-                <!-- Bagian 1: Data Sakramen Inisiasi & Lahir -->
+                <!-- Bagian 1: Data Diri & Sakramen Prodiakon (Suami) -->
                 <div class="modal-section-title">
-                    <i class="bi bi-award-fill text-gold me-1"></i> Data Sakramen &amp; Pribadi
+                    <i class="bi bi-person-badge-fill text-gold me-1"></i> Data Diri &amp; Sakramen Prodiakon (Suami)
                 </div>
                 <ul class="modal-info-list">
                     <li class="modal-info-row">
-                        <span class="modal-info-label"><i class="bi bi-geo-alt me-1 text-gold"></i> Wilayah Paroki</span>
-                        <span class="modal-info-val" id="modalProdiakonWilayah">-</span>
+                        <span class="modal-info-label"><i class="bi bi-person-fill me-1 text-gold"></i> Nama Lengkap</span>
+                        <span class="modal-info-val" id="modalProdiakonNamaVal">-</span>
                     </li>
                     <li class="modal-info-row">
-                        <span class="modal-info-label"><i class="bi bi-geo me-1 text-gold"></i> Tempat Lahir</span>
+                        <span class="modal-info-label"><i class="bi bi-geo-alt-fill me-1 text-gold"></i> Tempat Lahir</span>
                         <span class="modal-info-val" id="modalProdiakonTempatLahir">-</span>
                     </li>
                     <li class="modal-info-row">
@@ -131,26 +156,41 @@
                     </li>
                 </ul>
 
-                <!-- Bagian 2: Data Sakramen Perkawinan Katolik -->
+                <!-- Bagian 2: Data Diri & Sakramen Istri -->
                 <div class="modal-section-title mt-3">
-                    <i class="bi bi-heart-fill text-gold me-1"></i> Data Sakramen Perkawinan Katolik
+                    <i class="bi bi-person-heart text-gold me-1"></i> Data Diri &amp; Sakramen Istri
                 </div>
                 <ul class="modal-info-list">
                     <li class="modal-info-row">
-                        <span class="modal-info-label"><i class="bi bi-person-heart me-1 text-gold"></i> Nama Istri</span>
+                        <span class="modal-info-label"><i class="bi bi-person-heart me-1 text-gold"></i> Nama Lengkap Istri</span>
                         <span class="modal-info-val" id="modalProdiakonIstri">-</span>
                     </li>
                     <li class="modal-info-row">
-                        <span class="modal-info-label"><i class="bi bi-calendar-heart me-1 text-gold"></i> Lahir Istri</span>
-                        <span class="modal-info-val" id="modalProdiakonLahirIstri">-</span>
+                        <span class="modal-info-label"><i class="bi bi-geo-alt-fill me-1 text-gold"></i> Tempat Lahir Istri</span>
+                        <span class="modal-info-val" id="modalProdiakonTempatLahirIstri">-</span>
                     </li>
                     <li class="modal-info-row">
-                        <span class="modal-info-label"><i class="bi bi-droplet me-1 text-gold"></i> Baptis &amp; Krisma Istri</span>
-                        <span class="modal-info-val" id="modalProdiakonSakramenIstri">-</span>
+                        <span class="modal-info-label"><i class="bi bi-droplet-fill me-1 text-gold"></i> Sakramen Baptis Istri</span>
+                        <span class="modal-info-val" id="modalProdiakonBaptisIstri">-</span>
                     </li>
+                    <li class="modal-info-row">
+                        <span class="modal-info-label"><i class="bi bi-fire me-1 text-gold"></i> Sakramen Krisma Istri</span>
+                        <span class="modal-info-val" id="modalProdiakonKrismaIstri">-</span>
+                    </li>
+                </ul>
+
+                <!-- Bagian 3: Data Sakramen Perkawinan Katolik & Wilayah -->
+                <div class="modal-section-title mt-3">
+                    <i class="bi bi-heart-fill text-gold me-1"></i> Data Sakramen Perkawinan Katolik &amp; Wilayah
+                </div>
+                <ul class="modal-info-list">
                     <li class="modal-info-row">
                         <span class="modal-info-label"><i class="bi bi-building-check me-1 text-gold"></i> Tempat &amp; Tgl Nikah</span>
                         <span class="modal-info-val" id="modalProdiakonNikah">-</span>
+                    </li>
+                    <li class="modal-info-row">
+                        <span class="modal-info-label"><i class="bi bi-geo me-1 text-gold"></i> Wilayah Paroki</span>
+                        <span class="modal-info-val" id="modalProdiakonWilayah">-</span>
                     </li>
                 </ul>
             </div>
@@ -163,7 +203,7 @@
     </div>
 
     <!-- Modal Lightbox Foto Prodiakon Fullscreen -->
-    <div class="modal-backdrop photo-lightbox-backdrop" id="photoLightboxModal">
+    <div class="modal-backdrop photo-lightbox-backdrop" id="photoLightboxModal" role="dialog" aria-modal="true" aria-labelledby="lightboxPhotoName">
         <div class="photo-lightbox-card">
             <button type="button" class="photo-lightbox-close close-photo-lightbox" aria-label="Tutup Foto">&times;</button>
             <div class="photo-lightbox-img-wrap">
@@ -179,7 +219,7 @@
             </div>
         </div>
     </div>
-    <div class="modal-backdrop map-lightbox-backdrop" id="mapLightboxModal">
+    <div class="modal-backdrop map-lightbox-backdrop" id="mapLightboxModal" role="dialog" aria-modal="true" aria-label="Peta Teritori Wilayah Paroki">
         <div class="map-lightbox-card">
             <div class="map-lightbox-header">
                 <div class="map-lightbox-title-wrap">

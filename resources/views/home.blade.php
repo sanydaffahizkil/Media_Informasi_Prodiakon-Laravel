@@ -87,24 +87,7 @@
                     <div class="stat-label">Wilayah Paroki</div>
                     <div class="stat-sub">Cakupan Pastoral Pulomas</div>
                 </div>
-                <div class="stat-box shimmer-card">
-                    <div class="stat-icon-glow"><i class="bi bi-houses-fill"></i></div>
-                    <div class="stat-number-wrap">
-                        <span class="stat-counter" data-target="52">0</span>
-                        <span class="stat-plus">+</span>
-                    </div>
-                    <div class="stat-label">Komunitas Lingkungan</div>
-                    <div class="stat-sub">Persekutuan Umat Beriman</div>
-                </div>
-                <div class="stat-box shimmer-card">
-                    <div class="stat-icon-glow"><i class="bi bi-person-hearts"></i></div>
-                    <div class="stat-number-wrap">
-                        <span class="stat-counter" data-target="124">0</span>
-                        <span class="stat-plus">+</span>
-                    </div>
-                    <div class="stat-label">Prodiakon Terlantik</div>
-                    <div class="stat-sub">Pelayan Liturgis & Kunjungan</div>
-                </div>
+
                 <div class="stat-box shimmer-card">
                     <div class="stat-icon-glow"><i class="bi bi-calendar-check-fill"></i></div>
                     <div class="stat-number-wrap">
@@ -132,7 +115,7 @@
             <div class="pastoral-grid">
                 <div class="pastoral-photo-wrap" data-reveal="fade-right">
                     <div class="pastoral-photo-frame shimmer-card">
-                        <img src="/images/romo.png" alt="{{ $content['sambutan_romo']['nama'] }}">
+                        <img src="/images/romo.png" alt="{{ $content['sambutan_romo']['nama'] }}" loading="lazy">
                     </div>
                     <div class="pastoral-badge-gold">
                         <i class="bi bi-person-badge-fill me-1"></i> Romo Stephanus Royke Djakarya, Pr.
@@ -173,7 +156,7 @@
 
             <div class="vandel-grid">
                 <div class="vandel-image-card shimmer-card" data-reveal="fade-right">
-                    <img src="/images/vandel.png" alt="Vandel Prodiakon Paroki Santo Bonaventura">
+                    <img src="/images/vandel.png" alt="Vandel Prodiakon Paroki Santo Bonaventura" loading="lazy">
                     <div style="margin-top: 14px; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
                         Vandel Resmi Paguyuban Prodiakon Santo Bonaventura Pulomas
                     </div>
@@ -271,7 +254,7 @@
                 <!-- Left: Sacred Framed Portrait & Identity Info -->
                 <div class="stefanus-portrait-col">
                     <div class="stefanus-portrait-frame">
-                        <img src="{{ asset('images/stefanus.jpg') }}" alt="Santo Stefanus - Pelindung Prodiakon" class="stefanus-img">
+                        <img src="{{ asset('images/stefanus.jpg') }}" alt="Santo Stefanus - Pelindung Prodiakon" class="stefanus-img" loading="lazy">
                         <div class="stefanus-frame-badge">
                             <i class="bi bi-patch-check-fill text-gold"></i> Protomartir
                         </div>
@@ -362,7 +345,7 @@
                         <i class="bi bi-geo-alt-fill"></i> 11 Koordinator Wilayah
                     </button>
                     <button type="button" class="pengurus-tab-btn" data-tab="pembina">
-                        <i class="bi bi-shield-check"></i> Pembina & Penasehat
+                        <i class="bi bi-shield-check"></i> Pembina & Pemerhati
                     </button>
                     <button type="button" class="pengurus-tab-btn" data-tab="semua">
                         <i class="bi bi-collection-fill"></i> Tampilkan Semua
@@ -432,7 +415,10 @@
                                                 <div class="chip-photo-slot">
                                                     <img src="{{ file_exists(public_path($pbm['foto'])) ? $pbm['foto'] : '/images/default-avatar.svg' }}" alt="{{ $pbm['nama'] }}" class="chip-photo-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
                                                 </div>
-                                                <span class="chip-name">{{ $pbm['nama'] }}</span>
+                                                <div class="chip-info">
+                                                    <span class="chip-name">{{ $pbm['nama'] }}</span>
+                                                    <span class="chip-sub">Pembina & Pemerhati</span>
+                                                </div>
                                             </div>
                                         @endforeach
                                     </div>
@@ -609,7 +595,12 @@
                             </div>
                         </div>
                         <div class="bidang-koor-highlight">
-                            <div class="bidang-koor-photo-slot">
+                            <div class="bidang-koor-photo-slot photo-zoom-trigger cursor-pointer"
+                                 data-zoom-img="{{ file_exists(public_path($content['pengurus']['bidang'][0]['foto'])) ? $content['pengurus']['bidang'][0]['foto'] : '/images/default-avatar.svg' }}"
+                                 data-zoom-nama="{{ $content['pengurus']['bidang'][0]['koordinator'] }}"
+                                 data-zoom-wilayah="Bidang {{ $content['pengurus']['bidang'][0]['nama_bidang'] }}"
+                                 data-zoom-no="{{ $content['pengurus']['bidang'][0]['jabatan'] }}"
+                                 title="Klik untuk perbesar foto">
                                 <img src="{{ file_exists(public_path($content['pengurus']['bidang'][0]['foto'])) ? $content['pengurus']['bidang'][0]['foto'] : '/images/default-avatar.svg' }}" alt="{{ $content['pengurus']['bidang'][0]['koordinator'] }}" class="bidang-koor-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
                             </div>
                             <div class="bidang-koor-info">
@@ -618,10 +609,15 @@
                             </div>
                         </div>
                         <div class="bidang-subseksi-list">
-                            <div class="subseksi-title"><i class="bi bi-people-fill text-gold"></i> Tim Kesekretariatan:</div>
+                            <div class="subseksi-title"><i class="bi bi-people-fill text-gold"></i> Anggota Tim:</div>
                             @foreach($content['pengurus']['bidang'][0]['anggota'] as $agt)
                                 <div class="subseksi-item">
-                                    <div class="subseksi-photo-slot">
+                                    <div class="subseksi-photo-slot photo-zoom-trigger cursor-pointer"
+                                         data-zoom-img="{{ file_exists(public_path($agt['foto'])) ? $agt['foto'] : '/images/default-avatar.svg' }}"
+                                         data-zoom-nama="{{ $agt['nama'] }}"
+                                         data-zoom-wilayah="Bidang {{ $content['pengurus']['bidang'][0]['nama_bidang'] }}"
+                                         data-zoom-no="{{ $agt['peran'] }}"
+                                         title="Klik untuk perbesar foto">
                                         <img src="{{ file_exists(public_path($agt['foto'])) ? $agt['foto'] : '/images/default-avatar.svg' }}" alt="{{ $agt['nama'] }}" class="subseksi-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
                                     </div>
                                     <div class="subseksi-text">
@@ -645,7 +641,12 @@
                             </div>
                         </div>
                         <div class="bidang-koor-highlight">
-                            <div class="bidang-koor-photo-slot">
+                            <div class="bidang-koor-photo-slot photo-zoom-trigger cursor-pointer"
+                                 data-zoom-img="{{ file_exists(public_path($content['pengurus']['bidang'][1]['foto'])) ? $content['pengurus']['bidang'][1]['foto'] : '/images/default-avatar.svg' }}"
+                                 data-zoom-nama="{{ $content['pengurus']['bidang'][1]['koordinator'] }}"
+                                 data-zoom-wilayah="Bidang {{ $content['pengurus']['bidang'][1]['nama_bidang'] }}"
+                                 data-zoom-no="{{ $content['pengurus']['bidang'][1]['jabatan'] }}"
+                                 title="Klik untuk perbesar foto">
                                 <img src="{{ file_exists(public_path($content['pengurus']['bidang'][1]['foto'])) ? $content['pengurus']['bidang'][1]['foto'] : '/images/default-avatar.svg' }}" alt="{{ $content['pengurus']['bidang'][1]['koordinator'] }}" class="bidang-koor-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
                             </div>
                             <div class="bidang-koor-info">
@@ -653,21 +654,27 @@
                                 <h5 class="koor-name">{{ $content['pengurus']['bidang'][1]['koordinator'] }}</h5>
                             </div>
                         </div>
-                        <div class="bidang-subseksi-list">
-                            <div class="subseksi-title"><i class="bi bi-shield-check text-gold"></i> Tanggung Jawab:</div>
-                            <div class="subseksi-item">
-                                <div class="subseksi-text">
-                                    <span class="subseksi-role">Pengelolaan Kas</span>
-                                    <span class="subseksi-name">Pencatatan iuran, penerimaan persembahan dan operasional</span>
-                                </div>
+                        @if(!empty($content['pengurus']['bidang'][1]['anggota']) && count($content['pengurus']['bidang'][1]['anggota']) > 0)
+                            <div class="bidang-subseksi-list">
+                                <div class="subseksi-title"><i class="bi bi-people-fill text-gold"></i> Anggota Tim:</div>
+                                @foreach($content['pengurus']['bidang'][1]['anggota'] as $agt)
+                                    <div class="subseksi-item">
+                                        <div class="subseksi-photo-slot photo-zoom-trigger cursor-pointer"
+                                             data-zoom-img="{{ file_exists(public_path($agt['foto'])) ? $agt['foto'] : '/images/default-avatar.svg' }}"
+                                             data-zoom-nama="{{ $agt['nama'] }}"
+                                             data-zoom-wilayah="Bidang {{ $content['pengurus']['bidang'][1]['nama_bidang'] }}"
+                                             data-zoom-no="{{ $agt['peran'] }}"
+                                             title="Klik untuk perbesar foto">
+                                            <img src="{{ file_exists(public_path($agt['foto'])) ? $agt['foto'] : '/images/default-avatar.svg' }}" alt="{{ $agt['nama'] }}" class="subseksi-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
+                                        </div>
+                                        <div class="subseksi-text">
+                                            <span class="subseksi-role">{{ $agt['peran'] }}</span>
+                                            <span class="subseksi-name">{{ $agt['nama'] }}</span>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
-                            <div class="subseksi-item">
-                                <div class="subseksi-text">
-                                    <span class="subseksi-role">Akuntabilitas</span>
-                                    <span class="subseksi-name">Laporan keuangan transparan secara berkala kepada Pastor Paroki</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endif
                     </div>
 
                     <!-- 3. LITURGI DAN TATA GERAK -->
@@ -682,7 +689,12 @@
                             </div>
                         </div>
                         <div class="bidang-koor-highlight">
-                            <div class="bidang-koor-photo-slot">
+                            <div class="bidang-koor-photo-slot photo-zoom-trigger cursor-pointer"
+                                 data-zoom-img="{{ file_exists(public_path($content['pengurus']['bidang'][2]['foto'])) ? $content['pengurus']['bidang'][2]['foto'] : '/images/default-avatar.svg' }}"
+                                 data-zoom-nama="{{ $content['pengurus']['bidang'][2]['koordinator'] }}"
+                                 data-zoom-wilayah="{{ $content['pengurus']['bidang'][2]['nama_bidang'] }}"
+                                 data-zoom-no="{{ $content['pengurus']['bidang'][2]['jabatan'] }}"
+                                 title="Klik untuk perbesar foto">
                                 <img src="{{ file_exists(public_path($content['pengurus']['bidang'][2]['foto'])) ? $content['pengurus']['bidang'][2]['foto'] : '/images/default-avatar.svg' }}" alt="{{ $content['pengurus']['bidang'][2]['koordinator'] }}" class="bidang-koor-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
                             </div>
                             <div class="bidang-koor-info">
@@ -694,7 +706,12 @@
                             <div class="subseksi-title"><i class="bi bi-people-fill text-gold"></i> Anggota Tim:</div>
                             @foreach($content['pengurus']['bidang'][2]['anggota'] as $agt)
                                 <div class="subseksi-item">
-                                    <div class="subseksi-photo-slot">
+                                    <div class="subseksi-photo-slot photo-zoom-trigger cursor-pointer"
+                                         data-zoom-img="{{ file_exists(public_path($agt['foto'])) ? $agt['foto'] : '/images/default-avatar.svg' }}"
+                                         data-zoom-nama="{{ $agt['nama'] }}"
+                                         data-zoom-wilayah="{{ $content['pengurus']['bidang'][2]['nama_bidang'] }}"
+                                         data-zoom-no="{{ $agt['peran'] }}"
+                                         title="Klik untuk perbesar foto">
                                         <img src="{{ file_exists(public_path($agt['foto'])) ? $agt['foto'] : '/images/default-avatar.svg' }}" alt="{{ $agt['nama'] }}" class="subseksi-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
                                     </div>
                                     <div class="subseksi-text">
@@ -718,7 +735,12 @@
                             </div>
                         </div>
                         <div class="bidang-koor-highlight">
-                            <div class="bidang-koor-photo-slot">
+                            <div class="bidang-koor-photo-slot photo-zoom-trigger cursor-pointer"
+                                 data-zoom-img="{{ file_exists(public_path($content['pengurus']['bidang'][3]['foto'])) ? $content['pengurus']['bidang'][3]['foto'] : '/images/default-avatar.svg' }}"
+                                 data-zoom-nama="{{ $content['pengurus']['bidang'][3]['koordinator'] }}"
+                                 data-zoom-wilayah="{{ $content['pengurus']['bidang'][3]['nama_bidang'] }}"
+                                 data-zoom-no="{{ $content['pengurus']['bidang'][3]['jabatan'] }}"
+                                 title="Klik untuk perbesar foto">
                                 <img src="{{ file_exists(public_path($content['pengurus']['bidang'][3]['foto'])) ? $content['pengurus']['bidang'][3]['foto'] : '/images/default-avatar.svg' }}" alt="{{ $content['pengurus']['bidang'][3]['koordinator'] }}" class="bidang-koor-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
                             </div>
                             <div class="bidang-koor-info">
@@ -730,7 +752,12 @@
                             <div class="subseksi-title"><i class="bi bi-people-fill text-gold"></i> Anggota Tim:</div>
                             @foreach($content['pengurus']['bidang'][3]['anggota'] as $agt)
                                 <div class="subseksi-item">
-                                    <div class="subseksi-photo-slot">
+                                    <div class="subseksi-photo-slot photo-zoom-trigger cursor-pointer"
+                                         data-zoom-img="{{ file_exists(public_path($agt['foto'])) ? $agt['foto'] : '/images/default-avatar.svg' }}"
+                                         data-zoom-nama="{{ $agt['nama'] }}"
+                                         data-zoom-wilayah="{{ $content['pengurus']['bidang'][3]['nama_bidang'] }}"
+                                         data-zoom-no="{{ $agt['peran'] }}"
+                                         title="Klik untuk perbesar foto">
                                         <img src="{{ file_exists(public_path($agt['foto'])) ? $agt['foto'] : '/images/default-avatar.svg' }}" alt="{{ $agt['nama'] }}" class="subseksi-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
                                     </div>
                                     <div class="subseksi-text">
@@ -754,7 +781,12 @@
                             </div>
                         </div>
                         <div class="bidang-koor-highlight">
-                            <div class="bidang-koor-photo-slot">
+                            <div class="bidang-koor-photo-slot photo-zoom-trigger cursor-pointer"
+                                 data-zoom-img="{{ file_exists(public_path($content['pengurus']['bidang'][4]['foto'])) ? $content['pengurus']['bidang'][4]['foto'] : '/images/default-avatar.svg' }}"
+                                 data-zoom-nama="{{ $content['pengurus']['bidang'][4]['koordinator'] }}"
+                                 data-zoom-wilayah="{{ $content['pengurus']['bidang'][4]['nama_bidang'] }}"
+                                 data-zoom-no="{{ $content['pengurus']['bidang'][4]['jabatan'] }}"
+                                 title="Klik untuk perbesar foto">
                                 <img src="{{ file_exists(public_path($content['pengurus']['bidang'][4]['foto'])) ? $content['pengurus']['bidang'][4]['foto'] : '/images/default-avatar.svg' }}" alt="{{ $content['pengurus']['bidang'][4]['koordinator'] }}" class="bidang-koor-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
                             </div>
                             <div class="bidang-koor-info">
@@ -766,7 +798,12 @@
                             <div class="subseksi-title"><i class="bi bi-people-fill text-gold"></i> Anggota Tim:</div>
                             @foreach($content['pengurus']['bidang'][4]['anggota'] as $agt)
                                 <div class="subseksi-item">
-                                    <div class="subseksi-photo-slot">
+                                    <div class="subseksi-photo-slot photo-zoom-trigger cursor-pointer"
+                                         data-zoom-img="{{ file_exists(public_path($agt['foto'])) ? $agt['foto'] : '/images/default-avatar.svg' }}"
+                                         data-zoom-nama="{{ $agt['nama'] }}"
+                                         data-zoom-wilayah="{{ $content['pengurus']['bidang'][4]['nama_bidang'] }}"
+                                         data-zoom-no="{{ $agt['peran'] }}"
+                                         title="Klik untuk perbesar foto">
                                         <img src="{{ file_exists(public_path($agt['foto'])) ? $agt['foto'] : '/images/default-avatar.svg' }}" alt="{{ $agt['nama'] }}" class="subseksi-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
                                     </div>
                                     <div class="subseksi-text">
@@ -798,16 +835,17 @@
                         <div class="koor-wilayah-card shimmer-card">
                             <div class="kw-header">
                                 <span class="kw-badge">{{ $kw['wilayah'] }}</span>
-                                <div class="kw-photo-slot photo-zoom-trigger"
-                                     data-zoom-img="{{ file_exists(public_path($kw['foto'])) ? $kw['foto'] : '/images/default-avatar.svg' }}"
-                                     data-zoom-nama="{{ $kw['nama'] }}"
-                                     data-zoom-wilayah="{{ $kw['wilayah'] }}"
-                                     data-zoom-no="{{ $kw['peran'] }}"
-                                     title="Klik untuk melihat foto ukuran penuh"
-                                     style="cursor: pointer;">
-                                    <img src="{{ file_exists(public_path($kw['foto'])) ? $kw['foto'] : '/images/default-avatar.svg' }}" alt="{{ $kw['nama'] }}" class="kw-photo-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
-                                    <span class="kw-slot-hint"><i class="bi bi-camera"></i> Wadah Foto</span>
-                                </div>
+                                <span class="kw-role-pill"><i class="bi bi-person-badge-fill me-1"></i> Koordinator</span>
+                            </div>
+                            <div class="kw-photo-slot photo-zoom-trigger"
+                                 data-zoom-img="{{ file_exists(public_path($kw['foto'])) ? $kw['foto'] : '/images/default-avatar.svg' }}"
+                                 data-zoom-nama="{{ $kw['nama'] }}"
+                                 data-zoom-wilayah="{{ $kw['wilayah'] }}"
+                                 data-zoom-no="{{ $kw['peran'] }}"
+                                 title="Klik untuk melihat foto ukuran penuh"
+                                 style="cursor: pointer;">
+                                <img src="{{ file_exists(public_path($kw['foto'])) ? $kw['foto'] : '/images/default-avatar.svg' }}" alt="{{ $kw['nama'] }}" class="kw-photo-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
+                                <span class="photo-slot-pill"><i class="bi bi-camera"></i> Wadah Foto</span>
                             </div>
                             <h4 class="kw-name">{{ $kw['nama'] }}</h4>
                             <div class="kw-role">{{ $kw['peran'] }}</div>
@@ -821,49 +859,44 @@
             </div>
 
             <!-- =========================================================================
-                 TAB 4: PEMBINA & PENASEHAT (SESUAI PDF RESMI)
+                 TAB 4: TIM PEMBINA & PEMERHATI
                  ========================================================================= -->
             <div class="pengurus-pane" id="pane-pembina" data-reveal="fade-up">
-                <div class="pembina-layout">
-                    
-                    <!-- Penasehat Card -->
-                    <div class="advisor-main-card shimmer-card">
-                        <div class="advisor-icon-wrap">
-                            <i class="bi {{ $content['pengurus']['penasehat']['icon'] }}"></i>
+                <!-- Tim Pembina dan Pemerhati Showcase (Foto Besar & Proporsional) -->
+                <div class="pembina-section-wrap">
+                    <div class="pembina-section-header">
+                        <div class="pembina-header-icon"><i class="bi bi-people-fill"></i></div>
+                        <div>
+                            <h4 class="pembina-section-title">Tim Pembina dan Pemerhati</h4>
+                            <span class="pembina-section-sub">Pendampingan Pastoral Paguyuban Periode {{ $content['pengurus']['periode'] }}</span>
                         </div>
-                        <span class="advisor-badge">PENASEHAT</span>
-                        <h3 class="advisor-name">{{ $content['pengurus']['penasehat']['nama'] }}</h3>
-                        <div class="advisor-role">{{ $content['pengurus']['penasehat']['jabatan'] }}</div>
-                        <p class="advisor-text">
-                            Mendampingi secara rohani dan liturgis agar setiap pelayanan altar dan pastoral senantiasa selaras dengan ajaran Gereja Katolik serta ketetapan Keuskupan Agung Jakarta.
-                        </p>
                     </div>
 
-                    <!-- Tim Pembina dan Pemerhati -->
-                    <div class="pembina-panel shimmer-card">
-                        <div class="pembina-panel-header">
-                            <div class="pembina-panel-icon"><i class="bi bi-people-fill"></i></div>
-                            <div>
-                                <h4 style="color: var(--primary-navy); margin-bottom: 2px;">Tim Pembina dan Pemerhati</h4>
-                                <span style="font-size: 0.82rem; color: var(--text-muted);">Pendampingan Pastoral Paguyuban Periode {{ $content['pengurus']['periode'] }}</span>
-                            </div>
-                        </div>
-
-                        <div class="pembina-members-grid">
-                            @foreach($content['pengurus']['pembina_pemerhati'] as $pbm)
-                                <div class="pembina-member-card">
-                                    <div class="pembina-photo-slot">
-                                        <img src="{{ file_exists(public_path($pbm['foto'])) ? $pbm['foto'] : '/images/default-avatar.svg' }}" alt="{{ $pbm['nama'] }}" class="pembina-photo-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
-                                    </div>
-                                    <div class="pembina-info">
-                                        <h5 class="pembina-name">{{ $pbm['nama'] }}</h5>
-                                        <span class="pembina-role">{{ $pbm['jabatan'] }}</span>
-                                    </div>
+                    <div class="pembina-cards-grid">
+                        @foreach($content['pengurus']['pembina_pemerhati'] as $pbm)
+                            <div class="pembina-card shimmer-card">
+                                <div class="pembina-badge-row">
+                                    <span class="pembina-card-badge"><i class="bi bi-shield-check"></i> Pembina & Pemerhati</span>
                                 </div>
-                            @endforeach
-                        </div>
+                                <div class="pembina-photo-slot photo-zoom-trigger"
+                                     data-zoom-img="{{ file_exists(public_path($pbm['foto'])) ? $pbm['foto'] : '/images/default-avatar.svg' }}"
+                                     data-zoom-nama="{{ $pbm['nama'] }}"
+                                     data-zoom-wilayah="Tim Pembina & Pemerhati"
+                                     data-zoom-no="{{ $pbm['jabatan'] }}"
+                                     title="Klik untuk melihat foto ukuran penuh"
+                                     style="cursor: pointer;">
+                                    <img src="{{ file_exists(public_path($pbm['foto'])) ? $pbm['foto'] : '/images/default-avatar.svg' }}" alt="{{ $pbm['nama'] }}" class="pembina-photo-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
+                                    <span class="photo-slot-pill"><i class="bi bi-camera"></i> Wadah Foto</span>
+                                </div>
+                                <h4 class="pembina-card-name">{{ $pbm['nama'] }}</h4>
+                                <div class="pembina-card-role">{{ $pbm['jabatan'] }}</div>
+                                <div class="pembina-card-divider"></div>
+                                <div class="pembina-card-desc">
+                                    Pendampingan pastoral serta pembinaan kerohanian bagi seluruh pelayan altar Paguyuban Prodiakon Santo Bonaventura.
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-
                 </div>
             </div>
 
@@ -952,7 +985,7 @@
                     </div>
 
                     <div class="sasaran-image-frame shimmer-card">
-                        <img src="{{ $content['sasaran']['foto'] }}" alt="Ilustrasi Sasaran Pelayanan Prodiakon Pulomas">
+                        <img src="{{ $content['sasaran']['foto'] }}" alt="Ilustrasi Sasaran Pelayanan Prodiakon Pulomas" loading="lazy">
                     </div>
 
                     <div class="sasaran-prayer-card shimmer-card">
@@ -1007,10 +1040,14 @@
             <!-- Interaktif Tab Wrapper (Meniru persis tampilan navigasi di foto user) -->
             <div class="data-wilayah-wrapper">
                 
-                <!-- Left Sidebar: List Wilayah persis foto -->
+                <!-- Left Sidebar / Mobile Top Pill Strip: Wilayah Pelayanan -->
                 <aside class="wilayah-sidebar" data-reveal="fade-right">
                     <div class="wilayah-sidebar-header">
-                        <h3>Wilayah Pelayanan</h3>
+                        <div class="wilayah-header-title-box">
+                            <i class="bi bi-geo-alt-fill text-gold me-2"></i>
+                            <h3>Wilayah Pelayanan</h3>
+                        </div>
+                        <span class="wilayah-mobile-swipe-badge"><i class="bi bi-arrows-expand me-1"></i> Geser Pilihan</span>
                     </div>
                     <ul class="wilayah-nav-list">
                         @foreach($content['data_wilayah'] as $index => $w)
@@ -1077,7 +1114,7 @@
                                         <div class="peta-map-img-wrapper">
                                             <picture>
                                                 <source srcset="/images/peta.webp" type="image/webp">
-                                                <img src="/images/peta.png" alt="Peta Teritori Paroki Santo Bonaventura Pulomas" class="peta-main-img" id="mainPetaImage">
+                                                <img src="/images/peta.png" alt="Peta Teritori Paroki Santo Bonaventura Pulomas" class="peta-main-img" id="mainPetaImage" loading="lazy">
                                             </picture>
                                         </div>
                                         <div class="peta-map-footer-hint">
@@ -1160,13 +1197,43 @@
                                     </div>
                                 </div>
 
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-                                    <h4 style="font-size: 1.1rem; color: var(--primary-navy); margin: 0;">
-                                        <i class="bi bi-person-lines-fill text-gold me-2"></i>Daftar Pelayan Altar
-                                    </h4>
-                                    <span style="font-size: 0.82rem; color: var(--text-muted);">
-                                        Koordinator: <strong>{{ $w['koordinator'] }}</strong>
-                                    </span>
+                                <!-- Kartu Koordinator Wilayah Pelayanan (Dengan Foto & Data Lengkap) -->
+                                <div class="wilayah-koor-card shimmer-card">
+                                    <div class="koor-card-photo-slot photo-zoom-trigger"
+                                         data-zoom-img="{{ (!empty($w['koordinator_foto']) && file_exists(public_path($w['koordinator_foto']))) ? $w['koordinator_foto'] : '/images/default-avatar.svg' }}"
+                                         data-zoom-nama="{{ $w['koordinator'] }}"
+                                         data-zoom-wilayah="{{ $w['nama'] }} ({{ $w['nama_pelindung'] }})"
+                                         data-zoom-no="{{ $w['koordinator_jabatan'] ?? 'Koordinator Wilayah' }}"
+                                         title="Klik untuk melihat foto ukuran penuh"
+                                         style="cursor: pointer;">
+                                        <img src="{{ (!empty($w['koordinator_foto']) && file_exists(public_path($w['koordinator_foto']))) ? $w['koordinator_foto'] : '/images/default-avatar.svg' }}" 
+                                             alt="{{ $w['koordinator'] }}" 
+                                             class="koor-card-photo-img" 
+                                             onerror="this.src='/images/default-avatar.svg';" 
+                                             loading="lazy">
+                                        <span class="photo-slot-pill"><i class="bi bi-camera"></i> Wadah Foto</span>
+                                    </div>
+                                    <div class="koor-card-content">
+                                        <div class="koor-card-badge-row">
+                                            <span class="koor-badge"><i class="bi bi-person-badge-fill me-1"></i> KOORDINATOR {{ strtoupper($w['nama']) }}</span>
+                                            <span class="koor-saint-badge">{{ $w['nama_pelindung'] }}</span>
+                                        </div>
+                                        <h3 class="koor-card-name">{{ $w['koordinator'] }}</h3>
+                                        <div class="koor-card-role">
+                                            <i class="bi bi-shield-check text-gold me-1"></i> {{ $w['koordinator_jabatan'] ?? 'Koordinator Wilayah' }} &bull; Penanggung Jawab Teritorial
+                                        </div>
+                                        <p class="koor-card-desc">
+                                            Mengkoordinir seluruh penugasan pelayanan altar, perayaan ekaristi, serta karya pastoral komuni orang sakit di lingkungan naungan {{ $w['nama'] }}.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="prodiakon-section-divider">
+                                    <div class="prodiakon-section-title-wrap">
+                                        <i class="bi bi-people-fill text-gold me-2"></i>
+                                        <h4>Daftar Pelayan Altar {{ $w['nama'] }}</h4>
+                                    </div>
+                                    <span class="prodiakon-count-badge">{{ count($w['daftar_prodiakon']) }} Pelayan Terlantik</span>
                                 </div>
 
                                 <!-- Grid Cards of Prodiakon in this Wilayah -->
@@ -1179,7 +1246,7 @@
                                                      data-zoom-img="{{ (!empty($pd['foto']) && file_exists(public_path($pd['foto']))) ? $pd['foto'] : '/images/default-avatar.svg' }}"
                                                      data-zoom-nama="{{ $pd['nama'] }}"
                                                      data-zoom-wilayah="Wilayah {{ $pd['wilayah_romawi'] }}"
-                                                     data-zoom-no="No. {{ sprintf('%02d', $pd['no']) }}"
+                                                     data-zoom-no="Pelayan Altar {{ $w['nama'] }}"
                                                      title="Klik untuk melihat foto ukuran penuh">
                                                     <div class="prodiakon-photo-container">
                                                         <img src="{{ (!empty($pd['foto']) && file_exists(public_path($pd['foto']))) ? $pd['foto'] : '/images/default-avatar.svg' }}" 
@@ -1188,9 +1255,8 @@
                                                              onerror="this.src='/images/default-avatar.svg';" 
                                                              loading="lazy">
                                                         
-                                                        <!-- Floating Badges di atas Foto -->
+                                                        <!-- Floating Badges di atas Foto (Nomor dihapus sesuai instruksi) -->
                                                         <div class="prodiakon-floating-badges">
-                                                            <span class="badge-no">No. {{ sprintf('%02d', $pd['no']) }}</span>
                                                             <span class="badge-wilayah">Wil. {{ $pd['wilayah_romawi'] }}</span>
                                                         </div>
 
@@ -1224,11 +1290,12 @@
                                             <!-- Tombol Klik Detail sesuai instruksi User -->
                                             <button type="button" 
                                                     class="btn-detail-modal"
-                                                    data-no="No. {{ sprintf('%02d', $pd['no']) }}"
+                                                    data-no="Pelayan Altar {{ $w['nama'] }}"
                                                     data-wilayah-tag="Wilayah {{ $pd['wilayah_romawi'] }}"
                                                     data-nama="{{ $pd['nama'] }}"
                                                     data-inisial="{{ $pd['inisial'] }}"
                                                     data-foto="{{ $pd['foto'] }}"
+                                                    data-foto-istri="{{ $pd['foto_istri'] ?? '' }}"
                                                     data-wilayah-nama="Wilayah {{ $pd['wilayah_romawi'] }} - {{ $w['nama_pelindung'] ?? 'St. Bonaventura' }}"
                                                     data-tempat-lahir="{{ $pd['tempat_lahir'] ?: '-' }}"
                                                     data-nama-baptis="{{ $pd['nama_baptis'] ?: '-' }}"
@@ -1238,8 +1305,9 @@
                                                     data-tempat-krisma="{{ $pd['tempat_krisma'] ?: '-' }}"
                                                     data-tgl-krisma="{{ $pd['tgl_krisma'] ?: '-' }}"
                                                     data-istri="{{ $pd['istri'] ?: '-' }}"
-                                                    data-lahir-istri="{{ trim(($pd['tempat_lahir_istri'] ?? '') . ' ' . ($pd['tgl_lahir_istri'] ?? '')) ?: '-' }}"
-                                                    data-sakramen-istri="{{ trim(($pd['nama_baptis_istri'] ?? '') . ($pd['nama_krisma_istri'] ? ' | ' . $pd['nama_krisma_istri'] : '')) ?: '-' }}"
+                                                    data-tempat-lahir-istri="{{ $pd['tempat_lahir_istri'] ?: '-' }}"
+                                                    data-baptis-istri="{{ $pd['nama_baptis_istri'] ?: '-' }}"
+                                                    data-krisma-istri="{{ $pd['nama_krisma_istri'] ?: '-' }}"
                                                     data-nikah="{{ trim(($pd['tempat_perkawinan'] ?? '') . ($pd['tgl_perkawinan'] ? ', ' . $pd['tgl_perkawinan'] : '')) ?: '-' }}">
                                                 <i class="bi bi-info-circle-fill text-gold"></i> Detail Profil
                                             </button>

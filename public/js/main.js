@@ -515,7 +515,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const detailButtons = document.querySelectorAll('.btn-detail-modal');
 
   const modalName = document.getElementById('modalProdiakonName');
+  const modalNamaVal = document.getElementById('modalProdiakonNamaVal');
   const modalImg = document.getElementById('modalProdiakonImg');
+  const modalIstriImg = document.getElementById('modalIstriImg');
   const modalWilayahTag = document.getElementById('modalProdiakonWilayahTag');
   const modalNoTag = document.getElementById('modalProdiakonNoTag');
   const modalWilayah = document.getElementById('modalProdiakonWilayah');
@@ -523,8 +525,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalBaptis = document.getElementById('modalProdiakonBaptis');
   const modalKrisma = document.getElementById('modalProdiakonKrisma');
   const modalIstri = document.getElementById('modalProdiakonIstri');
-  const modalLahirIstri = document.getElementById('modalProdiakonLahirIstri');
-  const modalSakramenIstri = document.getElementById('modalProdiakonSakramenIstri');
+  const modalTempatLahirIstri = document.getElementById('modalProdiakonTempatLahirIstri');
+  const modalBaptisIstri = document.getElementById('modalProdiakonBaptisIstri');
+  const modalKrismaIstri = document.getElementById('modalProdiakonKrismaIstri');
   const modalNikah = document.getElementById('modalProdiakonNikah');
 
   detailButtons.forEach(btn => {
@@ -534,7 +537,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const noTag = btn.getAttribute('data-no') || 'No. 00';
       const wilayahTag = btn.getAttribute('data-wilayah-tag') || 'Wilayah';
       const foto = btn.getAttribute('data-foto') || '';
+      const fotoIstri = btn.getAttribute('data-foto-istri') || '';
       const wilayahNama = btn.getAttribute('data-wilayah-nama') || '-';
+      
+      // Data Suami
       const tempatLahir = btn.getAttribute('data-tempat-lahir') || '-';
       const namaBaptis = btn.getAttribute('data-nama-baptis') || '-';
       const tempatBaptis = btn.getAttribute('data-tempat-baptis') || '-';
@@ -542,18 +548,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const namaKrisma = btn.getAttribute('data-nama-krisma') || '-';
       const tempatKrisma = btn.getAttribute('data-tempat-krisma') || '-';
       const tglKrisma = btn.getAttribute('data-tgl-krisma') || '-';
+      
+      // Data Istri
       const istri = btn.getAttribute('data-istri') || '-';
-      const lahirIstri = btn.getAttribute('data-lahir-istri') || '-';
-      const sakramenIstri = btn.getAttribute('data-sakramen-istri') || '-';
+      const tempatLahirIstri = btn.getAttribute('data-tempat-lahir-istri') || '-';
+      const baptisIstri = btn.getAttribute('data-baptis-istri') || '-';
+      const krismaIstri = btn.getAttribute('data-krisma-istri') || '-';
+      
+      // Data Pernikahan
       const nikah = btn.getAttribute('data-nikah') || '-';
 
       if (modalName) modalName.textContent = nama;
+      if (modalNamaVal) modalNamaVal.textContent = nama;
       if (modalNoTag) modalNoTag.textContent = noTag;
       if (modalWilayahTag) modalWilayahTag.textContent = wilayahTag;
       if (modalWilayah) modalWilayah.textContent = wilayahNama;
       if (modalTempatLahir) modalTempatLahir.textContent = tempatLahir;
 
-      // Format Baptis
+      // Format Baptis Suami
       let baptisFull = namaBaptis;
       const extraBaptis = [tempatBaptis !== '-' ? tempatBaptis : '', tglBaptis !== '-' ? tglBaptis : ''].filter(Boolean).join(', ');
       if (extraBaptis) {
@@ -561,7 +573,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (modalBaptis) modalBaptis.textContent = baptisFull || '-';
 
-      // Format Krisma
+      // Format Krisma Suami
       let krismaFull = namaKrisma;
       const extraKrisma = [tempatKrisma !== '-' ? tempatKrisma : '', tglKrisma !== '-' ? tglKrisma : ''].filter(Boolean).join(', ');
       if (extraKrisma) {
@@ -569,17 +581,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (modalKrisma) modalKrisma.textContent = krismaFull || '-';
 
-      // Matrimonial Details
+      // Symmetrical Data Istri (Tanpa tanggal lahir)
       if (modalIstri) modalIstri.textContent = istri;
-      if (modalLahirIstri) modalLahirIstri.textContent = lahirIstri;
-      if (modalSakramenIstri) modalSakramenIstri.textContent = sakramenIstri;
+      if (modalTempatLahirIstri) modalTempatLahirIstri.textContent = tempatLahirIstri;
+      if (modalBaptisIstri) modalBaptisIstri.textContent = baptisIstri;
+      if (modalKrismaIstri) modalKrismaIstri.textContent = krismaIstri;
+
+      // Matrimonial Details (Tetap dibiarkan)
       if (modalNikah) modalNikah.textContent = nikah;
 
-      // Photo Slot Handling (Tampilkan foto asli jika ada, atau wadah avatar default tanpa inisial huruf)
+      // Photo Slot Handling Suami (Wadah Foto Suami)
       if (modalImg) {
         modalImg.src = (foto && foto.trim() !== '') ? foto : '/images/default-avatar.svg';
         modalImg.onerror = function() {
           this.src = '/images/default-avatar.svg';
+        };
+      }
+
+      // Photo Slot Handling Istri (Wadah Foto Istri)
+      if (modalIstriImg) {
+        modalIstriImg.src = (fotoIstri && fotoIstri.trim() !== '') ? fotoIstri : '/images/default-avatar-wife.svg';
+        modalIstriImg.onerror = function() {
+          this.src = '/images/default-avatar-wife.svg';
         };
       }
 
@@ -935,9 +958,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxName = document.getElementById('lightboxPhotoName');
   const lightboxWilayahTag = document.getElementById('lightboxPhotoWilayahTag');
   const lightboxNoTag = document.getElementById('lightboxPhotoNoTag');
+  const lightboxSub = document.querySelector('.photo-lightbox-sub');
   const closePhotoLightboxBtns = document.querySelectorAll('.close-photo-lightbox');
 
-  const openPhotoLightbox = (imgSrc, name, wilayah, no) => {
+  const openPhotoLightbox = (imgSrc, name, wilayah, no, roleSub = 'Pelayan Altar • Paroki Santo Bonaventura Pulomas') => {
     if (!photoLightbox || !lightboxImg) return;
     lightboxImg.src = imgSrc || '/images/default-avatar.svg';
     lightboxImg.onerror = function() {
@@ -946,6 +970,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lightboxName) lightboxName.textContent = name || 'Foto Prodiakon';
     if (lightboxWilayahTag) lightboxWilayahTag.textContent = wilayah || 'Wilayah Paroki';
     if (lightboxNoTag) lightboxNoTag.textContent = no || '';
+    if (lightboxSub) {
+      lightboxSub.innerHTML = `<i class="bi bi-shield-check text-gold me-1"></i> ${roleSub}`;
+    }
 
     photoLightbox.classList.add('show');
     document.body.style.overflow = 'hidden';
@@ -983,17 +1010,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Zoom button inside detail modal
   const btnZoomModalAction = document.getElementById('btnZoomModalAction');
+  const btnZoomWifeAction = document.getElementById('btnZoomWifeAction');
   const modalPhotoTrigger = document.getElementById('modalPhotoTrigger');
+  const modalWifePhotoTrigger = document.getElementById('modalWifePhotoTrigger');
+
   const triggerModalZoom = () => {
     const currentImg = modalImg ? modalImg.src : '/images/default-avatar.svg';
     const currentName = modalName ? modalName.textContent : 'Foto Prodiakon';
     const currentWilayah = modalWilayahTag ? modalWilayahTag.textContent : 'Wilayah Paroki';
     const currentNo = modalNoTag ? modalNoTag.textContent : '';
-    openPhotoLightbox(currentImg, currentName, currentWilayah, currentNo);
+    openPhotoLightbox(currentImg, currentName, currentWilayah, currentNo, 'Prodiakon (Suami) • Paroki Santo Bonaventura Pulomas');
+  };
+
+  const triggerWifeZoom = () => {
+    const currentImg = modalIstriImg ? modalIstriImg.src : '/images/default-avatar-wife.svg';
+    const currentName = modalIstri ? modalIstri.textContent : 'Foto Istri Prodiakon';
+    const currentWilayah = modalWilayahTag ? modalWilayahTag.textContent : 'Wilayah Paroki';
+    const currentNo = modalNoTag ? modalNoTag.textContent : '';
+    openPhotoLightbox(currentImg, currentName, currentWilayah, currentNo, 'Istri Prodiakon • Paroki Santo Bonaventura Pulomas');
   };
 
   if (btnZoomModalAction) btnZoomModalAction.addEventListener('click', triggerModalZoom);
   if (modalPhotoTrigger) modalPhotoTrigger.addEventListener('click', triggerModalZoom);
+  if (btnZoomWifeAction) btnZoomWifeAction.addEventListener('click', triggerWifeZoom);
+  if (modalWifePhotoTrigger) modalWifePhotoTrigger.addEventListener('click', triggerWifeZoom);
 
   // Close handlers
   closePhotoLightboxBtns.forEach(btn => btn.addEventListener('click', closePhotoLightbox));
