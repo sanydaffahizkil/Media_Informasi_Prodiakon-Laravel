@@ -5,6 +5,141 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
+  // 0. LUXURY SACRED OPENING CURTAIN (DISSOLVE ON ENTRY)
+  // =========================================================================
+  const welcomeCurtain = document.getElementById('welcomeCurtain');
+  if (welcomeCurtain) {
+    const dismissCurtain = () => {
+      welcomeCurtain.classList.add('hide-curtain');
+      setTimeout(() => {
+        if (welcomeCurtain.parentNode) {
+          welcomeCurtain.parentNode.removeChild(welcomeCurtain);
+        }
+      }, 850);
+    };
+
+    welcomeCurtain.addEventListener('click', dismissCurtain);
+
+    // Automatically dissolve smoothly after initial sacred presentation
+    setTimeout(dismissCurtain, 900);
+  }
+
+  // =========================================================================
+  // 0.1 HERO BACKGROUND SLIDESHOW ENGINE (CROSSFADE & PROGRESS BARS)
+  // =========================================================================
+  const heroSlider = document.getElementById('heroSlider');
+  const heroSlides = heroSlider ? heroSlider.querySelectorAll('.hero-slide') : [];
+  const heroDots = document.querySelectorAll('#heroSliderIndicators .slider-dot');
+  const heroCaption = document.getElementById('heroSlideCaptionText');
+  const heroPrevBtn = document.getElementById('heroPrevSlide');
+  const heroNextBtn = document.getElementById('heroNextSlide');
+  const heroSec = document.getElementById('hero');
+
+  let activeSlideIdx = 0;
+  let heroTimer = null;
+  const slideDurationMs = 6000; // 6 seconds per photo
+  let progressStart = 0;
+  let progressReq = null;
+
+  const switchToSlide = (targetIdx) => {
+    if (!heroSlides.length) return;
+
+    // Reset progress bar on all indicator dots
+    heroDots.forEach(dot => {
+      const fillBar = dot.querySelector('.dot-progress-fill');
+      if (fillBar) fillBar.style.width = '0%';
+      dot.classList.remove('active');
+    });
+
+    // Remove active class from old slide
+    heroSlides[activeSlideIdx]?.classList.remove('active');
+
+    // Update target index safely with modulo
+    activeSlideIdx = (targetIdx + heroSlides.length) % heroSlides.length;
+
+    // Set active class on new slide
+    const currentSlide = heroSlides[activeSlideIdx];
+    if (currentSlide) {
+      currentSlide.classList.add('active');
+
+      // Update slide caption badge
+      if (heroCaption) {
+        const newCaption = currentSlide.getAttribute('data-caption') || '';
+        heroCaption.style.opacity = '0';
+        setTimeout(() => {
+          heroCaption.textContent = newCaption;
+          heroCaption.style.opacity = '1';
+        }, 180);
+      }
+    }
+
+    // Set active indicator dot
+    if (heroDots[activeSlideIdx]) {
+      heroDots[activeSlideIdx].classList.add('active');
+    }
+
+    triggerProgressFill();
+  };
+
+  const triggerProgressFill = () => {
+    cancelAnimationFrame(progressReq);
+    progressStart = performance.now();
+
+    const frameStep = (now) => {
+      const elapsed = now - progressStart;
+      const progressPercent = Math.min(100, (elapsed / slideDurationMs) * 100);
+
+      const activeDot = heroDots[activeSlideIdx];
+      const fillBar = activeDot?.querySelector('.dot-progress-fill');
+      if (fillBar) {
+        fillBar.style.width = `${progressPercent}%`;
+      }
+
+      if (elapsed < slideDurationMs) {
+        progressReq = requestAnimationFrame(frameStep);
+      }
+    };
+
+    progressReq = requestAnimationFrame(frameStep);
+  };
+
+  const startHeroAutoplay = () => {
+    stopHeroAutoplay();
+    triggerProgressFill();
+    heroTimer = setInterval(() => {
+      switchToSlide(activeSlideIdx + 1);
+    }, slideDurationMs);
+  };
+
+  const stopHeroAutoplay = () => {
+    if (heroTimer) clearInterval(heroTimer);
+    cancelAnimationFrame(progressReq);
+  };
+
+  // Attach interactive click on dots
+  heroDots.forEach((dot, dotIdx) => {
+    dot.addEventListener('click', () => {
+      switchToSlide(dotIdx);
+      startHeroAutoplay();
+    });
+  });
+
+  // Next and Previous controls
+  heroPrevBtn?.addEventListener('click', () => {
+    switchToSlide(activeSlideIdx - 1);
+    startHeroAutoplay();
+  });
+
+  heroNextBtn?.addEventListener('click', () => {
+    switchToSlide(activeSlideIdx + 1);
+    startHeroAutoplay();
+  });
+
+  if (heroSlides.length > 0) {
+    startHeroAutoplay();
+  }
+
+  // =========================================================================
   // 1. TOP SCROLL PROGRESS BAR & FLOATING BACK-TO-TOP BUTTON
   // =========================================================================
   const scrollProgressBar = document.getElementById('scrollProgressBar');
@@ -49,6 +184,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Mobile Navigation Drawer Toggle
+  const mobileNavToggle = document.getElementById('mobileNavToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  if (mobileNavToggle && navLinks) {
+    mobileNavToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navLinks.classList.toggle('mobile-open');
+      mobileNavToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileNavToggle.innerHTML = isOpen ? '<i class="bi bi-x-lg"></i>' : '<i class="bi bi-list"></i>';
+    });
+
+    // Close mobile nav drawer when clicking any nav link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+        mobileNavToggle.setAttribute('aria-expanded', 'false');
+        mobileNavToggle.innerHTML = '<i class="bi bi-list"></i>';
+      });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+        if (navLinks.classList.contains('mobile-open')) {
+          navLinks.classList.remove('mobile-open');
+          mobileNavToggle.setAttribute('aria-expanded', 'false');
+          mobileNavToggle.innerHTML = '<i class="bi bi-list"></i>';
+        }
+      }
+    });
+  }
+
   // Fast, instant-response navigation for all internal anchor links (#)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -90,6 +258,9 @@ document.addEventListener('DOMContentLoaded', () => {
       window.requestAnimationFrame(() => {
         const scrolled = window.pageYOffset;
         if (heroSection && scrolled <= window.innerHeight * 1.2) {
+          if (heroSlider) {
+            heroSlider.style.transform = `translate3d(0, ${scrolled * 0.28}px, 0)`;
+          }
           if (heroOverlay) {
             heroOverlay.style.transform = `translate3d(0, ${scrolled * 0.32}px, 0) scale(1.02)`;
           }
@@ -145,20 +316,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { passive: true });
 
-  // Mobile Menu Toggle
-  const mobileToggle = document.getElementById('mobileNavToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('show');
-      });
-    });
-  }
 
   // =========================================================================
   // 3. INTERSECTION OBSERVER SCROLL REVEAL (AOS STYLE)
@@ -351,40 +508,79 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 7. MODAL DETAIL PRODIAKON (WITH ENHANCED POPUP ANIMATION)
+  // 7. MODAL DETAIL PRODIAKON (WITH PHOTO CONTAINER & SACRAMENTAL DETAILS)
   // =========================================================================
   const modalBackdrop = document.getElementById('detailModal');
   const modalCloseBtns = document.querySelectorAll('.close-modal-trigger');
   const detailButtons = document.querySelectorAll('.btn-detail-modal');
 
   const modalName = document.getElementById('modalProdiakonName');
-  const modalAvatar = document.getElementById('modalProdiakonAvatar');
-  const modalRole = document.getElementById('modalProdiakonRole');
+  const modalImg = document.getElementById('modalProdiakonImg');
+  const modalWilayahTag = document.getElementById('modalProdiakonWilayahTag');
+  const modalNoTag = document.getElementById('modalProdiakonNoTag');
   const modalWilayah = document.getElementById('modalProdiakonWilayah');
-  const modalLingkungan = document.getElementById('modalProdiakonLingkungan');
-  const modalMasaBakti = document.getElementById('modalProdiakonMasaBakti');
-  const modalJadwal = document.getElementById('modalProdiakonJadwal');
+  const modalTempatLahir = document.getElementById('modalProdiakonTempatLahir');
+  const modalBaptis = document.getElementById('modalProdiakonBaptis');
+  const modalKrisma = document.getElementById('modalProdiakonKrisma');
+  const modalIstri = document.getElementById('modalProdiakonIstri');
+  const modalLahirIstri = document.getElementById('modalProdiakonLahirIstri');
+  const modalSakramenIstri = document.getElementById('modalProdiakonSakramenIstri');
+  const modalNikah = document.getElementById('modalProdiakonNikah');
 
   detailButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const nama = btn.getAttribute('data-nama') || '-';
-      const lingkungan = btn.getAttribute('data-lingkungan') || '-';
-      const wilayah = btn.getAttribute('data-wilayah-nama') || '-';
-      const masaBakti = btn.getAttribute('data-masa-bakti') || '2025 - 2028';
-      const tugasKhusus = btn.getAttribute('data-tugas') || 'Pelayan Altar';
-      const jadwal = btn.getAttribute('data-jadwal') || 'Sesuai Jadwal Paroki';
+      const noTag = btn.getAttribute('data-no') || 'No. 00';
+      const wilayahTag = btn.getAttribute('data-wilayah-tag') || 'Wilayah';
+      const foto = btn.getAttribute('data-foto') || '';
+      const wilayahNama = btn.getAttribute('data-wilayah-nama') || '-';
+      const tempatLahir = btn.getAttribute('data-tempat-lahir') || '-';
+      const namaBaptis = btn.getAttribute('data-nama-baptis') || '-';
+      const tempatBaptis = btn.getAttribute('data-tempat-baptis') || '-';
+      const tglBaptis = btn.getAttribute('data-tgl-baptis') || '-';
+      const namaKrisma = btn.getAttribute('data-nama-krisma') || '-';
+      const tempatKrisma = btn.getAttribute('data-tempat-krisma') || '-';
+      const tglKrisma = btn.getAttribute('data-tgl-krisma') || '-';
+      const istri = btn.getAttribute('data-istri') || '-';
+      const lahirIstri = btn.getAttribute('data-lahir-istri') || '-';
+      const sakramenIstri = btn.getAttribute('data-sakramen-istri') || '-';
+      const nikah = btn.getAttribute('data-nikah') || '-';
 
       if (modalName) modalName.textContent = nama;
-      if (modalRole) modalRole.textContent = tugasKhusus;
-      if (modalWilayah) modalWilayah.textContent = wilayah;
-      if (modalLingkungan) modalLingkungan.textContent = lingkungan;
-      if (modalMasaBakti) modalMasaBakti.textContent = masaBakti;
-      if (modalJadwal) modalJadwal.textContent = jadwal;
+      if (modalNoTag) modalNoTag.textContent = noTag;
+      if (modalWilayahTag) modalWilayahTag.textContent = wilayahTag;
+      if (modalWilayah) modalWilayah.textContent = wilayahNama;
+      if (modalTempatLahir) modalTempatLahir.textContent = tempatLahir;
 
-      if (modalAvatar) {
-        const initials = nama.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
-        modalAvatar.textContent = initials || 'PD';
+      // Format Baptis
+      let baptisFull = namaBaptis;
+      const extraBaptis = [tempatBaptis !== '-' ? tempatBaptis : '', tglBaptis !== '-' ? tglBaptis : ''].filter(Boolean).join(', ');
+      if (extraBaptis) {
+        baptisFull += ` (${extraBaptis})`;
+      }
+      if (modalBaptis) modalBaptis.textContent = baptisFull || '-';
+
+      // Format Krisma
+      let krismaFull = namaKrisma;
+      const extraKrisma = [tempatKrisma !== '-' ? tempatKrisma : '', tglKrisma !== '-' ? tglKrisma : ''].filter(Boolean).join(', ');
+      if (extraKrisma) {
+        krismaFull += ` (${extraKrisma})`;
+      }
+      if (modalKrisma) modalKrisma.textContent = krismaFull || '-';
+
+      // Matrimonial Details
+      if (modalIstri) modalIstri.textContent = istri;
+      if (modalLahirIstri) modalLahirIstri.textContent = lahirIstri;
+      if (modalSakramenIstri) modalSakramenIstri.textContent = sakramenIstri;
+      if (modalNikah) modalNikah.textContent = nikah;
+
+      // Photo Slot Handling (Tampilkan foto asli jika ada, atau wadah avatar default tanpa inisial huruf)
+      if (modalImg) {
+        modalImg.src = (foto && foto.trim() !== '') ? foto : '/images/default-avatar.svg';
+        modalImg.onerror = function() {
+          this.src = '/images/default-avatar.svg';
+        };
       }
 
       if (modalBackdrop) {
@@ -434,32 +630,231 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 9. MAP LIGHTBOX MODAL & INTERACTIVE CONTROLS
+  // 9. MAP LIGHTBOX MODAL & INTERACTIVE PAN, DRAG, PINCH-TO-ZOOM ENGINE
   // =========================================================================
   const mapLightboxModal = document.getElementById('mapLightboxModal');
   const btnOpenMapLightbox = document.getElementById('btnOpenMapLightbox');
   const petaMainFrame = document.getElementById('petaMainFrame');
   const btnCloseMapLightbox = document.getElementById('btnCloseMapLightbox');
+  const mapViewport = document.getElementById('mapViewport');
+  const mapPanLayer = document.getElementById('mapPanLayer');
   const mapZoomableImg = document.getElementById('mapZoomableImg');
+  const mapTouchHint = document.getElementById('mapTouchHint');
   const btnZoomIn = document.getElementById('btnZoomIn');
   const btnZoomOut = document.getElementById('btnZoomOut');
   const btnZoomReset = document.getElementById('btnZoomReset');
 
-  let currentZoom = 1;
+  let currentScale = 1;
+  let panX = 0;
+  let panY = 0;
 
-  const updateMapZoom = (newZoom) => {
-    currentZoom = Math.min(Math.max(newZoom, 1), 3);
-    if (mapZoomableImg) {
-      mapZoomableImg.style.transform = `scale(${currentZoom})`;
-      mapZoomableImg.style.cursor = currentZoom > 1 ? 'grab' : 'zoom-in';
+  let isDragging = false;
+  let dragStartX = 0;
+  let dragStartY = 0;
+
+  // Touch Pinch Variables
+  let initialPinchDistance = 0;
+  let initialScaleOnPinch = 1;
+  let isPinching = false;
+  let lastTouchTime = 0;
+
+  const clampPan = (newX, newY, scale) => {
+    if (!mapViewport || scale <= 1) return { x: 0, y: 0 };
+    const vp = mapViewport.getBoundingClientRect();
+    const contentW = vp.width * scale;
+    const contentH = vp.height * scale;
+
+    // Allow generous margin so edge names & boundaries are 100% visible
+    const maxX = Math.max(0, (contentW - vp.width) / 2 + 180);
+    const maxY = Math.max(0, (contentH - vp.height) / 2 + 180);
+
+    return {
+      x: Math.min(Math.max(newX, -maxX), maxX),
+      y: Math.min(Math.max(newY, -maxY), maxY)
+    };
+  };
+
+  const applyMapTransform = (animate = false) => {
+    if (!mapPanLayer) return;
+
+    if (currentScale <= 1) {
+      panX = 0;
+      panY = 0;
+    } else {
+      const clamped = clampPan(panX, panY, currentScale);
+      panX = clamped.x;
+      panY = clamped.y;
+    }
+
+    if (animate) {
+      mapPanLayer.classList.remove('no-transition');
+    } else {
+      mapPanLayer.classList.add('no-transition');
+    }
+
+    mapPanLayer.style.transform = `translate3d(${panX}px, ${panY}px, 0) scale(${currentScale})`;
+
+    if (mapViewport) {
+      mapViewport.style.cursor = currentScale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default';
+    }
+
+    // Hide touch hint after first interaction
+    if (currentScale > 1 || panX !== 0 || panY !== 0) {
+      if (mapTouchHint) mapTouchHint.style.opacity = '0';
     }
   };
+
+  const zoomAtPoint = (targetScale, originX, originY) => {
+    const clampedScale = Math.min(Math.max(targetScale, 1), 4.5);
+    if (clampedScale === currentScale) return;
+
+    if (!mapViewport) {
+      currentScale = clampedScale;
+      applyMapTransform(true);
+      return;
+    }
+
+    const vp = mapViewport.getBoundingClientRect();
+    const cx = originX !== undefined ? (originX - vp.left - vp.width / 2) : 0;
+    const cy = originY !== undefined ? (originY - vp.top - vp.height / 2) : 0;
+
+    const scaleRatio = clampedScale / currentScale;
+    panX = (panX - cx) * scaleRatio + cx;
+    panY = (panY - cy) * scaleRatio + cy;
+    currentScale = clampedScale;
+
+    applyMapTransform(true);
+  };
+
+  const resetMap = () => {
+    currentScale = 1;
+    panX = 0;
+    panY = 0;
+    applyMapTransform(true);
+    if (mapTouchHint) mapTouchHint.style.opacity = '1';
+  };
+
+  // --- MOUSE DRAGGING (Desktop) ---
+  if (mapViewport) {
+    mapViewport.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return; // only left click
+      isDragging = true;
+      dragStartX = e.clientX - panX;
+      dragStartY = e.clientY - panY;
+      mapViewport.classList.add('is-dragging');
+      mapPanLayer?.classList.add('no-transition');
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      panX = e.clientX - dragStartX;
+      panY = e.clientY - dragStartY;
+      applyMapTransform(false);
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!isDragging) return;
+      isDragging = false;
+      mapViewport.classList.remove('is-dragging');
+      mapPanLayer?.classList.remove('no-transition');
+      applyMapTransform(true);
+    });
+
+    // --- MOUSE WHEEL ZOOM (Desktop) ---
+    mapViewport.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const zoomFactor = e.deltaY < 0 ? 1.25 : 0.8;
+      zoomAtPoint(currentScale * zoomFactor, e.clientX, e.clientY);
+    }, { passive: false });
+
+    // --- DOUBLE CLICK ZOOM (Desktop) ---
+    mapViewport.addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      if (currentScale > 1.2) {
+        resetMap();
+      } else {
+        zoomAtPoint(2.2, e.clientX, e.clientY);
+      }
+    });
+
+    // --- TOUCH EVENTS (Mobile & Tablet: 1-finger drag & 2-finger pinch) ---
+    mapViewport.addEventListener('touchstart', (e) => {
+      const now = Date.now();
+
+      if (e.touches.length === 1) {
+        // Check double-tap
+        if (now - lastTouchTime < 300) {
+          e.preventDefault();
+          const t = e.touches[0];
+          if (currentScale > 1.2) {
+            resetMap();
+          } else {
+            zoomAtPoint(2.2, t.clientX, t.clientY);
+          }
+          lastTouchTime = 0;
+          return;
+        }
+        lastTouchTime = now;
+
+        isDragging = true;
+        isPinching = false;
+        dragStartX = e.touches[0].clientX - panX;
+        dragStartY = e.touches[0].clientY - panY;
+        mapPanLayer?.classList.add('no-transition');
+      } else if (e.touches.length === 2) {
+        isDragging = false;
+        isPinching = true;
+        const dx = e.touches[0].clientX - e.touches[1].clientX;
+        const dy = e.touches[0].clientY - e.touches[1].clientY;
+        initialPinchDistance = Math.hypot(dx, dy);
+        initialScaleOnPinch = currentScale;
+        mapPanLayer?.classList.add('no-transition');
+      }
+    }, { passive: false });
+
+    mapViewport.addEventListener('touchmove', (e) => {
+      e.preventDefault(); // prevent browser pull-to-refresh & page scroll
+      if (isDragging && e.touches.length === 1) {
+        panX = e.touches[0].clientX - dragStartX;
+        panY = e.touches[0].clientY - dragStartY;
+        applyMapTransform(false);
+      } else if (isPinching && e.touches.length === 2) {
+        const dx = e.touches[0].clientX - e.touches[1].clientX;
+        const dy = e.touches[0].clientY - e.touches[1].clientY;
+        const dist = Math.hypot(dx, dy);
+        if (initialPinchDistance > 0) {
+          const pinchFactor = dist / initialPinchDistance;
+          currentScale = Math.min(Math.max(initialScaleOnPinch * pinchFactor, 1), 4.5);
+          applyMapTransform(false);
+        }
+      }
+    }, { passive: false });
+
+    mapViewport.addEventListener('touchend', (e) => {
+      if (e.touches.length === 0) {
+        isDragging = false;
+        isPinching = false;
+        mapPanLayer?.classList.remove('no-transition');
+        applyMapTransform(true);
+      } else if (e.touches.length === 1) {
+        isPinching = false;
+        isDragging = true;
+        dragStartX = e.touches[0].clientX - panX;
+        dragStartY = e.touches[0].clientY - panY;
+      }
+    });
+  }
+
+  // Button Zoom Handlers
+  btnZoomIn?.addEventListener('click', () => zoomAtPoint(currentScale * 1.35));
+  btnZoomOut?.addEventListener('click', () => zoomAtPoint(currentScale / 1.35));
+  btnZoomReset?.addEventListener('click', resetMap);
 
   const openMapLightbox = () => {
     if (mapLightboxModal) {
       mapLightboxModal.classList.add('show');
       document.body.style.overflow = 'hidden';
-      updateMapZoom(1);
+      resetMap();
     }
   };
 
@@ -467,7 +862,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mapLightboxModal) {
       mapLightboxModal.classList.remove('show');
       document.body.style.overflow = '';
-      updateMapZoom(1);
+      resetMap();
     }
   };
 
@@ -479,14 +874,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === mapLightboxModal) {
       closeMapLightbox();
     }
-  });
-
-  btnZoomIn?.addEventListener('click', () => updateMapZoom(currentZoom + 0.35));
-  btnZoomOut?.addEventListener('click', () => updateMapZoom(currentZoom - 0.35));
-  btnZoomReset?.addEventListener('click', () => updateMapZoom(1));
-
-  mapZoomableImg?.addEventListener('click', () => {
-    updateMapZoom(currentZoom > 1 ? 1 : 1.75);
   });
 
   // =========================================================================
@@ -540,11 +927,92 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // =========================================================================
+  // 12. FULLSCREEN PHOTO LIGHTBOX VIEWER
+  // =========================================================================
+  const photoLightbox = document.getElementById('photoLightboxModal');
+  const lightboxImg = document.getElementById('lightboxPhotoImg');
+  const lightboxName = document.getElementById('lightboxPhotoName');
+  const lightboxWilayahTag = document.getElementById('lightboxPhotoWilayahTag');
+  const lightboxNoTag = document.getElementById('lightboxPhotoNoTag');
+  const closePhotoLightboxBtns = document.querySelectorAll('.close-photo-lightbox');
+
+  const openPhotoLightbox = (imgSrc, name, wilayah, no) => {
+    if (!photoLightbox || !lightboxImg) return;
+    lightboxImg.src = imgSrc || '/images/default-avatar.svg';
+    lightboxImg.onerror = function() {
+      this.src = '/images/default-avatar.svg';
+    };
+    if (lightboxName) lightboxName.textContent = name || 'Foto Prodiakon';
+    if (lightboxWilayahTag) lightboxWilayahTag.textContent = wilayah || 'Wilayah Paroki';
+    if (lightboxNoTag) lightboxNoTag.textContent = no || '';
+
+    photoLightbox.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closePhotoLightbox = () => {
+    if (!photoLightbox) return;
+    photoLightbox.classList.remove('show');
+    if (!modalBackdrop?.classList.contains('show')) {
+      document.body.style.overflow = '';
+    }
+  };
+
+  // Clicks on prodiakon photo banners in cards
+  document.querySelectorAll('.prodiakon-photo-banner-wrap').forEach(wrap => {
+    wrap.addEventListener('click', () => {
+      const img = wrap.getAttribute('data-zoom-img');
+      const name = wrap.getAttribute('data-zoom-nama');
+      const wilayah = wrap.getAttribute('data-zoom-wilayah');
+      const no = wrap.getAttribute('data-zoom-no');
+      openPhotoLightbox(img, name, wilayah, no);
+    });
+  });
+
+  // Clicks on pimpinan & koordinator wilayah photo slots
+  document.querySelectorAll('.photo-zoom-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const img = trigger.getAttribute('data-zoom-img');
+      const name = trigger.getAttribute('data-zoom-nama');
+      const wilayah = trigger.getAttribute('data-zoom-wilayah');
+      const no = trigger.getAttribute('data-zoom-no');
+      openPhotoLightbox(img, name, wilayah, no);
+    });
+  });
+
+  // Zoom button inside detail modal
+  const btnZoomModalAction = document.getElementById('btnZoomModalAction');
+  const modalPhotoTrigger = document.getElementById('modalPhotoTrigger');
+  const triggerModalZoom = () => {
+    const currentImg = modalImg ? modalImg.src : '/images/default-avatar.svg';
+    const currentName = modalName ? modalName.textContent : 'Foto Prodiakon';
+    const currentWilayah = modalWilayahTag ? modalWilayahTag.textContent : 'Wilayah Paroki';
+    const currentNo = modalNoTag ? modalNoTag.textContent : '';
+    openPhotoLightbox(currentImg, currentName, currentWilayah, currentNo);
+  };
+
+  if (btnZoomModalAction) btnZoomModalAction.addEventListener('click', triggerModalZoom);
+  if (modalPhotoTrigger) modalPhotoTrigger.addEventListener('click', triggerModalZoom);
+
+  // Close handlers
+  closePhotoLightboxBtns.forEach(btn => btn.addEventListener('click', closePhotoLightbox));
+  if (photoLightbox) {
+    photoLightbox.addEventListener('click', (e) => {
+      if (e.target === photoLightbox) closePhotoLightbox();
+    });
+  }
+
   // Global ESC Key Listener
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (modalBackdrop?.classList.contains('show')) closeModal();
-      if (mapLightboxModal?.classList.contains('show')) closeMapLightbox();
+      if (photoLightbox?.classList.contains('show')) {
+        closePhotoLightbox();
+      } else if (modalBackdrop?.classList.contains('show')) {
+        closeModal();
+      } else if (mapLightboxModal?.classList.contains('show')) {
+        closeMapLightbox();
+      }
     }
   });
 });

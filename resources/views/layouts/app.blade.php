@@ -15,10 +15,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css?v={{ time() }}">
     <link rel="icon" type="image/png" href="/images/logo.png">
 </head>
 <body>
+    <!-- Luxury Sacred Opening Curtain -->
+    <div class="welcome-curtain" id="welcomeCurtain" onclick="this.classList.add('hide-curtain'); setTimeout(() => this.remove(), 700);" aria-hidden="true">
+        <div class="welcome-curtain-glow"></div>
+        <div class="welcome-curtain-box">
+            <div class="welcome-curtain-logo">
+                <img src="/images/logo.png" alt="Logo Paroki Santo Bonaventura">
+            </div>
+            <div class="welcome-curtain-badge">Selamat Datang di Portal Resmi</div>
+            <h2 class="welcome-curtain-title">Gereja Santo Bonaventura</h2>
+            <p class="welcome-curtain-sub">Paroki Pulo Mas &bull; Keuskupan Agung Jakarta</p>
+            <div class="welcome-curtain-bar">
+                <div class="welcome-curtain-progress"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Top Scroll Progress Bar -->
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scrollProgressBar"></div>
@@ -58,55 +74,111 @@
         @yield('content')
     </main>
 
-    <!-- Modal Popup Detail Prodiakon -->
+    <!-- Modal Popup Detail Prodiakon (Dengan Wadah Foto & Data Lengkap Excel) -->
     <div class="modal-backdrop" id="detailModal">
         <div class="modal-card">
             <div class="modal-header-luxury">
                 <div>
-                    <span style="font-size: 0.72rem; letter-spacing: 0.15em; color: var(--accent-gold); font-weight: 700; text-transform: uppercase;">Profil Pelayan Altar</span>
+                    <span style="font-size: 0.72rem; letter-spacing: 0.15em; color: var(--accent-gold); font-weight: 700; text-transform: uppercase;">
+                        <i class="bi bi-shield-fill-check me-1"></i> Data Resmi Prodiakon Paroki
+                    </span>
                     <h3 id="modalProdiakonName">Nama Prodiakon</h3>
                 </div>
                 <button type="button" class="modal-close-btn close-modal-trigger" aria-label="Tutup">&times;</button>
             </div>
             <div class="modal-body">
+                <!-- Wadah Foto Profil Prodiakon (Besar & Jelas) -->
                 <div class="modal-profile-header">
-                    <div class="modal-profile-avatar" id="modalProdiakonAvatar">PD</div>
+                    <div class="modal-photo-container" id="modalPhotoTrigger" title="Klik untuk melihat foto ukuran penuh" style="cursor: pointer;">
+                        <img src="/images/default-avatar.svg" alt="Foto Prodiakon" id="modalProdiakonImg" class="modal-real-photo" onerror="this.src='/images/default-avatar.svg';">
+                        <span class="modal-photo-slot-hint"><i class="bi bi-camera"></i> Wadah Foto</span>
+                        <div class="modal-photo-zoom-badge"><i class="bi bi-arrows-fullscreen"></i> Perbesar</div>
+                    </div>
                     <div class="modal-profile-name">
-                        <span class="modal-profile-tag" id="modalProdiakonRole">Pelayan Altar</span>
-                        <div style="font-size: 0.8rem; color: #16a34a; margin-top: 4px; font-weight: 600;">
-                            <i class="bi bi-patch-check-fill"></i> Terdaftar Aktif
+                        <div class="modal-badge-group">
+                            <span class="modal-profile-tag" id="modalProdiakonWilayahTag">Wilayah I</span>
+                            <span class="modal-no-tag" id="modalProdiakonNoTag">No. 01</span>
                         </div>
+                        <div class="modal-status-active">
+                            <i class="bi bi-patch-check-fill text-gold"></i> Terdaftar di Buku Induk Paroki
+                        </div>
+                        <button type="button" class="btn-zoom-modal-action" id="btnZoomModalAction">
+                            <i class="bi bi-arrows-fullscreen text-gold me-1"></i> Lihat Foto Penuh (HD)
+                        </button>
                     </div>
                 </div>
 
+                <!-- Bagian 1: Data Sakramen Inisiasi & Lahir -->
+                <div class="modal-section-title">
+                    <i class="bi bi-award-fill text-gold me-1"></i> Data Sakramen &amp; Pribadi
+                </div>
                 <ul class="modal-info-list">
                     <li class="modal-info-row">
                         <span class="modal-info-label"><i class="bi bi-geo-alt me-1 text-gold"></i> Wilayah Paroki</span>
                         <span class="modal-info-val" id="modalProdiakonWilayah">-</span>
                     </li>
                     <li class="modal-info-row">
-                        <span class="modal-info-label"><i class="bi bi-house-door me-1 text-gold"></i> Lingkungan</span>
-                        <span class="modal-info-val" id="modalProdiakonLingkungan">-</span>
+                        <span class="modal-info-label"><i class="bi bi-geo me-1 text-gold"></i> Tempat Lahir</span>
+                        <span class="modal-info-val" id="modalProdiakonTempatLahir">-</span>
                     </li>
                     <li class="modal-info-row">
-                        <span class="modal-info-label"><i class="bi bi-calendar-check me-1 text-gold"></i> Periode Masa Bakti</span>
-                        <span class="modal-info-val" id="modalProdiakonMasaBakti">2025 - 2028</span>
+                        <span class="modal-info-label"><i class="bi bi-droplet-fill me-1 text-gold"></i> Sakramen Baptis</span>
+                        <span class="modal-info-val" id="modalProdiakonBaptis">-</span>
                     </li>
                     <li class="modal-info-row">
-                        <span class="modal-info-label"><i class="bi bi-clock me-1 text-gold"></i> Jadwal Pelayanan</span>
-                        <span class="modal-info-val" id="modalProdiakonJadwal">-</span>
+                        <span class="modal-info-label"><i class="bi bi-fire me-1 text-gold"></i> Sakramen Krisma</span>
+                        <span class="modal-info-val" id="modalProdiakonKrisma">-</span>
+                    </li>
+                </ul>
+
+                <!-- Bagian 2: Data Sakramen Perkawinan Katolik -->
+                <div class="modal-section-title mt-3">
+                    <i class="bi bi-heart-fill text-gold me-1"></i> Data Sakramen Perkawinan Katolik
+                </div>
+                <ul class="modal-info-list">
+                    <li class="modal-info-row">
+                        <span class="modal-info-label"><i class="bi bi-person-heart me-1 text-gold"></i> Nama Istri</span>
+                        <span class="modal-info-val" id="modalProdiakonIstri">-</span>
+                    </li>
+                    <li class="modal-info-row">
+                        <span class="modal-info-label"><i class="bi bi-calendar-heart me-1 text-gold"></i> Lahir Istri</span>
+                        <span class="modal-info-val" id="modalProdiakonLahirIstri">-</span>
+                    </li>
+                    <li class="modal-info-row">
+                        <span class="modal-info-label"><i class="bi bi-droplet me-1 text-gold"></i> Baptis &amp; Krisma Istri</span>
+                        <span class="modal-info-val" id="modalProdiakonSakramenIstri">-</span>
+                    </li>
+                    <li class="modal-info-row">
+                        <span class="modal-info-label"><i class="bi bi-building-check me-1 text-gold"></i> Tempat &amp; Tgl Nikah</span>
+                        <span class="modal-info-val" id="modalProdiakonNikah">-</span>
                     </li>
                 </ul>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn-primary-gold close-modal-trigger" style="padding: 10px 24px; font-size: 0.85rem;">
-                    Tutup Detail
+                    Tutup Profil
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Modal Lightbox Peta Fullscreen -->
+    <!-- Modal Lightbox Foto Prodiakon Fullscreen -->
+    <div class="modal-backdrop photo-lightbox-backdrop" id="photoLightboxModal">
+        <div class="photo-lightbox-card">
+            <button type="button" class="photo-lightbox-close close-photo-lightbox" aria-label="Tutup Foto">&times;</button>
+            <div class="photo-lightbox-img-wrap">
+                <img src="/images/default-avatar.svg" id="lightboxPhotoImg" alt="Foto Prodiakon Fullscreen" class="photo-lightbox-img">
+            </div>
+            <div class="photo-lightbox-caption">
+                <div class="photo-lightbox-tags">
+                    <span class="photo-lightbox-badge" id="lightboxPhotoWilayahTag">Wilayah I</span>
+                    <span class="photo-lightbox-no" id="lightboxPhotoNoTag">No. 01</span>
+                </div>
+                <h3 class="photo-lightbox-name" id="lightboxPhotoName">Nama Prodiakon</h3>
+                <span class="photo-lightbox-sub"><i class="bi bi-shield-check text-gold me-1"></i> Pelayan Altar &bull; Paroki Santo Bonaventura Pulomas</span>
+            </div>
+        </div>
+    </div>
     <div class="modal-backdrop map-lightbox-backdrop" id="mapLightboxModal">
         <div class="map-lightbox-card">
             <div class="map-lightbox-header">
@@ -126,10 +198,15 @@
                 </div>
             </div>
             <div class="map-lightbox-viewport" id="mapViewport">
-                <picture>
-                    <source srcset="/images/peta.webp" type="image/webp">
-                    <img src="/images/peta.png" alt="Peta Paroki Pulomas Fullscreen" class="map-zoomable-img" id="mapZoomableImg">
-                </picture>
+                <div class="map-pan-layer" id="mapPanLayer">
+                    <picture>
+                        <source srcset="/images/peta.webp" type="image/webp">
+                        <img src="/images/peta.png" alt="Peta Paroki Pulomas Fullscreen" class="map-zoomable-img" id="mapZoomableImg" draggable="false">
+                    </picture>
+                </div>
+                <div class="map-touch-hint" id="mapTouchHint">
+                    <i class="bi bi-arrows-move me-1"></i> Geser/drag untuk menjelajah &bull; Cubit 2 jari (pinch) di HP atau roda mouse untuk zoom
+                </div>
             </div>
             <div class="map-lightbox-footer">
                 <span><i class="bi bi-info-circle me-1 text-gold"></i> Gunakan tombol zoom di atas atau cubit/geser untuk melihat nama jalan dan batas teritori lingkungan secara mendetail.</span>
@@ -184,7 +261,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; {{ date('Y') }} Paguyuban Prodiakon Santo Bonaventura Pulomas. Dikembangkan untuk kemuliaan Allah yang lebih besar (AMDG).</p>
+                <p>&copy; {{ date('Y') }} Dibuat Oleh Sany Daffa Hizkil & Yermias Hendrik Sasabone</p>
             </div>
         </div>
     </footer>
@@ -199,6 +276,6 @@
     </button>
 
     <!-- Main JavaScript -->
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js?v={{ time() }}"></script>
 </body>
 </html>
