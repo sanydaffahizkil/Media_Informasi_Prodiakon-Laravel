@@ -254,6 +254,38 @@
         </div>
     </div>
 
+    <!-- Bagan Struktur Organisasi Fullscreen Lightbox Modal -->
+    <div class="modal-backdrop map-lightbox-backdrop" id="baganLightboxModal" role="dialog" aria-modal="true" aria-label="Bagan Struktur Organisasi">
+        <div class="map-lightbox-card">
+            <div class="map-lightbox-header">
+                <div class="map-lightbox-title-wrap">
+                    <i class="bi bi-diagram-3-fill text-gold me-2"></i>
+                    <div>
+                        <h3 class="map-lightbox-title">Bagan Struktur Organisasi Paguyuban Prodiakon (HD)</h3>
+                        <span class="map-lightbox-sub">Gereja Santo Bonaventura Pulomas &bull; Periode 2022 – 2025</span>
+                    </div>
+                </div>
+                <div class="map-lightbox-tools">
+                    <button type="button" class="btn-map-tool" id="btnModalBaganZoomIn" title="Perbesar"><i class="bi bi-zoom-in"></i></button>
+                    <button type="button" class="btn-map-tool" id="btnModalBaganZoomOut" title="Perkecil"><i class="bi bi-zoom-out"></i></button>
+                    <button type="button" class="btn-map-tool" id="btnModalBaganZoomFit" title="Pas Layar / Reset"><i class="bi bi-arrows-angle-contract"></i></button>
+                    <button type="button" class="btn-map-close" id="btnCloseBaganLightbox" title="Tutup">&times;</button>
+                </div>
+            </div>
+            <div class="map-lightbox-viewport" id="baganModalViewport">
+                <div class="map-pan-layer bagan-modal-pan-layer" id="baganModalPanLayer">
+                    <!-- Cloned organogram-tree rendered dynamically here -->
+                </div>
+                <div class="map-touch-hint" id="baganModalTouchHint">
+                    <i class="bi bi-arrows-move me-1"></i> Geser/drag untuk menjelajah &bull; Cubit 2 jari (pinch) di HP atau gunakan tombol zoom
+                </div>
+            </div>
+            <div class="map-lightbox-footer">
+                <span><i class="bi bi-info-circle me-1 text-gold"></i> Gunakan tombol zoom di atas atau cubit/geser layar untuk melihat rincian hierarki dan setiap seksi pelayanan.</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -301,14 +333,14 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; {{ date('Y') }} Dibuat Oleh Sany Daffa Hizkil & Yermias Hendrik Sasabone</p>
+                <p>&copy; {{ date('Y') }} Made With Love ❤️</p>
             </div>
         </div>
     </footer>
 
     <!-- Floating Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
-        <svg class="progress-ring" width="50" height="50">
+    <button type="button" class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+        <svg class="progress-ring" viewBox="0 0 50 50" aria-hidden="true">
             <circle class="progress-ring-bg" stroke="rgba(203, 162, 88, 0.2)" stroke-width="3" fill="transparent" r="20" cx="25" cy="25"/>
             <circle class="progress-ring-indicator" id="progressRingCircle" stroke="var(--accent-gold)" stroke-width="3" stroke-dasharray="125.66" stroke-dashoffset="125.66" fill="transparent" r="20" cx="25" cy="25"/>
         </svg>

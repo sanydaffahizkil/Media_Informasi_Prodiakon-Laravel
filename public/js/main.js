@@ -147,42 +147,122 @@ document.addEventListener('DOMContentLoaded', () => {
   const progressRingCircle = document.getElementById('progressRingCircle');
   const circumference = 2 * Math.PI * 20; // ~125.66
 
+  let scrollProgressTicking = false;
+  let cachedDocHeight = 0;
+  const updateDocHeight = () => {
+    cachedDocHeight = document.documentElement.scrollHeight - window.innerHeight;
+  };
+  updateDocHeight();
+  window.addEventListener('resize', updateDocHeight, { passive: true });
+
   const handleScrollProgress = () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) : 0;
+    if (!scrollProgressTicking) {
+      window.requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        if (cachedDocHeight <= 0) updateDocHeight();
+        const scrollPercent = cachedDocHeight > 0 ? (scrollTop / cachedDocHeight) : 0;
 
-    // Update top progress bar
-    if (scrollProgressBar) {
-      scrollProgressBar.style.width = `${Math.min(100, scrollPercent * 100)}%`;
-    }
+        // Update top progress bar
+        if (scrollProgressBar) {
+          scrollProgressBar.style.width = `${Math.min(100, scrollPercent * 100)}%`;
+        }
 
-    // Update circular SVG indicator
-    if (progressRingCircle) {
-      const offset = circumference - (scrollPercent * circumference);
-      progressRingCircle.style.strokeDashoffset = offset;
-    }
+        // Update circular SVG indicator
+        if (progressRingCircle) {
+          const offset = circumference - (scrollPercent * circumference);
+          progressRingCircle.style.strokeDashoffset = offset;
+        }
 
-    // Show/hide floating back-to-top button
-    if (backToTopBtn) {
-      if (scrollTop > 320) {
-        backToTopBtn.classList.add('show');
-      } else {
-        backToTopBtn.classList.remove('show');
-      }
+        // Show/hide floating back-to-top button
+        if (backToTopBtn) {
+          if (scrollTop > 260) {
+            backToTopBtn.classList.add('show');
+          } else {
+            backToTopBtn.classList.remove('show');
+          }
+        }
+        scrollProgressTicking = false;
+      });
+      scrollProgressTicking = true;
     }
   };
 
   window.addEventListener('scroll', handleScrollProgress, { passive: true });
   handleScrollProgress();
 
-  // =========================================================================
-  backToTopBtn?.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  // Instant zero-delay scroll-to-top execution
+  const executeScrollToTop = () => {
+    // Instant haptic visual animation on button
+    if (backToTopBtn) {
+      backToTopBtn.style.transform = 'translateY(0) scale(0.88)';
+      setTimeout(() => {
+        if (backToTopBtn) backToTopBtn.style.transform = '';
+      }, 150);
+    }
+
+    try {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } catch (_) {
+      window.scrollTo(0, 0);
+    }
+  };
+
+  if (backToTopBtn) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
+    let touchHandled = false;
+
+    // Instant touch response on touchend (as soon as finger lifts from button)
+    backToTopBtn.addEventListener('touchstart', (e) => {
+      touchHandled = false;
+      touchStartTime = Date.now();
+      if (e.touches && e.touches[0]) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    backToTopBtn.addEventListener('touchend', (e) => {
+      let moved = false;
+      if (e.changedTouches && e.changedTouches[0]) {
+        const dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
+        const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx > 12 || dy > 12) moved = true;
+      }
+
+      const elapsed = Date.now() - touchStartTime;
+      // If it was a genuine tap without drag/scroll gesture
+      if (!moved && elapsed < 600) {
+        touchHandled = true;
+        // Suppress 300ms delayed synthetic click on mobile
+        if (e.cancelable) e.preventDefault();
+        executeScrollToTop();
+      }
+
+      // Reset touchHandled flag after small delay to swallow any late synthetic click
+      setTimeout(() => {
+        touchHandled = false;
+      }, 400);
+    }, { passive: false });
+
+    backToTopBtn.addEventListener('touchcancel', () => {
+      touchHandled = false;
+    }, { passive: true });
+
+    // Desktop mouse click & touch fallback
+    backToTopBtn.addEventListener('click', (e) => {
+      if (touchHandled) return; // Prevent duplicate execution from synthetic click
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      executeScrollToTop();
     });
-  });
+  }
 
   // Mobile Navigation Drawer Toggle
   const mobileNavToggle = document.getElementById('mobileNavToggle');
@@ -296,31 +376,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
   const navItems = document.querySelectorAll('.nav-link[href^="#"]');
 
+  // Pre-calculate section positions to prevent forced reflow layout thrashing on scroll frames
+  let cachedSections = [];
+  const refreshSectionCache = () => {
+    cachedSections = Array.from(sections).map(section => ({
+      id: section.getAttribute('id'),
+      top: section.offsetTop,
+      bottom: section.offsetTop + section.offsetHeight
+    }));
+  };
+  refreshSectionCache();
+  window.addEventListener('resize', refreshSectionCache, { passive: true });
+  window.addEventListener('orientationchange', refreshSectionCache, { passive: true });
+  window.addEventListener('load', refreshSectionCache, { passive: true });
+
+  let scrollSpyTicking = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar?.classList.add('scrolled');
-    } else {
-      navbar?.classList.remove('scrolled');
+    if (!scrollSpyTicking) {
+      window.requestAnimationFrame(() => {
+        const currentScroll = window.scrollY;
+
+        if (currentScroll > 40) {
+          navbar?.classList.add('scrolled');
+        } else {
+          navbar?.classList.remove('scrolled');
+        }
+
+        // ScrollSpy active link using cached offsets (zero DOM reflow!)
+        let current = '';
+        const scrollPos = currentScroll + 130;
+
+        for (let i = 0; i < cachedSections.length; i++) {
+          const sec = cachedSections[i];
+          if (scrollPos >= sec.top && scrollPos < sec.bottom) {
+            current = sec.id;
+            break;
+          }
+        }
+
+        if (current) {
+          navItems.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === `#${current}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+
+        scrollSpyTicking = false;
+      });
+      scrollSpyTicking = true;
     }
-
-    // ScrollSpy active link
-    let current = '';
-    const scrollPos = window.scrollY + 130;
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navItems.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
   }, { passive: true });
 
 
@@ -907,6 +1015,532 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
+  // 10. BAGAN STRUKTUR ORGANISASI: INTERACTIVE PAN, DRAG, ZOOM & AUTO-FIT ENGINE
+  // =========================================================================
+
+  // --- A. INLINE BAGAN VIEWER ---
+  const inlineBaganViewport = document.getElementById('inlineBaganViewport');
+  const inlineBaganPanLayer = document.getElementById('inlineBaganPanLayer');
+  const inlineBaganTree = document.getElementById('inlineBaganTree');
+  const inlineBaganTouchHint = document.getElementById('inlineBaganTouchHint');
+  const btnInlineZoomIn = document.getElementById('btnInlineZoomIn');
+  const btnInlineZoomOut = document.getElementById('btnInlineZoomOut');
+  const btnInlineZoomFit = document.getElementById('btnInlineZoomFit');
+
+  let inlineScale = 1;
+  let inlineFitScale = 1;
+  let inlinePanX = 0;
+  let inlinePanY = 0;
+  let inlineIsDragging = false;
+  let inlineDragStartX = 0;
+  let inlineDragStartY = 0;
+  let inlineIsPinching = false;
+  let inlineInitialPinchDist = 0;
+  let inlineInitialScaleOnPinch = 1;
+  let inlineLastTouchTime = 0;
+  let inlineTouchStartX = 0;
+  let inlineTouchStartY = 0;
+
+  const calculateInlineFitScale = () => {
+    if (!inlineBaganViewport) return 1;
+    const vpW = inlineBaganViewport.clientWidth;
+    if (vpW <= 0) return 1;
+    const naturalW = 980;
+    if (vpW >= naturalW + 20) {
+      return 1;
+    }
+    const fit = Math.min(1, Math.max(0.32, (vpW - 16) / naturalW));
+    return parseFloat(fit.toFixed(3));
+  };
+
+  const clampInlinePan = (newX, newY, scale) => {
+    if (!inlineBaganViewport) return { x: 0, y: 0 };
+    const vpW = inlineBaganViewport.clientWidth;
+    const vpH = inlineBaganViewport.clientHeight;
+    const naturalW = 980;
+    const naturalH = inlineBaganTree ? inlineBaganTree.offsetHeight : 800;
+
+    const renderedW = naturalW * scale;
+    const renderedH = naturalH * scale;
+
+    let maxX = 0;
+    if (renderedW > vpW) {
+      maxX = Math.max(0, (renderedW - vpW) / 2 + 50);
+    } else {
+      maxX = 20;
+    }
+
+    let minY = 0;
+    let maxY = 30;
+    if (renderedH > vpH) {
+      minY = -(renderedH - vpH + 50);
+    } else {
+      minY = -20;
+    }
+
+    return {
+      x: Math.min(Math.max(newX, -maxX), maxX),
+      y: Math.min(Math.max(newY, minY), maxY)
+    };
+  };
+
+  const applyInlineTransform = (animate = false) => {
+    if (!inlineBaganPanLayer) return;
+
+    if (inlineScale <= inlineFitScale * 1.02) {
+      inlinePanX = 0;
+      inlinePanY = 0;
+    } else {
+      const clamped = clampInlinePan(inlinePanX, inlinePanY, inlineScale);
+      inlinePanX = clamped.x;
+      inlinePanY = clamped.y;
+    }
+
+    if (animate) {
+      inlineBaganPanLayer.classList.remove('no-transition');
+    } else {
+      inlineBaganPanLayer.classList.add('no-transition');
+    }
+
+    inlineBaganPanLayer.style.transform = `translate3d(${inlinePanX}px, ${inlinePanY}px, 0) scale(${inlineScale})`;
+
+    if (inlineBaganViewport) {
+      inlineBaganViewport.style.cursor = inlineScale > inlineFitScale * 1.05 ? (inlineIsDragging ? 'grabbing' : 'grab') : 'default';
+    }
+
+    if (inlineTouchHint && (inlineScale > inlineFitScale * 1.1 || inlinePanX !== 0 || inlinePanY !== 0)) {
+      inlineTouchHint.style.opacity = '0';
+    }
+  };
+
+  const fitInlineBagan = (animate = true) => {
+    if (!inlineBaganViewport || !inlineBaganTree) return;
+    inlineFitScale = calculateInlineFitScale();
+    inlineScale = inlineFitScale;
+    inlinePanX = 0;
+    inlinePanY = 0;
+
+    if (window.innerWidth <= 768) {
+      const treeHeight = inlineBaganTree.offsetHeight || 800;
+      const scaledHeight = Math.round(treeHeight * inlineFitScale);
+      inlineBaganViewport.style.height = `${Math.min(Math.max(280, scaledHeight + 24), Math.round(window.innerHeight * 0.7))}px`;
+    } else {
+      inlineBaganViewport.style.height = '';
+    }
+
+    applyInlineTransform(animate);
+    if (inlineTouchHint) inlineTouchHint.style.opacity = '1';
+  };
+
+  const zoomInlineAt = (targetScale) => {
+    const minS = Math.max(0.3, inlineFitScale);
+    const maxS = 2.4;
+    const clamped = Math.min(Math.max(targetScale, minS), maxS);
+    if (Math.abs(clamped - inlineScale) < 0.01) return;
+    inlineScale = clamped;
+    applyInlineTransform(true);
+  };
+
+  btnInlineZoomIn?.addEventListener('click', () => zoomInlineAt(inlineScale * 1.35));
+  btnInlineZoomOut?.addEventListener('click', () => zoomInlineAt(inlineScale / 1.35));
+  btnInlineZoomFit?.addEventListener('click', () => fitInlineBagan(true));
+
+  if (inlineBaganViewport) {
+    inlineBaganViewport.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
+      inlineIsDragging = true;
+      inlineDragStartX = e.clientX - inlinePanX;
+      inlineDragStartY = e.clientY - inlinePanY;
+      inlineBaganViewport.classList.add('is-dragging');
+      inlineBaganPanLayer?.classList.add('no-transition');
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!inlineIsDragging) return;
+      inlinePanX = e.clientX - inlineDragStartX;
+      inlinePanY = e.clientY - inlineDragStartY;
+      applyInlineTransform(false);
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!inlineIsDragging) return;
+      inlineIsDragging = false;
+      inlineBaganViewport?.classList.remove('is-dragging');
+      inlineBaganPanLayer?.classList.remove('no-transition');
+      applyInlineTransform(true);
+    });
+
+    inlineBaganViewport.addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      if (inlineScale > inlineFitScale * 1.25) {
+        fitInlineBagan(true);
+      } else {
+        zoomInlineAt(Math.min(2.0, inlineFitScale * 2.2));
+      }
+    });
+
+    inlineBaganViewport.addEventListener('touchstart', (e) => {
+      const now = Date.now();
+      if (e.touches.length === 1) {
+        if (now - inlineLastTouchTime < 300) {
+          e.preventDefault();
+          if (inlineScale > inlineFitScale * 1.25) {
+            fitInlineBagan(true);
+          } else {
+            zoomInlineAt(Math.min(2.0, inlineFitScale * 2.2));
+          }
+          inlineLastTouchTime = 0;
+          return;
+        }
+        inlineLastTouchTime = now;
+
+        inlineIsDragging = true;
+        inlineIsPinching = false;
+        inlineTouchStartX = e.touches[0].clientX;
+        inlineTouchStartY = e.touches[0].clientY;
+        inlineDragStartX = e.touches[0].clientX - inlinePanX;
+        inlineDragStartY = e.touches[0].clientY - inlinePanY;
+        inlineBaganPanLayer?.classList.add('no-transition');
+      } else if (e.touches.length === 2) {
+        inlineIsDragging = false;
+        inlineIsPinching = true;
+        const dx = e.touches[0].clientX - e.touches[1].clientX;
+        const dy = e.touches[0].clientY - e.touches[1].clientY;
+        inlineInitialPinchDist = Math.hypot(dx, dy);
+        inlineInitialScaleOnPinch = inlineScale;
+        inlineBaganPanLayer?.classList.add('no-transition');
+      }
+    }, { passive: false });
+
+    inlineBaganViewport.addEventListener('touchmove', (e) => {
+      if (inlineIsDragging && e.touches.length === 1) {
+        const curX = e.touches[0].clientX;
+        const curY = e.touches[0].clientY;
+        const diffX = Math.abs(curX - inlineTouchStartX);
+        const diffY = Math.abs(curY - inlineTouchStartY);
+
+        if (inlineScale > inlineFitScale * 1.08 || diffX > diffY + 6) {
+          e.preventDefault();
+          inlinePanX = curX - inlineDragStartX;
+          inlinePanY = curY - inlineDragStartY;
+          applyInlineTransform(false);
+        }
+      } else if (inlineIsPinching && e.touches.length === 2) {
+        e.preventDefault();
+        const dx = e.touches[0].clientX - e.touches[1].clientX;
+        const dy = e.touches[0].clientY - e.touches[1].clientY;
+        const dist = Math.hypot(dx, dy);
+        if (inlineInitialPinchDist > 0) {
+          const pinchFactor = dist / inlineInitialPinchDist;
+          inlineScale = Math.min(Math.max(inlineInitialScaleOnPinch * pinchFactor, inlineFitScale * 0.9), 2.4);
+          applyInlineTransform(false);
+        }
+      }
+    }, { passive: false });
+
+    inlineBaganViewport.addEventListener('touchend', (e) => {
+      if (e.touches.length === 0) {
+        inlineIsDragging = false;
+        inlineIsPinching = false;
+        inlineBaganPanLayer?.classList.remove('no-transition');
+        applyInlineTransform(true);
+      } else if (e.touches.length === 1) {
+        inlineIsPinching = false;
+        inlineIsDragging = true;
+        inlineDragStartX = e.touches[0].clientX - inlinePanX;
+        inlineDragStartY = e.touches[0].clientY - inlinePanY;
+      }
+    });
+  }
+
+  // --- B. MODAL LIGHTBOX FULLSCREEN VIEWER ---
+  const baganLightboxModal = document.getElementById('baganLightboxModal');
+  const btnOpenBaganLightbox = document.getElementById('btnOpenBaganLightbox');
+  const btnOpenBaganLightboxFooter = document.getElementById('btnOpenBaganLightboxFooter');
+  const btnCloseBaganLightbox = document.getElementById('btnCloseBaganLightbox');
+  const baganModalViewport = document.getElementById('baganModalViewport');
+  const baganModalPanLayer = document.getElementById('baganModalPanLayer');
+  const baganModalTouchHint = document.getElementById('baganModalTouchHint');
+  const btnModalBaganZoomIn = document.getElementById('btnModalBaganZoomIn');
+  const btnModalBaganZoomOut = document.getElementById('btnModalBaganZoomOut');
+  const btnModalBaganZoomFit = document.getElementById('btnModalBaganZoomFit');
+
+  let modalScale = 1;
+  let modalFitScale = 1;
+  let modalPanX = 0;
+  let modalPanY = 0;
+  let modalIsDragging = false;
+  let modalDragStartX = 0;
+  let modalDragStartY = 0;
+  let modalIsPinching = false;
+  let modalInitialPinchDist = 0;
+  let modalInitialScaleOnPinch = 1;
+  let modalLastTouchTime = 0;
+  let baganModalCloned = false;
+
+  const ensureBaganModalClone = () => {
+    if (baganModalCloned && baganModalPanLayer?.children.length > 0) return;
+    if (inlineBaganTree && baganModalPanLayer) {
+      const cloned = inlineBaganTree.cloneNode(true);
+      cloned.id = 'clonedBaganTree';
+      baganModalPanLayer.innerHTML = '';
+      baganModalPanLayer.appendChild(cloned);
+      baganModalCloned = true;
+    }
+  };
+
+  const calculateModalFitScale = () => {
+    if (!baganModalViewport) return 1;
+    const vpW = baganModalViewport.clientWidth;
+    if (vpW <= 0) return 1;
+    const naturalW = 980;
+    if (vpW >= naturalW + 40) return 1;
+    const fit = Math.min(1.1, Math.max(0.35, (vpW - 24) / naturalW));
+    return parseFloat(fit.toFixed(3));
+  };
+
+  const clampModalPan = (newX, newY, scale) => {
+    if (!baganModalViewport) return { x: 0, y: 0 };
+    const vpW = baganModalViewport.clientWidth;
+    const vpH = baganModalViewport.clientHeight;
+    const naturalW = 980;
+    const naturalH = baganModalPanLayer?.firstElementChild?.offsetHeight || 800;
+
+    const renderedW = naturalW * scale;
+    const renderedH = naturalH * scale;
+
+    let maxX = 0;
+    if (renderedW > vpW) {
+      maxX = Math.max(0, (renderedW - vpW) / 2 + 120);
+    } else {
+      maxX = 40;
+    }
+
+    let minY = 0;
+    let maxY = 40;
+    if (renderedH > vpH) {
+      minY = -(renderedH - vpH + 120);
+    } else {
+      minY = -40;
+    }
+
+    return {
+      x: Math.min(Math.max(newX, -maxX), maxX),
+      y: Math.min(Math.max(newY, minY), maxY)
+    };
+  };
+
+  const applyModalTransform = (animate = false) => {
+    if (!baganModalPanLayer) return;
+
+    if (modalScale <= modalFitScale * 1.02) {
+      modalPanX = 0;
+      modalPanY = 0;
+    } else {
+      const clamped = clampModalPan(modalPanX, modalPanY, modalScale);
+      modalPanX = clamped.x;
+      modalPanY = clamped.y;
+    }
+
+    if (animate) {
+      baganModalPanLayer.classList.remove('no-transition');
+    } else {
+      baganModalPanLayer.classList.add('no-transition');
+    }
+
+    baganModalPanLayer.style.transform = `translate3d(${modalPanX}px, ${modalPanY}px, 0) scale(${modalScale})`;
+
+    if (baganModalViewport) {
+      baganModalViewport.style.cursor = modalScale > modalFitScale * 1.05 ? (modalIsDragging ? 'grabbing' : 'grab') : 'default';
+    }
+
+    if (baganModalTouchHint && (modalScale > modalFitScale * 1.1 || modalPanX !== 0 || modalPanY !== 0)) {
+      baganModalTouchHint.style.opacity = '0';
+    }
+  };
+
+  const resetModalBagan = () => {
+    modalFitScale = calculateModalFitScale();
+    modalScale = modalFitScale;
+    modalPanX = 0;
+    modalPanY = 0;
+    applyModalTransform(true);
+    if (baganModalTouchHint) baganModalTouchHint.style.opacity = '1';
+  };
+
+  const zoomModalAt = (targetScale, originX, originY) => {
+    const minS = Math.max(0.3, modalFitScale * 0.85);
+    const maxS = 3.0;
+    const clamped = Math.min(Math.max(targetScale, minS), maxS);
+    if (Math.abs(clamped - modalScale) < 0.01) return;
+
+    if (originX !== undefined && baganModalViewport) {
+      const vp = baganModalViewport.getBoundingClientRect();
+      const cx = originX - vp.left - vp.width / 2;
+      const cy = originY - vp.top;
+      const ratio = clamped / modalScale;
+      modalPanX = (modalPanX - cx) * ratio + cx;
+      modalPanY = (modalPanY - cy) * ratio + cy;
+    }
+
+    modalScale = clamped;
+    applyModalTransform(true);
+  };
+
+  const openBaganLightbox = () => {
+    if (!baganLightboxModal) return;
+    ensureBaganModalClone();
+    baganLightboxModal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+      resetModalBagan();
+    }, 50);
+  };
+
+  const closeBaganLightbox = () => {
+    if (!baganLightboxModal) return;
+    baganLightboxModal.classList.remove('show');
+    if (!modalBackdrop?.classList.contains('show') && !photoLightbox?.classList.contains('show') && !mapLightboxModal?.classList.contains('show')) {
+      document.body.style.overflow = '';
+    }
+  };
+
+  btnOpenBaganLightbox?.addEventListener('click', openBaganLightbox);
+  btnOpenBaganLightboxFooter?.addEventListener('click', openBaganLightbox);
+  btnCloseBaganLightbox?.addEventListener('click', closeBaganLightbox);
+
+  baganLightboxModal?.addEventListener('click', (e) => {
+    if (e.target === baganLightboxModal) {
+      closeBaganLightbox();
+    }
+  });
+
+  btnModalBaganZoomIn?.addEventListener('click', () => zoomModalAt(modalScale * 1.35));
+  btnModalBaganZoomOut?.addEventListener('click', () => zoomModalAt(modalScale / 1.35));
+  btnModalBaganZoomFit?.addEventListener('click', resetModalBagan);
+
+  if (baganModalViewport) {
+    baganModalViewport.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
+      modalIsDragging = true;
+      modalDragStartX = e.clientX - modalPanX;
+      modalDragStartY = e.clientY - modalPanY;
+      baganModalViewport.classList.add('is-dragging');
+      baganModalPanLayer?.classList.add('no-transition');
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!modalIsDragging) return;
+      modalPanX = e.clientX - modalDragStartX;
+      modalPanY = e.clientY - modalDragStartY;
+      applyModalTransform(false);
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!modalIsDragging) return;
+      modalIsDragging = false;
+      baganModalViewport?.classList.remove('is-dragging');
+      baganModalPanLayer?.classList.remove('no-transition');
+      applyModalTransform(true);
+    });
+
+    baganModalViewport.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const zoomFactor = e.deltaY < 0 ? 1.25 : 0.8;
+      zoomModalAt(modalScale * zoomFactor, e.clientX, e.clientY);
+    }, { passive: false });
+
+    baganModalViewport.addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      if (modalScale > modalFitScale * 1.25) {
+        resetModalBagan();
+      } else {
+        zoomModalAt(Math.min(2.5, modalFitScale * 2.2), e.clientX, e.clientY);
+      }
+    });
+
+    baganModalViewport.addEventListener('touchstart', (e) => {
+      const now = Date.now();
+      if (e.touches.length === 1) {
+        if (now - modalLastTouchTime < 300) {
+          e.preventDefault();
+          const t = e.touches[0];
+          if (modalScale > modalFitScale * 1.25) {
+            resetModalBagan();
+          } else {
+            zoomModalAt(Math.min(2.5, modalFitScale * 2.2), t.clientX, t.clientY);
+          }
+          modalLastTouchTime = 0;
+          return;
+        }
+        modalLastTouchTime = now;
+
+        modalIsDragging = true;
+        modalIsPinching = false;
+        modalDragStartX = e.touches[0].clientX - modalPanX;
+        modalDragStartY = e.touches[0].clientY - modalPanY;
+        baganModalPanLayer?.classList.add('no-transition');
+      } else if (e.touches.length === 2) {
+        modalIsDragging = false;
+        modalIsPinching = true;
+        const dx = e.touches[0].clientX - e.touches[1].clientX;
+        const dy = e.touches[0].clientY - e.touches[1].clientY;
+        modalInitialPinchDist = Math.hypot(dx, dy);
+        modalInitialScaleOnPinch = modalScale;
+        baganModalPanLayer?.classList.add('no-transition');
+      }
+    }, { passive: false });
+
+    baganModalViewport.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      if (modalIsDragging && e.touches.length === 1) {
+        modalPanX = e.touches[0].clientX - modalDragStartX;
+        modalPanY = e.touches[0].clientY - modalDragStartY;
+        applyModalTransform(false);
+      } else if (modalIsPinching && e.touches.length === 2) {
+        const dx = e.touches[0].clientX - e.touches[1].clientX;
+        const dy = e.touches[0].clientY - e.touches[1].clientY;
+        const dist = Math.hypot(dx, dy);
+        if (modalInitialPinchDist > 0) {
+          const pinchFactor = dist / modalInitialPinchDist;
+          modalScale = Math.min(Math.max(modalInitialScaleOnPinch * pinchFactor, modalFitScale * 0.8), 3.0);
+          applyModalTransform(false);
+        }
+      }
+    }, { passive: false });
+
+    baganModalViewport.addEventListener('touchend', (e) => {
+      if (e.touches.length === 0) {
+        modalIsDragging = false;
+        modalIsPinching = false;
+        baganModalPanLayer?.classList.remove('no-transition');
+        applyModalTransform(true);
+      } else if (e.touches.length === 1) {
+        modalIsPinching = false;
+        modalIsDragging = true;
+        modalDragStartX = e.touches[0].clientX - modalPanX;
+        modalDragStartY = e.touches[0].clientY - modalPanY;
+      }
+    });
+  }
+
+  // Auto-fit inline bagan on window resize & initial load
+  let resizeBaganTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeBaganTimer);
+    resizeBaganTimer = setTimeout(() => {
+      fitInlineBagan(false);
+      if (baganLightboxModal?.classList.contains('show')) {
+        resetModalBagan();
+      }
+    }, 150);
+  });
+
+  setTimeout(() => {
+    fitInlineBagan(false);
+  }, 100);
+
+  // =========================================================================
   // PENGURUS SECTION: TABS & INTERACTION
   // =========================================================================
   const pengurusTabBtns = document.querySelectorAll('.pengurus-tab-btn');
@@ -926,12 +1560,16 @@ document.addEventListener('DOMContentLoaded', () => {
           pane.classList.add('show-all-mode');
           pane.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-revealed'));
         });
+        setTimeout(() => fitInlineBagan(false), 50);
       } else {
         pengurusPanes.forEach(pane => {
           pane.classList.remove('show-all-mode');
           if (pane.id === `pane-${targetTab}`) {
             pane.classList.add('active');
             pane.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-revealed'));
+            if (targetTab === 'bagan') {
+              setTimeout(() => fitInlineBagan(false), 50);
+            }
           } else {
             pane.classList.remove('active');
           }
@@ -1059,6 +1697,8 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModal();
       } else if (mapLightboxModal?.classList.contains('show')) {
         closeMapLightbox();
+      } else if (baganLightboxModal?.classList.contains('show')) {
+        closeBaganLightbox();
       }
     }
   });

@@ -364,14 +364,22 @@
                             <h3 class="bagan-title">Bagan Struktur Organisasi Paguyuban Prodiakon</h3>
                             <p class="bagan-desc">Gereja Santo Bonaventura, Paroki Pulomas &bull; Periode {{ $content['pengurus']['periode'] }}</p>
                         </div>
-                        <div class="bagan-meta-pill">
-                            <i class="bi bi-diagram-3"></i> 6 Pilar Struktur Pelayanan
+                        <div class="bagan-header-actions">
+                            <button type="button" class="btn-peta-action btn-bagan-fullscreen" id="btnOpenBaganLightbox" title="Buka Mode Layar Penuh (HD)">
+                                <i class="bi bi-arrows-fullscreen"></i> Layar Penuh
+                            </button>
+                            <div class="bagan-zoom-pill">
+                                <button type="button" class="btn-bagan-tool" id="btnInlineZoomIn" title="Perbesar"><i class="bi bi-zoom-in"></i></button>
+                                <button type="button" class="btn-bagan-tool" id="btnInlineZoomOut" title="Perkecil"><i class="bi bi-zoom-out"></i></button>
+                                <button type="button" class="btn-bagan-tool" id="btnInlineZoomFit" title="Pas Layar / Tampil Penuh"><i class="bi bi-arrows-angle-contract"></i></button>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Organogram Tree Canvas -->
-                    <div class="organogram-viewport">
-                        <div class="organogram-tree">
+                    <!-- Organogram Interactive Viewport -->
+                    <div class="organogram-viewport" id="inlineBaganViewport">
+                        <div class="organogram-pan-layer" id="inlineBaganPanLayer">
+                            <div class="organogram-tree" id="inlineBaganTree">
                             
                             <!-- LEVEL 1: KOORDINATOR -->
                             <div class="org-row org-row-root">
@@ -533,7 +541,9 @@
                             </div>
 
                             </div>
-
+                        </div>
+                        <div class="bagan-touch-hint" id="inlineBaganTouchHint">
+                            <i class="bi bi-arrows-move me-1"></i> Geser/drag untuk menjelajah &bull; Tombol zoom untuk perbesar
                         </div>
                     </div>
 
@@ -541,8 +551,10 @@
                         <div class="bagan-legend">
                             <span class="legend-dot"></span> Struktur Garis Komando & Koordinasi Pelayanan
                         </div>
-                        <div class="bagan-scroll-tip">
-                            <i class="bi bi-arrows-expand"></i> Geser horizontal untuk melihat seluruh bagan pada layar ponsel
+                        <div class="bagan-footer-actions">
+                            <button type="button" class="btn-bagan-link" id="btnOpenBaganLightboxFooter">
+                                <i class="bi bi-arrows-fullscreen text-gold me-1"></i> Buka Layar Penuh (Zoom & Geser Interaktif)
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1114,7 +1126,7 @@
                                         <div class="peta-map-img-wrapper">
                                             <picture>
                                                 <source srcset="/images/peta.webp" type="image/webp">
-                                                <img src="/images/peta.png" alt="Peta Teritori Paroki Santo Bonaventura Pulomas" class="peta-main-img" id="mainPetaImage" loading="lazy">
+                                                <img src="/images/peta.png" alt="Peta Teritori Paroki Santo Bonaventura Pulomas" class="peta-main-img" id="mainPetaImage" width="3588" height="2019" loading="lazy">
                                             </picture>
                                         </div>
                                         <div class="peta-map-footer-hint">
