@@ -1606,6 +1606,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   const photoLightbox = document.getElementById('photoLightboxModal');
   const lightboxImg = document.getElementById('lightboxPhotoImg');
+  const lightboxBackdrop = document.getElementById('lightboxPhotoBackdrop');
   const lightboxName = document.getElementById('lightboxPhotoName');
   const lightboxWilayahTag = document.getElementById('lightboxPhotoWilayahTag');
   const lightboxNoTag = document.getElementById('lightboxPhotoNoTag');
@@ -1614,10 +1615,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const openPhotoLightbox = (imgSrc, name, wilayah, no, roleSub = 'Pelayan Altar • Paroki Santo Bonaventura Pulomas') => {
     if (!photoLightbox || !lightboxImg) return;
-    lightboxImg.src = imgSrc || '/images/default-avatar.svg';
+    const finalSrc = imgSrc || '/images/default-avatar.svg';
+    lightboxImg.src = finalSrc;
     lightboxImg.onerror = function() {
       this.src = '/images/default-avatar.svg';
+      if (lightboxBackdrop) lightboxBackdrop.style.display = 'none';
     };
+    if (lightboxBackdrop) {
+      if (finalSrc.includes('default-avatar')) {
+        lightboxBackdrop.style.display = 'none';
+      } else {
+        lightboxBackdrop.style.display = 'block';
+        lightboxBackdrop.src = finalSrc;
+      }
+    }
     if (lightboxName) lightboxName.textContent = name || 'Foto Prodiakon';
     if (lightboxWilayahTag) lightboxWilayahTag.textContent = wilayah || 'Wilayah Paroki';
     if (lightboxNoTag) lightboxNoTag.textContent = no || '';

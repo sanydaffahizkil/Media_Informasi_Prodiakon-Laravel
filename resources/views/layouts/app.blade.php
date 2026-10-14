@@ -205,6 +205,7 @@
         <div class="photo-lightbox-card">
             <button type="button" class="photo-lightbox-close close-photo-lightbox" aria-label="Tutup Foto">&times;</button>
             <div class="photo-lightbox-img-wrap">
+                <img src="/images/default-avatar.svg" id="lightboxPhotoBackdrop" alt="" class="photo-lightbox-backdrop-img" aria-hidden="true">
                 <img src="/images/default-avatar.svg" id="lightboxPhotoImg" alt="Foto Prodiakon Fullscreen" class="photo-lightbox-img">
             </div>
             <div class="photo-lightbox-caption">

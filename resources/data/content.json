@@ -293,7 +293,7 @@
                 "wilayah": "Wilayah 1",
                 "nama": "Stephanus Pudji Ludianto",
                 "peran": "Koordinator Wilayah 1",
-                "foto": "/images/pengurus/Stephanus Pudji Ludianto.png"
+                "foto": "/images/pengurus/Stephanus Pudji Ludianto.jpeg"
             },
             {
                 "kode": "wilayah-ii",
@@ -712,7 +712,7 @@
                     "inisial": "SPL",
                     "wilayah_romawi": "I",
                     "slug": "stephanus-pudji-ludianto",
-                    "foto": "/images/pengurus/Stephanus Pudji Ludianto.png",
+                    "foto": "/images/pengurus/Stephanus Pudji Ludianto.jpeg",
                     "foto_slot_id": "slot-prodiakon-5",
                     "foto_istri": "/images/pengurus/Angela Mercyawati Subianto.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-5"
@@ -865,7 +865,7 @@
                     "inisial": "SPL",
                     "wilayah_romawi": "I",
                     "slug": "stephanus-pudji-ludianto",
-                    "foto": "/images/pengurus/Stephanus Pudji Ludianto.png",
+                    "foto": "/images/pengurus/Stephanus Pudji Ludianto.jpeg",
                     "foto_slot_id": "slot-prodiakon-5",
                     "foto_istri": "/images/pengurus/Angela Mercyawati Subianto.png",
                     "foto_slot_id_istri": "slot-prodiakon-istri-5"
@@ -899,7 +899,7 @@
                     "foto_slot_id_istri": "slot-prodiakon-istri-6"
                 }
             ],
-            "koordinator_foto": "/images/pengurus/Stephanus Pudji Ludianto.png",
+            "koordinator_foto": "/images/pengurus/Stephanus Pudji Ludianto.jpeg",
             "koordinator_jabatan": "Koordinator Wilayah 1"
         },
         {
@@ -2481,7 +2481,7 @@
             "inisial": "SPL",
             "wilayah_romawi": "I",
             "slug": "stephanus-pudji-ludianto",
-            "foto": "/images/pengurus/Stephanus Pudji Ludianto.png",
+            "foto": "/images/pengurus/Stephanus Pudji Ludianto.jpeg",
             "foto_slot_id": "slot-prodiakon-5",
             "foto_istri": "/images/pengurus/Angela Mercyawati Subianto.png"
         },

@@ -1257,10 +1257,17 @@
                                                      data-zoom-no="Pelayan Altar {{ $w['nama'] }}"
                                                      title="Klik untuk melihat foto ukuran penuh">
                                                     <div class="prodiakon-photo-container">
-                                                        <img src="{{ (!empty($pd['foto']) && file_exists(public_path($pd['foto']))) ? $pd['foto'] : '/images/default-avatar.svg' }}" 
+                                                        @php
+                                                            $hasRealPhoto = (!empty($pd['foto']) && file_exists(public_path($pd['foto'])));
+                                                            $photoSrc = $hasRealPhoto ? $pd['foto'] : '/images/default-avatar.svg';
+                                                        @endphp
+                                                        @if($hasRealPhoto)
+                                                            <img src="{{ $photoSrc }}" class="prodiakon-img-backdrop" alt="" aria-hidden="true">
+                                                        @endif
+                                                        <img src="{{ $photoSrc }}" 
                                                              alt="{{ $pd['nama'] }}" 
                                                              class="prodiakon-img" 
-                                                             onerror="this.src='/images/default-avatar.svg';" 
+                                                             onerror="this.src='/images/default-avatar.svg'; const b=this.parentElement.querySelector('.prodiakon-img-backdrop'); if(b) b.remove();" 
                                                              loading="lazy">
                                                         
                                                         <!-- Floating Badges di atas Foto (Nomor dihapus sesuai instruksi) -->
