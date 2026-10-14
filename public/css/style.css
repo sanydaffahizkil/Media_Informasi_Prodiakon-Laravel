@@ -3892,10 +3892,10 @@ section[id] {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(11, 22, 38, 0.95), rgba(11, 22, 38, 0.72) 65%, transparent);
+  background: linear-gradient(to top, rgba(11, 22, 38, 0.88), rgba(11, 22, 38, 0.6) 65%, transparent);
   padding: 12px 10px 6px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   z-index: 3;
   pointer-events: none;

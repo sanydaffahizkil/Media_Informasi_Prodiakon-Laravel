@@ -579,7 +579,6 @@
                                      title="Klik untuk melihat foto ukuran penuh"
                                      style="cursor: pointer;">
                                     <img src="{{ file_exists(public_path($ph['foto'])) ? $ph['foto'] : '/images/default-avatar.svg' }}" alt="{{ $ph['nama'] }}" class="pimpinan-photo-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
-                                    <span class="photo-slot-pill"><i class="bi bi-camera"></i> Wadah Foto</span>
                                 </div>
                             </div>
                             <h3 class="pimpinan-name">{{ $ph['nama'] }}</h3>
@@ -857,7 +856,6 @@
                                  title="Klik untuk melihat foto ukuran penuh"
                                  style="cursor: pointer;">
                                 <img src="{{ file_exists(public_path($kw['foto'])) ? $kw['foto'] : '/images/default-avatar.svg' }}" alt="{{ $kw['nama'] }}" class="kw-photo-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
-                                <span class="photo-slot-pill"><i class="bi bi-camera"></i> Wadah Foto</span>
                             </div>
                             <h4 class="kw-name">{{ $kw['nama'] }}</h4>
                             <div class="kw-role">{{ $kw['peran'] }}</div>
@@ -898,7 +896,6 @@
                                      title="Klik untuk melihat foto ukuran penuh"
                                      style="cursor: pointer;">
                                     <img src="{{ file_exists(public_path($pbm['foto'])) ? $pbm['foto'] : '/images/default-avatar.svg' }}" alt="{{ $pbm['nama'] }}" class="pembina-photo-img" onerror="this.src='/images/default-avatar.svg';" loading="lazy">
-                                    <span class="photo-slot-pill"><i class="bi bi-camera"></i> Wadah Foto</span>
                                 </div>
                                 <h4 class="pembina-card-name">{{ $pbm['nama'] }}</h4>
                                 <div class="pembina-card-role">{{ $pbm['jabatan'] }}</div>
@@ -1223,7 +1220,6 @@
                                              class="koor-card-photo-img" 
                                              onerror="this.src='/images/default-avatar.svg';" 
                                              loading="lazy">
-                                        <span class="photo-slot-pill"><i class="bi bi-camera"></i> Wadah Foto</span>
                                     </div>
                                     <div class="koor-card-content">
                                         <div class="koor-card-badge-row">
@@ -1253,7 +1249,7 @@
                                     @foreach($w['daftar_prodiakon'] as $pd)
                                         <div class="prodiakon-card shimmer-card" data-nama="{{ strtolower($pd['nama']) }}" data-lingkungan="{{ strtolower($pd['wilayah_romawi']) }}">
                                             <div>
-                                                <!-- Wadah Foto Profil Prodiakon (Besar & Jelas: Rasio Portrait Gallery) -->
+                                                <!-- Foto Profil Prodiakon (Besar & Jelas: Rasio Portrait Gallery) -->
                                                 <div class="prodiakon-photo-banner-wrap" 
                                                      data-zoom-img="{{ (!empty($pd['foto']) && file_exists(public_path($pd['foto']))) ? $pd['foto'] : '/images/default-avatar.svg' }}"
                                                      data-zoom-nama="{{ $pd['nama'] }}"
@@ -1272,9 +1268,8 @@
                                                             <span class="badge-wilayah">Wil. {{ $pd['wilayah_romawi'] }}</span>
                                                         </div>
 
-                                                        <!-- Bottom Glass Bar: Indikator Wadah Foto & Tombol Zoom -->
+                                                        <!-- Bottom Glass Bar: Tombol Zoom -->
                                                         <div class="avatar-photo-slot-bar">
-                                                            <span class="slot-badge-hint"><i class="bi bi-camera"></i> Wadah Foto</span>
                                                             <span class="slot-zoom-hint"><i class="bi bi-arrows-fullscreen"></i> Perbesar</span>
                                                         </div>
                                                     </div>

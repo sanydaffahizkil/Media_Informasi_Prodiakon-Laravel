@@ -711,7 +711,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Matrimonial Details (Tetap dibiarkan)
       if (modalNikah) modalNikah.textContent = nikah;
 
-      // Photo Slot Handling Suami (Wadah Foto Suami)
+      // Photo Slot Handling Suami
       if (modalImg) {
         modalImg.src = (foto && foto.trim() !== '') ? foto : '/images/default-avatar.svg';
         modalImg.onerror = function() {
@@ -719,7 +719,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
       }
 
-      // Photo Slot Handling Istri (Wadah Foto Istri)
+      // Photo Slot Handling Istri
       if (modalIstriImg) {
         modalIstriImg.src = (fotoIstri && fotoIstri.trim() !== '') ? fotoIstri : '/images/default-avatar-wife.svg';
         modalIstriImg.onerror = function() {

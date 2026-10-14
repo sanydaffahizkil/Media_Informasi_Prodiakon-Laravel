@@ -74,7 +74,7 @@
         @yield('content')
     </main>
 
-    <!-- Modal Popup Detail Prodiakon (Dengan Wadah Foto & Data Lengkap Excel) -->
+    <!-- Modal Popup Detail Prodiakon (Dengan Data Lengkap) -->
     <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="modalProdiakonName">
         <div class="modal-card">
             <div class="modal-header-luxury">
@@ -87,7 +87,7 @@
                 <button type="button" class="modal-close-btn close-modal-trigger" aria-label="Tutup">&times;</button>
             </div>
             <div class="modal-body">
-                <!-- Wadah Foto Profil Pasangan: Prodiakon & Istri (Besar & Jelas) -->
+                <!-- Foto Profil Pasangan: Prodiakon & Istri (Besar & Jelas) -->
                 <div class="modal-couple-header">
                     <div class="modal-couple-photos-grid">
                         <!-- Foto Prodiakon (Suami) -->
@@ -97,7 +97,6 @@
                             </div>
                             <div class="modal-photo-container" id="modalPhotoTrigger" title="Klik untuk melihat foto Prodiakon (HD)" style="cursor: pointer;">
                                 <img src="/images/default-avatar.svg" alt="Foto Prodiakon" id="modalProdiakonImg" class="modal-real-photo" onerror="this.src='/images/default-avatar.svg';">
-                                <span class="modal-photo-slot-hint"><i class="bi bi-camera"></i> Wadah Foto</span>
                                 <div class="modal-photo-zoom-badge"><i class="bi bi-arrows-fullscreen"></i> HD</div>
                             </div>
                             <button type="button" class="btn-zoom-modal-action" id="btnZoomModalAction" title="Perbesar Foto Suami">
@@ -112,7 +111,6 @@
                             </div>
                             <div class="modal-photo-container" id="modalWifePhotoTrigger" title="Klik untuk melihat foto Istri (HD)" style="cursor: pointer;">
                                 <img src="/images/default-avatar-wife.svg" alt="Foto Istri Prodiakon" id="modalIstriImg" class="modal-real-photo" onerror="this.src='/images/default-avatar-wife.svg';">
-                                <span class="modal-photo-slot-hint"><i class="bi bi-camera"></i> Wadah Foto</span>
                                 <div class="modal-photo-zoom-badge"><i class="bi bi-arrows-fullscreen"></i> HD</div>
                             </div>
                             <button type="button" class="btn-zoom-modal-action" id="btnZoomWifeAction" title="Perbesar Foto Istri">
