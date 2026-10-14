@@ -3599,6 +3599,34 @@ section[id] {
   opacity: 1 !important;
   visibility: visible !important;
   transform: none !important;
+  margin-bottom: 40px;
+}
+
+/* Multi-Wilayah Search Result Spacing & Elegant Divider */
+.wilayah-panel.has-search-divider {
+  margin-bottom: 56px;
+  padding-bottom: 44px;
+  border-bottom: 1.5px dashed rgba(203, 162, 88, 0.45);
+  position: relative;
+}
+
+.wilayah-panel.has-search-divider::after {
+  content: 'Wilayah Pelayanan Berikutnya';
+  position: absolute;
+  bottom: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fafbfc;
+  padding: 3px 18px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(203, 162, 88, 0.35);
+  box-shadow: 0 2px 8px rgba(18, 34, 60, 0.05);
+  white-space: nowrap;
 }
 
 .wilayah-header-card {
@@ -3792,6 +3820,7 @@ section[id] {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 22px;
+  margin-bottom: 28px;
 }
 
 .prodiakon-card {
@@ -6516,6 +6545,18 @@ section[id] {
     max-width: 100% !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    margin-bottom: 36px !important;
+  }
+
+  .wilayah-panel.has-search-divider {
+    margin-bottom: 52px !important;
+    padding-bottom: 38px !important;
+  }
+
+  .wilayah-panel.has-search-divider::after {
+    font-size: 0.72rem !important;
+    padding: 2px 14px !important;
+    bottom: -12px !important;
   }
 
   /* Khusus View Peta Wilayah Paroki on Mobile */
@@ -6720,6 +6761,7 @@ section[id] {
   .prodiakon-cards-grid {
     grid-template-columns: 1fr !important;
     gap: 18px !important;
+    margin-bottom: 24px !important;
   }
 
   .prodiakon-card {

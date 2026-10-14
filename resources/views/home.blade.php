@@ -1094,15 +1094,24 @@
                                      KHUSUS VIEW PETA WILAYAH PAROKI (HIGH-DEFINITION INTERACTIVE)
                                      ========================================================= -->
                                 <div class="peta-showcase-container">
+                                    @php
+                                        $realWilayahList = array_filter($content['data_wilayah'] ?? [], fn($item) => ($item['kode'] ?? '') !== 'peta');
+                                        $realTotalWilayah = count($realWilayahList);
+                                        $realTotalProdiakon = 0;
+                                        foreach ($realWilayahList as $item) {
+                                            $realTotalProdiakon += count($item['daftar_prodiakon'] ?? []);
+                                        }
+                                    @endphp
+
                                     <!-- Header Peta -->
                                     <div class="peta-header-card shimmer-card">
                                         <div class="peta-header-content">
                                             <div class="peta-badge-tag">
                                                 <i class="bi bi-compass-fill"></i> Teritori Pastoral Paroki Pulomas
                                             </div>
-                                            <h3 class="peta-main-title">PETA 11 WILAYAH GEREJA SANTO BONAVENTURA</h3>
+                                            <h3 class="peta-main-title">PETA {{ $realTotalWilayah }} WILAYAH GEREJA SANTO BONAVENTURA</h3>
                                             <p class="peta-main-desc">
-                                                Peta pembagian teritorial pastoral mencakup 11 Wilayah Pelayanan dan 52 Lingkungan di bawah naungan Paroki Pulomas, Keuskupan Agung Jakarta.
+                                                Peta pembagian teritorial pastoral mencakup {{ $realTotalWilayah }} Wilayah Pelayanan dan 52 Lingkungan di bawah naungan Paroki Pulomas, Keuskupan Agung Jakarta.
                                             </p>
                                         </div>
                                         <div class="peta-header-actions">
@@ -1147,7 +1156,7 @@
                                                 <i class="bi bi-map"></i>
                                             </div>
                                             <div>
-                                                <h4>11 Wilayah Pelayanan</h4>
+                                                <h4>{{ $realTotalWilayah }} Wilayah Pelayanan</h4>
                                                 <p>Tersebar di Wilayah I hingga XI</p>
                                             </div>
                                         </div>
@@ -1156,7 +1165,7 @@
                                                 <i class="bi bi-people-fill"></i>
                                             </div>
                                             <div>
-                                                <h4>53 Pelayan Altar</h4>
+                                                <h4>{{ $realTotalProdiakon }} Pelayan Altar</h4>
                                                 <p>Melayani liturgi dan orang sakit</p>
                                             </div>
                                         </div>
@@ -1322,7 +1331,13 @@
                                                     data-tempat-lahir-istri="{{ $pd['tempat_lahir_istri'] ?: '-' }}"
                                                     data-baptis-istri="{{ $pd['nama_baptis_istri'] ?: '-' }}"
                                                     data-krisma-istri="{{ $pd['nama_krisma_istri'] ?: '-' }}"
-                                                    data-nikah="{{ trim(($pd['tempat_perkawinan'] ?? '') . ($pd['tgl_perkawinan'] ? ', ' . $pd['tgl_perkawinan'] : '')) ?: '-' }}">
+                                                    @php
+                                                        $nikahTempat = (!empty($pd['tempat_perkawinan']) && trim($pd['tempat_perkawinan']) !== '-') ? trim($pd['tempat_perkawinan']) : '';
+                                                        $nikahTgl = (!empty($pd['tgl_perkawinan']) && trim($pd['tgl_perkawinan']) !== '-') ? trim($pd['tgl_perkawinan']) : '';
+                                                        $nikahParts = array_filter([$nikahTempat, $nikahTgl]);
+                                                        $nikahFinal = !empty($nikahParts) ? implode(', ', $nikahParts) : '-';
+                                                    @endphp
+                                                    data-nikah="{{ $nikahFinal }}">
                                                 <i class="bi bi-info-circle-fill text-gold"></i> Detail Profil
                                             </button>
                                         </div>

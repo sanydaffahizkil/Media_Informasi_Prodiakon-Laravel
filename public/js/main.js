@@ -548,6 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Smooth switch panel with entrance transition
       wilayahPanels.forEach(panel => {
+        panel.classList.remove('has-search-divider');
         if (panel.getAttribute('id') === `panel-${targetKode}`) {
           panel.style.display = 'block';
           panel.style.animation = 'none';
@@ -582,6 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeKode = activeBtn ? activeBtn.getAttribute('data-wilayah') : 'wilayah-1';
 
         wilayahPanels.forEach(p => {
+          p.classList.remove('has-search-divider');
           p.style.display = (p.id === `panel-${activeKode}`) ? 'block' : 'none';
         });
         allProdiakonCards.forEach(c => {
@@ -591,7 +593,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       let totalMatches = 0;
+      const matchedPanels = [];
       wilayahPanels.forEach(panel => {
+        panel.classList.remove('has-search-divider');
         const cardsInPanel = panel.querySelectorAll('.prodiakon-card');
         let panelHasMatch = false;
 
@@ -609,7 +613,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         panel.style.display = panelHasMatch ? 'block' : 'none';
+        if (panelHasMatch) {
+          matchedPanels.push(panel);
+        }
       });
+
+      // Berikan pemisah dan spasi antar wilayah hasil pencarian
+      if (matchedPanels.length > 1) {
+        for (let i = 0; i < matchedPanels.length - 1; i++) {
+          matchedPanels[i].classList.add('has-search-divider');
+        }
+      }
 
       if (searchFeedback) {
         searchFeedback.style.display = 'inline-block';
