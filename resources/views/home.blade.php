@@ -158,7 +158,7 @@
                 <div class="vandel-image-card shimmer-card" data-reveal="fade-right">
                     <img src="/images/vandel.png" alt="Vandel Prodiakon Paroki Santo Bonaventura" loading="lazy">
                     <div style="margin-top: 14px; font-size: 0.85rem; color: var(--text-muted); font-style: italic;">
-                        Vandel Resmi Paguyuban Prodiakon Santo Bonaventura Pulomas
+                        Vandel Resmi Prodiakon Santo Bonaventura Pulomas
                     </div>
                 </div>
 
@@ -325,7 +325,7 @@
             <div style="text-align: center;" data-reveal="fade-up">
                 <span class="section-tag"><i class="bi bi-diagram-3-fill"></i> Kepengurusan</span>
                 <h2 class="section-title">DAFTAR PENGURUS</h2>
-                <p class="section-subtitle">Susunan Kepengurusan Paguyuban Prodiakon Santo Bonaventura, Paroki Pulomas Periode {{ $content['pengurus']['periode'] }}.</p>
+                <p class="section-subtitle">Susunan Kepengurusan Prodiakon Santo Bonaventura, Paroki Pulomas Periode {{ $content['pengurus']['periode'] }}.</p>
                 <div class="divider-gold"></div>
                 <div class="pengurus-period-badge">
                     <i class="bi bi-patch-check-fill text-gold"></i> Dokumen Resmi Periode {{ $content['pengurus']['periode'] }} &bull; Paroki Pulomas - Jakarta
@@ -361,7 +361,7 @@
                     <div class="bagan-header">
                         <div class="bagan-title-area">
                             <span class="bagan-badge"><i class="bi bi-award-fill"></i> Bagan Struktur Resmi</span>
-                            <h3 class="bagan-title">Bagan Struktur Organisasi Paguyuban Prodiakon</h3>
+                            <h3 class="bagan-title">Bagan Struktur Organisasi Prodiakon</h3>
                             <p class="bagan-desc">Gereja Santo Bonaventura, Paroki Pulomas &bull; Periode {{ $content['pengurus']['periode'] }}</p>
                         </div>
                         <div class="bagan-header-actions">
@@ -878,7 +878,7 @@
                         <div class="pembina-header-icon"><i class="bi bi-people-fill"></i></div>
                         <div>
                             <h4 class="pembina-section-title">Tim Pembina dan Pemerhati</h4>
-                            <span class="pembina-section-sub">Pendampingan Pastoral Paguyuban Periode {{ $content['pengurus']['periode'] }}</span>
+                            <span class="pembina-section-sub">Pendampingan Pastoral Periode {{ $content['pengurus']['periode'] }}</span>
                         </div>
                     </div>
 
@@ -901,7 +901,7 @@
                                 <div class="pembina-card-role">{{ $pbm['jabatan'] }}</div>
                                 <div class="pembina-card-divider"></div>
                                 <div class="pembina-card-desc">
-                                    Pendampingan pastoral serta pembinaan kerohanian bagi seluruh pelayan altar Paguyuban Prodiakon Santo Bonaventura.
+                                    Pendampingan pastoral serta pembinaan kerohanian bagi seluruh pelayan altar Prodiakon Santo Bonaventura.
                                 </div>
                             </div>
                         @endforeach
@@ -920,7 +920,7 @@
             <div style="text-align: center;" data-reveal="fade-up">
                 <span class="section-tag"><i class="bi bi-briefcase-fill"></i> Uraian Amanah Pelayanan</span>
                 <h2 class="section-title">DESKRIPSI TUGAS PRODIAKON PAROKI</h2>
-                <p class="section-subtitle">Rincian wewenang, tanggung jawab, dan koordinasi kepengurusan Paguyuban Prodiakon Gereja Santo Bonaventura Paroki Pulo Mas.</p>
+                <p class="section-subtitle">Rincian wewenang, tanggung jawab, dan koordinasi kepengurusan Prodiakon Gereja Santo Bonaventura Paroki Pulo Mas.</p>
                 <div class="divider-gold"></div>
             </div>
 

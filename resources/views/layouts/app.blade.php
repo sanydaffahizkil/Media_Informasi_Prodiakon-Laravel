@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Prodiakon Paroki Santo Bonaventura Pulomas | Media Informasi</title>
-    <meta name="description" content="Media Informasi Resmi Paguyuban Prodiakon Gereja Santo Bonaventura Paroki Pulomas Keuskupan Agung Jakarta Periode 2025 - 2028.">
+    <meta name="description" content="Media Informasi Resmi Prodiakon Gereja Santo Bonaventura Paroki Pulomas Keuskupan Agung Jakarta Periode 2025 - 2028.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -260,7 +260,7 @@
                 <div class="map-lightbox-title-wrap">
                     <i class="bi bi-diagram-3-fill text-gold me-2"></i>
                     <div>
-                        <h3 class="map-lightbox-title">Bagan Struktur Organisasi Paguyuban Prodiakon (HD)</h3>
+                        <h3 class="map-lightbox-title">Bagan Struktur Organisasi Prodiakon (HD)</h3>
                         <span class="map-lightbox-sub">Gereja Santo Bonaventura Pulomas &bull; Periode 2022 – 2025</span>
                     </div>
                 </div>
@@ -298,7 +298,7 @@
                             <span class="brand-line-3">Paroki Pulo Mas</span>
                         </div>
                     </div>
-                    <p>Paguyuban Prodiakon Paroki Pulomas - Keuskupan Agung Jakarta.</p>
+                    <p>Prodiakon Paroki Pulomas - Keuskupan Agung Jakarta.</p>
                     <p style="margin-top: 8px;">Mewujudkan pelayanan altar yang kudus, bersatu dalam Ekaristi, dan berbuah dalam kasih pastoral bagi seluruh umat beriman.</p>
                 </div>
 
